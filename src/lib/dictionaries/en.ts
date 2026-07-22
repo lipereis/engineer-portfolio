@@ -94,6 +94,8 @@ export const en = {
         course: "Course",
         certificate: "Certificate",
       },
+      editable: "Editable",
+      editableHint: "Draft entry — revise in config.ts",
     },
     contact: {
       title: "Contact",

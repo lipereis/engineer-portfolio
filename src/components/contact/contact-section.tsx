@@ -1,0 +1,153 @@
+"use client";
+
+import * as React from "react";
+import { motion } from "framer-motion";
+import { Check, Code2, Copy, ExternalLink, Mail } from "lucide-react";
+
+import { MagneticButton } from "@/components/ui/magnetic-button";
+import { siteConfig } from "@/config";
+import { useLocale } from "@/hooks/use-locale";
+import { useReducedMotion } from "@/hooks/use-reduced-motion";
+
+export function ContactSection() {
+  const { t } = useLocale();
+  const reduced = useReducedMotion();
+  const copy = t.sections.contact;
+  const [copied, setCopied] = React.useState(false);
+  const resetTimer = React.useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  const githubUrl = `https://github.com/${siteConfig.githubUsername}`;
+  const mailto = `mailto:${siteConfig.email}`;
+
+  const reveal = reduced
+    ? { initial: false as const, whileInView: { opacity: 1, y: 0 } }
+    : {
+        initial: { opacity: 0, y: 24 },
+        whileInView: { opacity: 1, y: 0 },
+      };
+
+  React.useEffect(() => {
+    return () => {
+      if (resetTimer.current) clearTimeout(resetTimer.current);
+    };
+  }, []);
+
+  async function handleCopyEmail() {
+    try {
+      await navigator.clipboard.writeText(siteConfig.email);
+      setCopied(true);
+      if (resetTimer.current) clearTimeout(resetTimer.current);
+      resetTimer.current = setTimeout(() => setCopied(false), 2000);
+    } catch {
+      setCopied(false);
+    }
+  }
+
+  return (
+    <section
+      id="contact"
+      aria-labelledby="contact-heading"
+      className="scroll-mt-20 border-t border-border/60 px-5 py-24 sm:px-8"
+    >
+      <div className="mx-auto w-full max-w-6xl">
+        <motion.header
+          className="mb-12 max-w-2xl"
+          {...reveal}
+          viewport={{ once: true, margin: "-80px" }}
+          transition={{ duration: reduced ? 0 : 0.6, ease: [0.22, 1, 0.36, 1] }}
+        >
+          <p className="mb-3 text-xs font-medium uppercase tracking-[0.2em] text-accent">
+            {t.nav.contact}
+          </p>
+          <h2
+            id="contact-heading"
+            className="font-display text-3xl tracking-tight text-fg sm:text-4xl"
+          >
+            {copy.title}
+          </h2>
+          <p className="mt-3 text-base leading-relaxed text-muted-foreground sm:text-lg">
+            {copy.subtitle}
+          </p>
+        </motion.header>
+
+        <motion.div
+          className="flex flex-col gap-8"
+          {...reveal}
+          viewport={{ once: true, margin: "-60px" }}
+          transition={{
+            duration: reduced ? 0 : 0.6,
+            delay: reduced ? 0 : 0.08,
+            ease: [0.22, 1, 0.36, 1],
+          }}
+        >
+          <a
+            href={mailto}
+            className="font-display text-2xl tracking-tight text-fg underline-offset-4 transition-colors hover:text-accent hover:underline sm:text-3xl"
+          >
+            {siteConfig.email}
+          </a>
+
+          <div className="flex flex-wrap items-center gap-3">
+            <MagneticButton
+              size="lg"
+              className="h-11 gap-2 px-5 text-sm"
+              nativeButton={false}
+              render={<a href={mailto} />}
+            >
+              <Mail data-icon="inline-start" />
+              {copy.email}
+            </MagneticButton>
+
+            <MagneticButton
+              type="button"
+              size="lg"
+              variant="outline"
+              className="h-11 gap-2 px-5 text-sm"
+              onClick={() => {
+                void handleCopyEmail();
+              }}
+              aria-live="polite"
+            >
+              {copied ? (
+                <Check data-icon="inline-start" />
+              ) : (
+                <Copy data-icon="inline-start" />
+              )}
+              {copied ? copy.copied : copy.copyEmail}
+            </MagneticButton>
+
+            <MagneticButton
+              size="lg"
+              variant="ghost"
+              className="h-11 gap-2 px-5 text-sm"
+              nativeButton={false}
+              render={
+                <a
+                  href={siteConfig.linkedin}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                />
+              }
+            >
+              <ExternalLink data-icon="inline-start" />
+              {copy.linkedin}
+            </MagneticButton>
+
+            <MagneticButton
+              size="lg"
+              variant="ghost"
+              className="h-11 gap-2 px-5 text-sm"
+              nativeButton={false}
+              render={
+                <a href={githubUrl} target="_blank" rel="noopener noreferrer" />
+              }
+            >
+              <Code2 data-icon="inline-start" />
+              {copy.github}
+            </MagneticButton>
+          </div>
+        </motion.div>
+      </div>
+    </section>
+  );
+}

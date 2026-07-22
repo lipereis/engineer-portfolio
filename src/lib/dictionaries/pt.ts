@@ -96,6 +96,8 @@ export const pt = {
         course: "Curso",
         certificate: "Certificado",
       },
+      editable: "Editável",
+      editableHint: "Rascunho — revise em config.ts",
     },
     contact: {
       title: "Contato",
