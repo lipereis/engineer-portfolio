@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { GeistSans } from "geist/font/sans";
 import { Instrument_Serif } from "next/font/google";
+import { AppProviders } from "@/components/providers/app-providers";
 import { cn } from "@/lib/utils";
 import "./globals.css";
 
@@ -29,8 +30,11 @@ export default function RootLayout({
         instrument.variable,
         "dark antialiased grain",
       )}
+      suppressHydrationWarning
     >
-      <body className="min-h-full flex flex-col font-sans">{children}</body>
+      <body className="min-h-full flex flex-col font-sans">
+        <AppProviders>{children}</AppProviders>
+      </body>
     </html>
   );
 }
