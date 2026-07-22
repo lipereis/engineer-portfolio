@@ -9,7 +9,7 @@
     "prebuild": "tsx scripts/fetch-github.ts",
     "build": "next build",
     "start": "npx serve out",
-    "lint": "next lint",
+    "lint": "eslint .",
     "test": "vitest run",
     "test:watch": "vitest"
   },

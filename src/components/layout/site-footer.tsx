@@ -1,7 +1,5 @@
 "use client";
 
-"use client";
-
 import { siteConfig } from "@/config";
 import { useLocale } from "@/hooks/use-locale";
 import { withBasePath } from "@/lib/utils";
