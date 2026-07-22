@@ -104,6 +104,7 @@ export const en = {
   },
 
   command: {
+    title: "Command menu",
     placeholder: "Jump to a section, toggle theme, or copy email…",
     empty: "No matching actions.",
     groups: {

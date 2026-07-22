@@ -82,7 +82,7 @@ export function CommandMenu() {
     <CommandDialog
       open={open}
       onOpenChange={setOpen}
-      title={t.chrome.skipToContent}
+      title={t.command.title}
       description={t.command.placeholder}
     >
       <Command>

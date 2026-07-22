@@ -106,6 +106,7 @@ export const pt = {
   },
 
   command: {
+    title: "Menu de comandos",
     placeholder: "Ir para uma seção, alternar tema ou copiar e-mail…",
     empty: "Nenhuma ação correspondente.",
     groups: {

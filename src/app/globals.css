@@ -9,7 +9,8 @@
   --bg: #e6e4e1;
   --fg: #141210;
   --accent: #c4843a;
-  --muted: #6b6560;
+  --muted-foreground: #6b6560; /* craft muted text */
+  --muted: color-mix(in srgb, var(--fg) 10%, var(--bg)); /* shadcn surface */
   --border: rgba(20, 18, 16, 0.12);
   --grain-opacity: 0.04;
 
@@ -24,16 +25,15 @@
   --primary-foreground: #0c0b0a;
   --secondary: color-mix(in srgb, var(--fg) 8%, var(--bg));
   --secondary-foreground: var(--fg);
-  --muted-foreground: var(--muted);
   --accent-foreground: #0c0b0a;
   --destructive: oklch(0.577 0.245 27.325);
   --input: var(--border);
   --ring: var(--accent);
   --chart-1: var(--accent);
-  --chart-2: var(--muted);
+  --chart-2: var(--muted-foreground);
   --chart-3: var(--fg);
   --chart-4: color-mix(in srgb, var(--accent) 70%, var(--fg));
-  --chart-5: color-mix(in srgb, var(--muted) 70%, var(--bg));
+  --chart-5: color-mix(in srgb, var(--muted-foreground) 70%, var(--bg));
   --radius: 0.625rem;
   --sidebar: var(--bg);
   --sidebar-foreground: var(--fg);
@@ -50,7 +50,8 @@
   --bg: #0c0b0a;
   --fg: #f5f0e8;
   --accent: #e8a45a;
-  --muted: #9a948c;
+  --muted-foreground: #9a948c; /* craft muted text */
+  --muted: color-mix(in srgb, var(--fg) 10%, var(--bg)); /* shadcn surface */
   --border: rgba(255, 255, 255, 0.08);
   --grain-opacity: 0.06;
 
@@ -64,16 +65,15 @@
   --primary-foreground: #0c0b0a;
   --secondary: color-mix(in srgb, var(--fg) 10%, var(--bg));
   --secondary-foreground: var(--fg);
-  --muted-foreground: var(--muted);
   --accent-foreground: var(--fg);
   --destructive: oklch(0.704 0.191 22.216);
   --input: var(--border);
   --ring: var(--accent);
   --chart-1: var(--accent);
-  --chart-2: var(--muted);
+  --chart-2: var(--muted-foreground);
   --chart-3: var(--fg);
   --chart-4: color-mix(in srgb, var(--accent) 70%, var(--fg));
-  --chart-5: color-mix(in srgb, var(--muted) 70%, var(--bg));
+  --chart-5: color-mix(in srgb, var(--muted-foreground) 70%, var(--bg));
   --sidebar: var(--bg);
   --sidebar-foreground: var(--fg);
   --sidebar-primary: var(--accent);
