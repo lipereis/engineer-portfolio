@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "fetch-github": "tsx scripts/fetch-github.ts",
+    "generate-resume": "tsx scripts/generate-resume.ts",
     "prebuild": "tsx scripts/fetch-github.ts",
     "build": "next build",
     "start": "npx serve out",
@@ -29,10 +30,12 @@
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
     "@types/node": "^20.19.43",
+    "@types/pdfkit": "^0.17.6",
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "16.2.11",
+    "pdfkit": "^0.19.1",
     "shadcn": "^4.14.0",
     "tailwindcss": "^4",
     "tsx": "^4.23.1",
