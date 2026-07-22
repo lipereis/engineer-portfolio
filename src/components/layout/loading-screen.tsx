@@ -10,38 +10,44 @@ import { useReducedMotion } from "@/hooks/use-reduced-motion";
 const STORAGE_KEY = "portfolio-loaded";
 const MIN_MS = 600;
 
+function hasSeenThisSession(): boolean {
+  try {
+    return sessionStorage.getItem(STORAGE_KEY) === "1";
+  } catch {
+    return false;
+  }
+}
+
 export function LoadingScreen() {
   const { t } = useLocale();
   const reduced = useReducedMotion();
-  const [visible, setVisible] = React.useState(false);
-  const [ready, setReady] = React.useState(false);
+  // Show-until-done: cover first paint (avoids FOUC). Effect hides when
+  // reduced-motion, already seen this session, or min duration + load done.
+  const [visible, setVisible] = React.useState(true);
 
   React.useEffect(() => {
+    // Critical: skip immediately when reduced (also handles false→true race)
     if (reduced) {
-      setReady(true);
+      setVisible(false);
       return;
     }
 
-    try {
-      if (sessionStorage.getItem(STORAGE_KEY) === "1") {
-        setReady(true);
-        return;
-      }
-    } catch {
-      // private mode / blocked storage — still show once this mount
+    if (hasSeenThisSession()) {
+      setVisible(false);
+      return;
     }
 
     setVisible(true);
-    setReady(true);
 
     const started = performance.now();
     let cancelled = false;
+    let hideTimer = 0;
 
     const finish = () => {
       if (cancelled) return;
       const elapsed = performance.now() - started;
       const wait = Math.max(0, MIN_MS - elapsed);
-      window.setTimeout(() => {
+      hideTimer = window.setTimeout(() => {
         if (cancelled) return;
         try {
           sessionStorage.setItem(STORAGE_KEY, "1");
@@ -60,11 +66,10 @@ export function LoadingScreen() {
 
     return () => {
       cancelled = true;
+      window.clearTimeout(hideTimer);
       window.removeEventListener("load", finish);
     };
   }, [reduced]);
-
-  if (!ready) return null;
 
   return (
     <AnimatePresence>

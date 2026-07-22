@@ -61,7 +61,7 @@ export function SiteFooter() {
             {t.sections.contact.resume}
           </Link>
           <a
-            href={githubUrl}
+            href="https://github.com/lipereis/engineer-portfolio"
             target="_blank"
             rel="noopener noreferrer"
             className="transition-colors hover:text-accent"
