@@ -33,23 +33,21 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
   const [theme, setTheme] = useState<Theme>(DEFAULT_THEME);
 
   // Hydration-safe: render DEFAULT_THEME first, then sync from storage.
+  // Only setTheme here — [theme] effect is the sole apply/persist path
+  // (avoids applyThemeClass(next) then stale theme re-applying in same flush).
   useEffect(() => {
     const stored = localStorage.getItem(THEME_KEY);
     const next = isTheme(stored) ? stored : DEFAULT_THEME;
     setTheme(next);
-    applyThemeClass(next);
   }, []);
 
   useEffect(() => {
     applyThemeClass(theme);
+    localStorage.setItem(THEME_KEY, theme);
   }, [theme]);
 
   const toggle = useCallback(() => {
-    setTheme((prev) => {
-      const next: Theme = prev === "dark" ? "light" : "dark";
-      localStorage.setItem(THEME_KEY, next);
-      return next;
-    });
+    setTheme((prev) => (prev === "dark" ? "light" : "dark"));
   }, []);
 
   return (
