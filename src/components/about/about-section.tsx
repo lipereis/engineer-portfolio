@@ -10,13 +10,6 @@ export function AboutSection() {
   const { locale, t } = useLocale();
   const reduced = useReducedMotion();
 
-  const reveal = reduced
-    ? { initial: false as const, whileInView: { opacity: 1, y: 0 } }
-    : {
-        initial: { opacity: 0, y: 24 },
-        whileInView: { opacity: 1, y: 0 },
-      };
-
   return (
     <section
       id="about"
@@ -24,12 +17,7 @@ export function AboutSection() {
       className="scroll-mt-20 border-t border-border/60 px-5 py-24 sm:px-8"
     >
       <div className="mx-auto w-full max-w-6xl">
-        <motion.header
-          className="mb-12 max-w-2xl"
-          {...reveal}
-          viewport={{ once: true, margin: "-80px" }}
-          transition={{ duration: reduced ? 0 : 0.6, ease: [0.22, 1, 0.36, 1] }}
-        >
+        <header className="mb-12 max-w-2xl">
           <p className="mb-3 text-xs font-medium uppercase tracking-[0.2em] text-accent">
             {t.nav.about}
           </p>
@@ -42,21 +30,12 @@ export function AboutSection() {
           <p className="mt-3 text-base leading-relaxed text-muted-foreground sm:text-lg">
             {t.sections.about.subtitle}
           </p>
-        </motion.header>
+        </header>
 
         <div className="grid gap-14 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,1fr)] lg:gap-16">
-          <motion.p
-            className="max-w-xl text-base leading-relaxed text-fg/90 sm:text-lg"
-            {...reveal}
-            viewport={{ once: true, margin: "-60px" }}
-            transition={{
-              duration: reduced ? 0 : 0.6,
-              delay: reduced ? 0 : 0.08,
-              ease: [0.22, 1, 0.36, 1],
-            }}
-          >
+          <p className="max-w-xl text-base leading-relaxed text-fg/90 sm:text-lg">
             {siteConfig.about[locale]}
-          </motion.p>
+          </p>
 
           <ol className="relative list-none space-y-0 border-l border-border/80 pl-0">
             {siteConfig.experience.map((entry, index) => (

@@ -11,13 +11,6 @@ export function ExperienceSection() {
   const reduced = useReducedMotion();
   const copy = t.sections.experience;
 
-  const reveal = reduced
-    ? { initial: false as const, whileInView: { opacity: 1, y: 0 } }
-    : {
-        initial: { opacity: 0, y: 24 },
-        whileInView: { opacity: 1, y: 0 },
-      };
-
   return (
     <section
       id="experience"
@@ -25,12 +18,7 @@ export function ExperienceSection() {
       className="scroll-mt-20 border-t border-border/60 px-5 py-24 sm:px-8"
     >
       <div className="mx-auto w-full max-w-6xl">
-        <motion.header
-          className="mb-14 max-w-2xl"
-          {...reveal}
-          viewport={{ once: true, margin: "-80px" }}
-          transition={{ duration: reduced ? 0 : 0.6, ease: [0.22, 1, 0.36, 1] }}
-        >
+        <header className="mb-14 max-w-2xl">
           <p className="mb-3 text-xs font-medium uppercase tracking-[0.2em] text-accent">
             {t.nav.experience}
           </p>
@@ -43,7 +31,7 @@ export function ExperienceSection() {
           <p className="mt-3 text-base leading-relaxed text-muted-foreground sm:text-lg">
             {copy.subtitle}
           </p>
-        </motion.header>
+        </header>
 
         <ol className="relative mx-auto list-none space-y-0 border-l border-border/80 pl-0 sm:max-w-3xl">
           {siteConfig.experience.map((entry, index) => (
