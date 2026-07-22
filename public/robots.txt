@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://lipereis.github.io/engineer-portfolio/sitemap.xml
