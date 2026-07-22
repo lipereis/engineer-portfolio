@@ -37,15 +37,20 @@ export function TypingText({
   const [phase, setPhase] = React.useState<"typing" | "holding" | "deleting">(
     "typing",
   );
+  /** Announced only when a full phrase completes (hold) — not per keystroke. */
+  const [announced, setAnnounced] = React.useState("");
 
   React.useEffect(() => {
     setIndex(0);
     if (reduced) {
-      setText(safeLines[0] ?? "");
+      const first = safeLines[0] ?? "";
+      setText(first);
       setPhase("holding");
+      setAnnounced(first);
     } else {
       setText("");
       setPhase("typing");
+      setAnnounced("");
     }
   }, [safeLines, reduced]);
 
@@ -55,6 +60,7 @@ export function TypingText({
     const current = safeLines[index % safeLines.length] ?? "";
 
     if (phase === "holding") {
+      setAnnounced(current);
       const id = window.setTimeout(() => setPhase("deleting"), holdMs);
       return () => window.clearTimeout(id);
     }
@@ -94,20 +100,24 @@ export function TypingText({
   const display = reduced ? (safeLines[0] ?? "") : text;
 
   return (
-    <p
-      className={cn(
-        "min-h-[1.5em] font-sans text-base text-accent sm:text-lg",
-        className,
-      )}
-      aria-live="polite"
-    >
-      <span>{display}</span>
-      {!reduced ? (
-        <span
-          aria-hidden
-          className="ml-0.5 inline-block h-[1.05em] w-[2px] translate-y-[0.12em] bg-accent align-baseline animate-pulse"
-        />
-      ) : null}
-    </p>
+    <>
+      <p
+        className={cn(
+          "min-h-[1.5em] font-sans text-base text-accent sm:text-lg",
+          className,
+        )}
+      >
+        <span>{display}</span>
+        {!reduced ? (
+          <span
+            aria-hidden
+            className="ml-0.5 inline-block h-[1.05em] w-[2px] translate-y-[0.12em] bg-accent align-baseline animate-pulse"
+          />
+        ) : null}
+      </p>
+      <span className="sr-only" aria-live="polite">
+        {announced}
+      </span>
+    </>
   );
 }
