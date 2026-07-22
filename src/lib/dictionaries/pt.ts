@@ -1,0 +1,146 @@
+import type { Dictionary } from "./en";
+
+export const pt = {
+  meta: {
+    title: "Felipe Gomes — Software Engineer",
+    description:
+      "Software Engineer · Frontend · Full-stack capable. Portfólio de Felipe Gomes — ofício em vídeo, produto e tooling com IA, do Rio de Janeiro.",
+  },
+
+  nav: {
+    about: "Sobre",
+    skills: "Skills",
+    projects: "Projetos",
+    ask: "Busca",
+    stats: "Stats",
+    experience: "Experiência",
+    education: "Educação",
+    contact: "Contato",
+    openMenu: "Abrir menu",
+    closeMenu: "Fechar menu",
+  },
+
+  hero: {
+    role: "Software Engineer",
+    focus: "Frontend · Full-stack capable",
+    typingLines: [
+      "Construindo produtos com código e IA",
+      "Do ofício em vídeo à engenharia de software",
+      "Entregando ferramentas com acabamento premium",
+    ],
+    arc: "Editor de vídeo em transição para engenharia de software — construindo produtos com código e IA.",
+    ctaProjects: "Ver Projetos",
+    ctaResume: "Baixar Currículo",
+    ctaGithub: "GitHub",
+    ctaLinkedin: "LinkedIn",
+  },
+
+  sections: {
+    about: {
+      title: "Sobre",
+      subtitle: "O caminho do ofício criativo à engenharia.",
+    },
+    skills: {
+      title: "Skills",
+      subtitle: "Ferramentas que uso para desenhar, construir e entregar.",
+      groups: {
+        frontend: "Frontend",
+        backend: "Backend",
+        languages: "Linguagens de Programação",
+        databases: "Bancos de Dados",
+        tools: "Ferramentas",
+        design: "Design",
+      },
+    },
+    projects: {
+      title: "Projetos em Destaque",
+      subtitle: "Principais repositórios ranqueados pela atividade pública no GitHub.",
+      liveDemo: "Demo ao vivo",
+      viewGithub: "GitHub",
+      stars: "Stars",
+      forks: "Forks",
+    },
+    ask: {
+      title: "Pergunte sobre meus projetos",
+      subtitle: "Busque em todos os repositórios públicos.",
+      placeholder: "Tente “Next.js”, “vídeo” ou o nome de um repo…",
+      empty: "Nenhum projeto corresponde a essa busca. Tente outra palavra-chave.",
+      results: "resultados",
+    },
+    stats: {
+      title: "Estatísticas do GitHub",
+      subtitle: "Instantâneo da atividade pública na última build.",
+      repositories: "Repositórios",
+      stars: "Stars totais",
+      forks: "Forks totais",
+      followers: "Seguidores",
+      following: "Seguindo",
+      languages: "Linguagens",
+      commits: "Atividade de commits",
+      contributions: "Calendário de contribuições",
+      fetchedAt: "Dados obtidos em",
+    },
+    experience: {
+      title: "Experiência",
+      subtitle: "Uma linha do tempo de ofício, aprendizado e transição.",
+    },
+    education: {
+      title: "Educação",
+      subtitle: "Cursos, trilha autodidata e certificados.",
+      kinds: {
+        university: "Universidade",
+        course: "Curso",
+        certificate: "Certificado",
+      },
+    },
+    contact: {
+      title: "Contato",
+      subtitle: "Vamos falar sobre vagas, colaboração ou projetos.",
+      email: "E-mail",
+      copyEmail: "Copiar e-mail",
+      copied: "Copiado!",
+      linkedin: "LinkedIn",
+      github: "GitHub",
+      resume: "Currículo",
+    },
+  },
+
+  command: {
+    placeholder: "Ir para uma seção, alternar tema ou copiar e-mail…",
+    empty: "Nenhuma ação correspondente.",
+    groups: {
+      navigation: "Navegação",
+      actions: "Ações",
+      preferences: "Preferências",
+    },
+    actions: {
+      copyEmail: "Copiar e-mail",
+      openGithub: "Abrir GitHub",
+      openLinkedin: "Abrir LinkedIn",
+      downloadResume: "Baixar currículo",
+      toggleTheme: "Alternar tema",
+      themeDark: "Tema: Escuro",
+      themeLight: "Tema: Claro",
+      languageEn: "Idioma: English",
+      languagePt: "Idioma: Português",
+    },
+  },
+
+  chrome: {
+    loading: "Carregando",
+    backToTop: "Voltar ao topo",
+    themeToggle: "Alternar tema",
+    languageToggle: "Trocar idioma",
+    skipToContent: "Pular para o conteúdo",
+    footer: {
+      builtBy: "Feito por Felipe Gomes",
+      rights: "Todos os direitos reservados.",
+      source: "Código no GitHub",
+    },
+    notFound: {
+      title: "Página não encontrada",
+      description: "Essa rota não existe neste portfólio.",
+      home: "Voltar ao início",
+    },
+  },
+} as const satisfies Dictionary;
