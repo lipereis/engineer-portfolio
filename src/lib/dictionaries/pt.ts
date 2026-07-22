@@ -9,10 +9,10 @@ export const pt = {
 
   nav: {
     about: "Sobre",
-    skills: "Skills",
+    skills: "Habilidades",
     projects: "Projetos",
     ask: "Busca",
-    stats: "Stats",
+    stats: "Estatísticas",
     experience: "Experiência",
     education: "Educação",
     contact: "Contato",
@@ -41,7 +41,7 @@ export const pt = {
       subtitle: "O caminho do ofício criativo à engenharia.",
     },
     skills: {
-      title: "Skills",
+      title: "Habilidades",
       subtitle: "Ferramentas que uso para desenhar, construir e entregar.",
       groups: {
         frontend: "Frontend",
@@ -105,6 +105,7 @@ export const pt = {
       email: "E-mail",
       copyEmail: "Copiar e-mail",
       copied: "Copiado!",
+      copyFailed: "Não foi possível copiar o e-mail",
       linkedin: "LinkedIn",
       github: "GitHub",
       resume: "Currículo",

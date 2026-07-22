@@ -11,6 +11,7 @@ export function ContactSection() {
   const { t } = useLocale();
   const copy = t.sections.contact;
   const [copied, setCopied] = React.useState(false);
+  const [announcement, setAnnouncement] = React.useState("");
   const resetTimer = React.useRef<ReturnType<typeof setTimeout> | null>(null);
 
   const githubUrl = `https://github.com/${siteConfig.githubUsername}`;
@@ -26,10 +27,17 @@ export function ContactSection() {
     try {
       await navigator.clipboard.writeText(siteConfig.email);
       setCopied(true);
+      setAnnouncement(copy.copied);
       if (resetTimer.current) clearTimeout(resetTimer.current);
-      resetTimer.current = setTimeout(() => setCopied(false), 2000);
+      resetTimer.current = setTimeout(() => {
+        setCopied(false);
+        setAnnouncement("");
+      }, 2000);
     } catch {
       setCopied(false);
+      setAnnouncement(copy.copyFailed);
+      if (resetTimer.current) clearTimeout(resetTimer.current);
+      resetTimer.current = setTimeout(() => setAnnouncement(""), 2000);
     }
   }
 
@@ -82,7 +90,6 @@ export function ContactSection() {
               onClick={() => {
                 void handleCopyEmail();
               }}
-              aria-live="polite"
             >
               {copied ? (
                 <Check data-icon="inline-start" />
@@ -122,6 +129,10 @@ export function ContactSection() {
               {copy.github}
             </MagneticButton>
           </div>
+
+          <span className="sr-only" aria-live="polite">
+            {announcement}
+          </span>
         </div>
       </div>
     </section>

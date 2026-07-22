@@ -1,9 +1,10 @@
 "use client";
 
-import Link from "next/link";
+"use client";
 
 import { siteConfig } from "@/config";
 import { useLocale } from "@/hooks/use-locale";
+import { withBasePath } from "@/lib/utils";
 
 const year = new Date().getFullYear();
 
@@ -52,14 +53,14 @@ export function SiteFooter() {
           >
             {t.sections.contact.linkedin}
           </a>
-          <Link
-            href={siteConfig.resumeUrl}
+          <a
+            href={withBasePath(siteConfig.resumeUrl)}
             target="_blank"
             rel="noopener noreferrer"
             className="transition-colors hover:text-fg"
           >
             {t.sections.contact.resume}
-          </Link>
+          </a>
           <a
             href="https://github.com/lipereis/engineer-portfolio"
             target="_blank"

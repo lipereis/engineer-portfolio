@@ -10,11 +10,18 @@ import type { GithubData } from "@/lib/types";
 const github = githubJson as GithubData;
 
 function formatFetchedAt(iso: string, locale: string): string {
+  // Fixed parts avoid Node vs browser ICU hydration mismatches.
   try {
-    return new Date(iso).toLocaleString(locale === "pt" ? "pt-BR" : "en-US", {
-      dateStyle: "medium",
-      timeStyle: "short",
-    });
+    const d = new Date(iso);
+    if (Number.isNaN(d.getTime())) return iso;
+    const y = d.getUTCFullYear();
+    const m = String(d.getUTCMonth() + 1).padStart(2, "0");
+    const day = String(d.getUTCDate()).padStart(2, "0");
+    const hh = String(d.getUTCHours()).padStart(2, "0");
+    const mm = String(d.getUTCMinutes()).padStart(2, "0");
+    return locale === "pt"
+      ? `${day}/${m}/${y} ${hh}:${mm} UTC`
+      : `${y}-${m}-${day} ${hh}:${mm} UTC`;
   } catch {
     return iso;
   }
@@ -73,7 +80,7 @@ export function StatsSection() {
                 {item.label}
               </dt>
               <dd className="mt-2 font-display text-3xl tabular-nums tracking-tight text-fg sm:text-4xl">
-                {item.value.toLocaleString(locale === "pt" ? "pt-BR" : "en-US")}
+                {item.value}
               </dd>
             </div>
           ))}
@@ -91,7 +98,7 @@ export function StatsSection() {
             <h3 className="mb-5 text-sm font-medium tracking-wide text-muted-foreground">
               {s.commits}
             </h3>
-            <CommitActivity weeks={github.commitActivity} />
+            <CommitActivity weeks={github.commitActivity} label={s.commits} />
           </div>
         </div>
 
@@ -104,6 +111,8 @@ export function StatsSection() {
               days={github.contributionWeeks}
               lessLabel={s.less}
               moreLabel={s.more}
+              calendarLabel={s.contributions}
+              locale={locale}
             />
           ) : (
             <p className="text-sm leading-relaxed text-muted-foreground">

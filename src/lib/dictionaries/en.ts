@@ -103,6 +103,7 @@ export const en = {
       email: "Email",
       copyEmail: "Copy email",
       copied: "Copied!",
+      copyFailed: "Couldn’t copy email",
       linkedin: "LinkedIn",
       github: "GitHub",
       resume: "Resume",

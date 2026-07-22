@@ -1,3 +1,4 @@
+import type { Locale } from "@/lib/i18n";
 import type { GithubData } from "@/lib/types";
 
 type Day = GithubData["contributionWeeks"][number];
@@ -6,6 +7,8 @@ type ContributionCalendarProps = {
   days: Day[];
   lessLabel: string;
   moreLabel: string;
+  calendarLabel: string;
+  locale: Locale;
 };
 
 const LEVEL_CLASS: Record<Day["level"], string> = {
@@ -24,22 +27,23 @@ function chunkWeeks(days: Day[]): Day[][] {
   return weeks;
 }
 
-function formatDayTitle(day: Day): string {
-  const label = new Date(`${day.date}T12:00:00Z`).toLocaleDateString(undefined, {
-    year: "numeric",
-    month: "short",
-    day: "numeric",
-    timeZone: "UTC",
-  });
+function formatDayTitle(day: Day, locale: Locale): string {
+  // ISO date avoids Node vs browser ICU mismatches on SSR titles.
   const n = day.count;
+  if (locale === "pt") {
+    const contrib = n === 1 ? "1 contribuição" : `${n} contribuições`;
+    return `${contrib} em ${day.date}`;
+  }
   const contrib = n === 1 ? "1 contribution" : `${n} contributions`;
-  return `${contrib} on ${label}`;
+  return `${contrib} on ${day.date}`;
 }
 
 export function ContributionCalendar({
   days,
   lessLabel,
   moreLabel,
+  calendarLabel,
+  locale,
 }: ContributionCalendarProps) {
   const weeks = chunkWeeks(days);
 
@@ -50,13 +54,13 @@ export function ContributionCalendar({
           className="inline-grid grid-flow-col gap-[3px]"
           style={{ gridTemplateRows: "repeat(7, 11px)" }}
           role="img"
-          aria-label="Contribution calendar"
+          aria-label={calendarLabel}
         >
           {weeks.map((week, wi) =>
             week.map((day, di) => (
               <span
                 key={day.date}
-                title={formatDayTitle(day)}
+                title={formatDayTitle(day, locale)}
                 className={`size-[11px] rounded-[2px] ${LEVEL_CLASS[day.level]}`}
                 style={{ gridRow: di + 1, gridColumn: wi + 1 }}
               />

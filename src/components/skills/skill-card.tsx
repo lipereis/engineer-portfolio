@@ -74,7 +74,6 @@ export function SkillCard({ name, icon, index, reduced }: SkillCardProps) {
         "group flex items-center gap-3 rounded-lg border border-border/70 bg-fg/[0.03] px-3.5 py-3",
         "transition-[border-color,background-color,transform] duration-300",
         "hover:border-accent/40 hover:bg-accent/[0.06]",
-        "focus-within:border-accent/50 focus-within:bg-accent/[0.06]",
       )}
       initial={reduced ? false : { opacity: 0, y: 16 }}
       whileInView={{ opacity: 1, y: 0 }}

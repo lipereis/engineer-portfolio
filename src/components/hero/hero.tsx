@@ -1,7 +1,6 @@
 "use client";
 
 import * as React from "react";
-import Link from "next/link";
 import { motion } from "framer-motion";
 import { ArrowDown, Code2, Download, ExternalLink } from "lucide-react";
 
@@ -11,6 +10,7 @@ import { MagneticButton } from "@/components/ui/magnetic-button";
 import { siteConfig } from "@/config";
 import { useLocale } from "@/hooks/use-locale";
 import { useReducedMotion } from "@/hooks/use-reduced-motion";
+import { withBasePath } from "@/lib/utils";
 
 const githubUrl = `https://github.com/${siteConfig.githubUsername}`;
 
@@ -101,8 +101,8 @@ export function Hero() {
             className="h-11 gap-2 px-5 text-sm"
             nativeButton={false}
             render={
-              <Link
-                href={siteConfig.resumeUrl}
+              <a
+                href={withBasePath(siteConfig.resumeUrl)}
                 target="_blank"
                 rel="noopener noreferrer"
               />

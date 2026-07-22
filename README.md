@@ -45,7 +45,7 @@ Edit [`src/config.ts`](src/config.ts) — name, links, about, experience, educat
 ## Bilingual + theme
 
 - **Locales:** English and Portuguese (`en` / `pt`), toggled in the UI; preference persists locally.
-- **Theme:** light / dark / system; preference persists locally.
+- **Theme:** dark / light (dark default); preference persists locally.
 
 ## Deploy (GitHub Pages)
 

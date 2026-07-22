@@ -9,7 +9,7 @@ import { siteConfig } from "@/config";
 import { useLocale } from "@/hooks/use-locale";
 import { useReducedMotion } from "@/hooks/use-reduced-motion";
 import { useTheme } from "@/hooks/use-theme";
-import { cn } from "@/lib/utils";
+import { cn, withBasePath } from "@/lib/utils";
 
 const SECTION_IDS = [
   "about",
@@ -139,14 +139,14 @@ export function SiteHeader() {
               <Languages />
             </Button>
 
-            <Link
-              href={siteConfig.resumeUrl}
+            <a
+              href={withBasePath(siteConfig.resumeUrl)}
               target="_blank"
               rel="noopener noreferrer"
               className="hidden rounded-md px-2.5 py-1.5 text-sm text-accent transition-opacity hover:opacity-80 sm:inline"
             >
               {t.sections.contact.resume}
-            </Link>
+            </a>
 
             <Button
               type="button"
@@ -194,15 +194,15 @@ export function SiteHeader() {
                 {t.nav[id]}
               </button>
             ))}
-            <Link
-              href={siteConfig.resumeUrl}
+            <a
+              href={withBasePath(siteConfig.resumeUrl)}
               target="_blank"
               rel="noopener noreferrer"
               className="mt-4 rounded-md px-2 py-3 text-lg text-accent"
               onClick={() => setOpen(false)}
             >
               {t.sections.contact.resume}
-            </Link>
+            </a>
           </nav>
         </div>
       ) : null}
