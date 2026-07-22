@@ -76,6 +76,10 @@ export const en = {
       languages: "Languages",
       commits: "Commit activity",
       contributions: "Contribution calendar",
+      contributionsEmpty:
+        "Contribution calendar unavailable for this build (GraphQL skipped).",
+      less: "Less",
+      more: "More",
       fetchedAt: "Data fetched",
     },
     experience: {

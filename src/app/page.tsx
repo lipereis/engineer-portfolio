@@ -3,6 +3,7 @@ import { Hero } from "@/components/hero/hero";
 import { ProjectsSection } from "@/components/projects/projects-section";
 import { AskProjects } from "@/components/search/ask-projects";
 import { SkillsSection } from "@/components/skills/skills-section";
+import { StatsSection } from "@/components/stats/stats-section";
 
 export default function Home() {
   return (
@@ -12,6 +13,7 @@ export default function Home() {
       <SkillsSection />
       <ProjectsSection />
       <AskProjects />
+      <StatsSection />
     </>
   );
 }

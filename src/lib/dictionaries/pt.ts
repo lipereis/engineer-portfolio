@@ -78,6 +78,10 @@ export const pt = {
       languages: "Linguagens",
       commits: "Atividade de commits",
       contributions: "Calendário de contribuições",
+      contributionsEmpty:
+        "Calendário de contribuições indisponível nesta build (GraphQL omitido).",
+      less: "Menos",
+      more: "Mais",
       fetchedAt: "Dados obtidos em",
     },
     experience: {
