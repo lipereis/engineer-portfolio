@@ -1,6 +1,12 @@
 import type { Metadata } from "next";
 import { GeistSans } from "geist/font/sans";
 import { Instrument_Serif } from "next/font/google";
+import { BackToTop } from "@/components/layout/back-to-top";
+import { CursorGlow } from "@/components/layout/cursor-glow";
+import { LoadingScreen } from "@/components/layout/loading-screen";
+import { ScrollProgress } from "@/components/layout/scroll-progress";
+import { SiteFooter } from "@/components/layout/site-footer";
+import { SiteHeader } from "@/components/layout/site-header";
 import { AppProviders } from "@/components/providers/app-providers";
 import { cn } from "@/lib/utils";
 import "./globals.css";
@@ -33,7 +39,17 @@ export default function RootLayout({
       suppressHydrationWarning
     >
       <body className="min-h-full flex flex-col font-sans">
-        <AppProviders>{children}</AppProviders>
+        <AppProviders>
+          <LoadingScreen />
+          <ScrollProgress />
+          <CursorGlow />
+          <SiteHeader />
+          <main id="content" className="flex min-h-0 flex-1 flex-col">
+            {children}
+          </main>
+          <SiteFooter />
+          <BackToTop />
+        </AppProviders>
       </body>
     </html>
   );
