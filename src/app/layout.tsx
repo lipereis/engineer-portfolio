@@ -28,7 +28,7 @@ export default function RootLayout({
       className={cn(
         GeistSans.variable,
         instrument.variable,
-        "dark antialiased grain",
+        "dark antialiased grain font-sans",
       )}
       suppressHydrationWarning
     >
