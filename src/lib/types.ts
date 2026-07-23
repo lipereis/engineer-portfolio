@@ -11,6 +11,7 @@ export type RankableRepo = {
   homepage: string | null;
   html_url: string;
   fork: boolean;
+  private?: boolean;
 };
 
 export type ScoredRepo = RankableRepo & { score: number };

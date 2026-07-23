@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { rankRepos, scoreRepo } from "./rank";
+import { applyFeaturedPins, rankRepos, scoreRepo } from "./rank";
 import type { RankableRepo } from "./types";
 
 const base = (over: Partial<RankableRepo> = {}): RankableRepo => ({
@@ -55,5 +55,24 @@ describe("rankRepos", () => {
     expect(ranked).toHaveLength(2);
     expect(ranked[0].name).toBe("keep");
     expect(ranked.every((r) => r.name !== "forked")).toBe(true);
+  });
+});
+
+describe("applyFeaturedPins", () => {
+  it("puts pins first then fills from ranked", () => {
+    const all = [
+      base({ name: "CineOps", commitCount: 10 }),
+      base({ name: "TrainFlow", commitCount: 5 }),
+      base({ name: "other", commitCount: 90 }),
+      base({ name: "another", commitCount: 80 }),
+    ].map((r) => ({ ...r, score: scoreRepo(r) }));
+    const ranked = [...all].sort((a, b) => b.score - a.score);
+    const pinned = applyFeaturedPins(ranked, all, ["TrainFlow", "CineOps"], 4);
+    expect(pinned.map((r) => r.name)).toEqual([
+      "TrainFlow",
+      "CineOps",
+      "other",
+      "another",
+    ]);
   });
 });

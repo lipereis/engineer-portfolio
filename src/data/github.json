@@ -3,70 +3,26 @@
     "login": "lipereis",
     "avatarUrl": "https://avatars.githubusercontent.com/u/204008502?v=4",
     "followers": 0,
-    "following": 3,
-    "publicRepos": 28,
+    "following": 1,
+    "publicRepos": 30,
     "htmlUrl": "https://github.com/lipereis"
   },
   "topProjects": [
     {
-      "name": "video-portfolio",
-      "description": "Portfólio de Editor de Vídeo e Videomaker.",
+      "name": "TrainFlow",
+      "description": "AI-powered operating system for personal trainers",
       "stargazers_count": 0,
       "forks_count": 0,
-      "size": 36696,
-      "language": "JavaScript",
+      "size": 1226,
+      "language": "TypeScript",
       "topics": [],
-      "pushed_at": "2026-07-07T13:22:39Z",
-      "commitCount": 42,
+      "pushed_at": "2026-07-23T01:11:10Z",
+      "commitCount": 69,
       "homepage": null,
-      "html_url": "https://github.com/lipereis/video-portfolio",
+      "html_url": "https://github.com/lipereis/TrainFlow",
       "fork": false,
-      "score": 55.38014239107687
-    },
-    {
-      "name": "ladobdacena",
-      "description": "Meu projeto de artigos sobre música, cinema e moda. Utilizei HTML, CSS e JavaScript.",
-      "stargazers_count": 0,
-      "forks_count": 0,
-      "size": 2574,
-      "language": "HTML",
-      "topics": [],
-      "pushed_at": "2025-09-23T15:05:36Z",
-      "commitCount": 31,
-      "homepage": null,
-      "html_url": "https://github.com/lipereis/ladobdacena",
-      "fork": false,
-      "score": 42.276059913907915
-    },
-    {
-      "name": "scriptmvp-ai",
-      "description": "Ferramenta de IA para gerar roteiros virais de Reels, TikTok e Shorts | Projeto de Portfólio de Prompt Engineering",
-      "stargazers_count": 0,
-      "forks_count": 0,
-      "size": 16,
-      "language": "Python",
-      "topics": [],
-      "pushed_at": "2026-04-13T14:50:10Z",
-      "commitCount": 8,
-      "homepage": null,
-      "html_url": "https://github.com/lipereis/scriptmvp-ai",
-      "fork": false,
-      "score": 38.46948932791096
-    },
-    {
-      "name": "Wealthchain",
-      "description": "Mercado de criptomoedas utilizando a API do site Coingecko.",
-      "stargazers_count": 0,
-      "forks_count": 0,
-      "size": 2768,
-      "language": "JavaScript",
-      "topics": [],
-      "pushed_at": "2025-09-11T23:50:36Z",
-      "commitCount": 1,
-      "homepage": null,
-      "html_url": "https://github.com/lipereis/Wealthchain",
-      "fork": false,
-      "score": 33.48539210568873
+      "private": true,
+      "score": 61.86230068968798
     },
     {
       "name": "CineOps",
@@ -81,26 +37,92 @@
       "homepage": null,
       "html_url": "https://github.com/lipereis/CineOps",
       "fork": false,
-      "score": 27.519509780726786
+      "private": false,
+      "score": 27.48500949866819
     },
     {
-      "name": "tubepilot-ai",
+      "name": "video-portfolio",
+      "description": "Portfólio de Editor de Vídeo e Videomaker.",
+      "stargazers_count": 0,
+      "forks_count": 0,
+      "size": 36696,
+      "language": "JavaScript",
+      "topics": [],
+      "pushed_at": "2026-07-07T13:22:39Z",
+      "commitCount": 42,
+      "homepage": null,
+      "html_url": "https://github.com/lipereis/video-portfolio",
+      "fork": false,
+      "private": false,
+      "score": 55.345642109018264
+    },
+    {
+      "name": "ladobdacena",
+      "description": "Meu projeto de artigos sobre música, cinema e moda. Utilizei HTML, CSS e JavaScript.",
+      "stargazers_count": 0,
+      "forks_count": 0,
+      "size": 2574,
+      "language": "HTML",
+      "topics": [],
+      "pushed_at": "2025-09-23T15:05:36Z",
+      "commitCount": 31,
+      "homepage": null,
+      "html_url": "https://github.com/lipereis/ladobdacena",
+      "fork": false,
+      "private": false,
+      "score": 42.24155963184931
+    },
+    {
+      "name": "scriptmvp-ai",
+      "description": "Ferramenta de IA para gerar roteiros virais de Reels, TikTok e Shorts | Projeto de Portfólio de Prompt Engineering",
+      "stargazers_count": 0,
+      "forks_count": 0,
+      "size": 16,
+      "language": "Python",
+      "topics": [],
+      "pushed_at": "2026-04-13T14:50:10Z",
+      "commitCount": 8,
+      "homepage": null,
+      "html_url": "https://github.com/lipereis/scriptmvp-ai",
+      "fork": false,
+      "private": false,
+      "score": 38.43498904585236
+    },
+    {
+      "name": "queuekind",
       "description": null,
       "stargazers_count": 0,
       "forks_count": 0,
-      "size": 175,
+      "size": 2428,
       "language": "TypeScript",
       "topics": [],
-      "pushed_at": "2026-05-30T14:59:47Z",
-      "commitCount": 3,
-      "homepage": "https://tubepilot-ai.vercel.app",
-      "html_url": "https://github.com/lipereis/tubepilot-ai",
+      "pushed_at": "2026-07-16T13:48:17Z",
+      "commitCount": 4,
+      "homepage": null,
+      "html_url": "https://github.com/lipereis/queuekind",
       "fork": false,
-      "score": 24.63377062547564
+      "private": true,
+      "score": 35.96623666761796
     }
   ],
   "allProjects": [
     {
+      "name": "TrainFlow",
+      "description": "AI-powered operating system for personal trainers",
+      "stargazers_count": 0,
+      "forks_count": 0,
+      "size": 1226,
+      "language": "TypeScript",
+      "topics": [],
+      "pushed_at": "2026-07-23T01:11:10Z",
+      "commitCount": 69,
+      "homepage": null,
+      "html_url": "https://github.com/lipereis/TrainFlow",
+      "fork": false,
+      "private": true,
+      "score": 61.86230068968798
+    },
+    {
       "name": "video-portfolio",
       "description": "Portfólio de Editor de Vídeo e Videomaker.",
       "stargazers_count": 0,
@@ -113,7 +135,8 @@
       "homepage": null,
       "html_url": "https://github.com/lipereis/video-portfolio",
       "fork": false,
-      "score": 55.38014239107687
+      "private": false,
+      "score": 55.345642109018264
     },
     {
       "name": "ladobdacena",
@@ -128,7 +151,8 @@
       "homepage": null,
       "html_url": "https://github.com/lipereis/ladobdacena",
       "fork": false,
-      "score": 42.276059913907915
+      "private": false,
+      "score": 42.24155963184931
     },
     {
       "name": "scriptmvp-ai",
@@ -143,7 +167,24 @@
       "homepage": null,
       "html_url": "https://github.com/lipereis/scriptmvp-ai",
       "fork": false,
-      "score": 38.46948932791096
+      "private": false,
+      "score": 38.43498904585236
+    },
+    {
+      "name": "queuekind",
+      "description": null,
+      "stargazers_count": 0,
+      "forks_count": 0,
+      "size": 2428,
+      "language": "TypeScript",
+      "topics": [],
+      "pushed_at": "2026-07-16T13:48:17Z",
+      "commitCount": 4,
+      "homepage": null,
+      "html_url": "https://github.com/lipereis/queuekind",
+      "fork": false,
+      "private": true,
+      "score": 35.96623666761796
     },
     {
       "name": "Wealthchain",
@@ -158,7 +199,8 @@
       "homepage": null,
       "html_url": "https://github.com/lipereis/Wealthchain",
       "fork": false,
-      "score": 33.48539210568873
+      "private": false,
+      "score": 33.45089182363014
     },
     {
       "name": "CineOps",
@@ -173,7 +215,8 @@
       "homepage": null,
       "html_url": "https://github.com/lipereis/CineOps",
       "fork": false,
-      "score": 27.519509780726786
+      "private": false,
+      "score": 27.48500949866819
     },
     {
       "name": "tubepilot-ai",
@@ -188,7 +231,24 @@
       "homepage": "https://tubepilot-ai.vercel.app",
       "html_url": "https://github.com/lipereis/tubepilot-ai",
       "fork": false,
-      "score": 24.63377062547564
+      "private": false,
+      "score": 24.599270343417047
+    },
+    {
+      "name": "tube-vision-suite",
+      "description": null,
+      "stargazers_count": 0,
+      "forks_count": 0,
+      "size": 201,
+      "language": "TypeScript",
+      "topics": [],
+      "pushed_at": "2026-05-30T13:56:20Z",
+      "commitCount": 0,
+      "homepage": null,
+      "html_url": "https://github.com/lipereis/tube-vision-suite",
+      "fork": false,
+      "private": true,
+      "score": 23.789959555745817
     },
     {
       "name": "samplesearch",
@@ -203,7 +263,8 @@
       "homepage": null,
       "html_url": "https://github.com/lipereis/samplesearch",
       "fork": false,
-      "score": 22.67470289335997
+      "private": false,
+      "score": 22.640202611301373
     },
     {
       "name": "dogsnext",
@@ -218,7 +279,8 @@
       "homepage": null,
       "html_url": "https://github.com/lipereis/dogsnext",
       "fork": false,
-      "score": 21.653815811929224
+      "private": false,
+      "score": 21.619315529870626
     },
     {
       "name": "jumpcut",
@@ -233,7 +295,8 @@
       "homepage": null,
       "html_url": "https://github.com/lipereis/jumpcut",
       "fork": false,
-      "score": 20.799362330194064
+      "private": false,
+      "score": 20.764862048135463
     },
     {
       "name": "animaisfantasticos.github.io",
@@ -248,6 +311,7 @@
       "homepage": null,
       "html_url": "https://github.com/lipereis/animaisfantasticos.github.io",
       "fork": false,
+      "private": false,
       "score": 20
     },
     {
@@ -263,7 +327,8 @@
       "homepage": null,
       "html_url": "https://github.com/lipereis/climaagora",
       "fork": false,
-      "score": 19.919223916952056
+      "private": false,
+      "score": 19.884723634893458
     },
     {
       "name": "filmeapp",
@@ -278,7 +343,8 @@
       "homepage": null,
       "html_url": "https://github.com/lipereis/filmeapp",
       "fork": false,
-      "score": 18.352478292903346
+      "private": false,
+      "score": 18.317978010844747
     },
     {
       "name": "projetodogs",
@@ -293,7 +359,8 @@
       "homepage": null,
       "html_url": "https://github.com/lipereis/projetodogs",
       "fork": false,
-      "score": 17.560627550894214
+      "private": false,
+      "score": 17.526127268835616
     },
     {
       "name": "filedrop",
@@ -308,7 +375,8 @@
       "homepage": null,
       "html_url": "https://github.com/lipereis/filedrop",
       "fork": false,
-      "score": 17.517640488489345
+      "private": false,
+      "score": 17.483140206430743
     },
     {
       "name": "gambamachine",
@@ -323,7 +391,8 @@
       "homepage": null,
       "html_url": "https://github.com/lipereis/gambamachine",
       "fork": false,
-      "score": 17.032327988489346
+      "private": false,
+      "score": 16.997827706430748
     },
     {
       "name": "listadetarefas",
@@ -338,7 +407,8 @@
       "homepage": null,
       "html_url": "https://github.com/lipereis/listadetarefas",
       "fork": false,
-      "score": 17.015180918474123
+      "private": false,
+      "score": 16.980680636415524
     },
     {
       "name": "cacaniqueljs",
@@ -353,7 +423,8 @@
       "homepage": null,
       "html_url": "https://github.com/lipereis/cacaniqueljs",
       "fork": false,
-      "score": 16.42189943065069
+      "private": false,
+      "score": 16.38739914859209
     },
     {
       "name": "conversordemo",
@@ -368,22 +439,8 @@
       "homepage": null,
       "html_url": "https://github.com/lipereis/conversordemo",
       "fork": false,
-      "score": 15.978196044044898
-    },
-    {
-      "name": "letterbotd",
-      "description": "Bot sobre filmes.",
-      "stargazers_count": 0,
-      "forks_count": 0,
-      "size": 16,
-      "language": "Python",
-      "topics": [],
-      "pushed_at": "2025-08-26T14:54:52Z",
-      "commitCount": 1,
-      "homepage": null,
-      "html_url": "https://github.com/lipereis/letterbotd",
-      "fork": false,
-      "score": 15.017568665810503
+      "private": false,
+      "score": 15.943695761986302
     },
     {
       "name": "rentandride.github.io",
@@ -398,7 +455,24 @@
       "homepage": null,
       "html_url": "https://github.com/lipereis/rentandride.github.io",
       "fork": false,
+      "private": false,
       "score": 15.000000000000002
+    },
+    {
+      "name": "letterbotd",
+      "description": "Bot sobre filmes.",
+      "stargazers_count": 0,
+      "forks_count": 0,
+      "size": 16,
+      "language": "Python",
+      "topics": [],
+      "pushed_at": "2025-08-26T14:54:52Z",
+      "commitCount": 1,
+      "homepage": null,
+      "html_url": "https://github.com/lipereis/letterbotd",
+      "fork": false,
+      "private": false,
+      "score": 14.983068383751904
     },
     {
       "name": "calculadora",
@@ -413,7 +487,8 @@
       "homepage": null,
       "html_url": "https://github.com/lipereis/calculadora",
       "fork": false,
-      "score": 14.663471443588277
+      "private": false,
+      "score": 14.62897116152968
     },
     {
       "name": "bullcord",
@@ -428,7 +503,8 @@
       "homepage": null,
       "html_url": "https://github.com/lipereis/bullcord",
       "fork": false,
-      "score": 12.85673342988965
+      "private": false,
+      "score": 12.82223314783105
     },
     {
       "name": "sakuracommerce",
@@ -443,7 +519,8 @@
       "homepage": null,
       "html_url": "https://github.com/lipereis/sakuracommerce",
       "fork": false,
-      "score": 12.779692904775494
+      "private": false,
+      "score": 12.745192622716894
     },
     {
       "name": "bikcraft.github.io",
@@ -458,6 +535,7 @@
       "homepage": null,
       "html_url": "https://github.com/lipereis/bikcraft.github.io",
       "fork": false,
+      "private": false,
       "score": 11.330000000000002
     },
     {
@@ -473,6 +551,7 @@
       "homepage": null,
       "html_url": "https://github.com/lipereis/lipereis.github.io",
       "fork": false,
+      "private": false,
       "score": 5.595
     },
     {
@@ -488,7 +567,8 @@
       "homepage": null,
       "html_url": "https://github.com/lipereis/projetolms",
       "fork": false,
-      "score": 5.329774716038814
+      "private": false,
+      "score": 5.295274433980213
     }
   ],
   "stats": {
@@ -496,12 +576,12 @@
     "totalForks": 0
   },
   "languages": {
-    "JavaScript": 1372948,
-    "TypeScript": 387577,
-    "CSS": 150900,
-    "Python": 52273,
+    "TypeScript": 1386675,
+    "JavaScript": 1383170,
+    "CSS": 177665,
     "HTML": 183209,
-    "PLpgSQL": 2898
+    "PLpgSQL": 5796,
+    "Python": 52273
   },
   "commitActivity": [
     {
@@ -530,15 +610,15 @@
     },
     {
       "week": "2025-09-07",
-      "count": 0
+      "count": 2
     },
     {
       "week": "2025-09-14",
-      "count": 6
+      "count": 8
     },
     {
       "week": "2025-09-21",
-      "count": 31
+      "count": 27
     },
     {
       "week": "2025-09-28",
@@ -570,11 +650,11 @@
     },
     {
       "week": "2025-11-16",
-      "count": 0
+      "count": 2
     },
     {
       "week": "2025-11-23",
-      "count": 2
+      "count": 0
     },
     {
       "week": "2025-11-30",
@@ -602,11 +682,11 @@
     },
     {
       "week": "2026-01-11",
-      "count": 0
+      "count": 8
     },
     {
       "week": "2026-01-18",
-      "count": 10
+      "count": 2
     },
     {
       "week": "2026-01-25",
@@ -622,11 +702,11 @@
     },
     {
       "week": "2026-02-15",
-      "count": 3
+      "count": 4
     },
     {
       "week": "2026-02-22",
-      "count": 2
+      "count": 1
     },
     {
       "week": "2026-03-01",
@@ -682,15 +762,15 @@
     },
     {
       "week": "2026-05-31",
-      "count": 8
+      "count": 22
     },
     {
       "week": "2026-06-07",
-      "count": 0
+      "count": 1
     },
     {
       "week": "2026-06-14",
-      "count": 1
+      "count": 0
     },
     {
       "week": "2026-06-21",
@@ -698,11 +778,11 @@
     },
     {
       "week": "2026-06-28",
-      "count": 1
+      "count": 3
     },
     {
       "week": "2026-07-05",
-      "count": 4
+      "count": 2
     },
     {
       "week": "2026-07-12",
@@ -710,7 +790,7 @@
     },
     {
       "week": "2026-07-19",
-      "count": 2
+      "count": 101
     }
   ],
   "contributionWeeks": [
@@ -2551,9 +2631,14 @@
     },
     {
       "date": "2026-07-22",
-      "count": 5,
-      "level": 3
+      "count": 7,
+      "level": 4
+    },
+    {
+      "date": "2026-07-23",
+      "count": 0,
+      "level": 0
     }
   ],
-  "fetchedAt": "2026-07-22T15:22:28.086Z"
+  "fetchedAt": "2026-07-23T11:31:21.398Z"
 }

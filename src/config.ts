@@ -46,15 +46,21 @@ export const siteConfig = {
   siteUrl: "https://lipereis.github.io/engineer-portfolio",
   basePath: "/engineer-portfolio",
   location: "Rio de Janeiro",
-  headline: "Software Engineer · Frontend · Full-stack capable",
+  headline: "AI Engineer · Frontend · Full-stack capable",
   socials: {} as Record<string, never>,
 
   /** Repos excluded from ranking (e.g. profile README-only). */
-  repoDenylist: ["lipereis"] as const,
+  repoDenylist: ["lipereis", "engineer-portfolio"] as const,
+
+  /**
+   * Always show first in Featured (then fill remaining slots by score).
+   * Names must match GitHub repo names exactly (TrainFlow is private — needs GITHUB_TOKEN at build).
+   */
+  featuredPins: ["TrainFlow", "CineOps"] as const,
 
   about: {
-    en: "I'm Felipe Gomes — a video editor turned product builder, now focused on software engineering. I started in post-production, learned to ship with HTML, CSS, JavaScript, React, and Next.js, then built AI-assisted tools at the video × product intersection. Today I write frontend-strong, full-stack-capable code and aim for a software engineering role where craft and shipping both matter.",
-    pt: "Sou Felipe Gomes — editor de vídeo que virou construtor de produto e agora foca em engenharia de software. Comecei na pós-produção, aprendi a entregar com HTML, CSS, JavaScript, React e Next.js, e depois criei ferramentas com IA na interseção vídeo × produto. Hoje escrevo código com forte base frontend e capacidade full-stack, buscando uma vaga de engenharia de software onde craft e entrega importam juntos.",
+    en: "I'm Felipe Gomes — a video editor turned product builder, now focused on AI engineering. I started in post-production, learned to ship with HTML, CSS, JavaScript, React, and Next.js, then built AI-assisted tools at the video × product intersection. Today I write frontend-strong, full-stack-capable code and aim for an AI engineering role where craft and shipping both matter.",
+    pt: "Sou Felipe Gomes — editor de vídeo que virou construtor de produto e agora foca em engenharia de IA. Comecei na pós-produção, aprendi a entregar com HTML, CSS, JavaScript, React e Next.js, e depois criei ferramentas com IA na interseção vídeo × produto. Hoje escrevo código com forte base frontend e capacidade full-stack, buscando uma vaga de engenharia de IA onde craft e entrega importam juntos.",
   } satisfies LocalizedString,
 
   experience: [
@@ -106,16 +112,16 @@ export const siteConfig = {
     {
       id: "goals",
       title: {
-        en: "Software Engineering Goals",
-        pt: "Metas em Engenharia de Software",
+        en: "AI Engineering Goals",
+        pt: "Metas em Engenharia de IA",
       },
       period: {
         en: "Next",
         pt: "Próximo",
       },
       description: {
-        en: "Land a software engineering role — frontend-strong, full-stack capable — contributing to real products with clean UI, solid TypeScript, and thoughtful systems.",
-        pt: "Conseguir uma vaga de engenharia de software — forte em frontend, capaz de full-stack — contribuindo em produtos reais com UI limpa, TypeScript sólido e sistemas bem pensados.",
+        en: "Land an AI engineering role — frontend-strong, full-stack capable — contributing to real products with clean UI, solid TypeScript, and thoughtful AI systems.",
+        pt: "Conseguir uma vaga de engenharia de IA — forte em frontend, capaz de full-stack — contribuindo em produtos reais com UI limpa, TypeScript sólido e sistemas de IA bem pensados.",
       },
     },
   ] as const satisfies readonly ExperienceEntry[],

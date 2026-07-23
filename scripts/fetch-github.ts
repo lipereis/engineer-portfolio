@@ -1,7 +1,7 @@
 import { mkdir, access, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { siteConfig } from "@/config";
-import { rankAll, rankRepos } from "@/lib/rank";
+import { rankAll, rankRepos, applyFeaturedPins } from "@/lib/rank";
 import type { GithubData, RankableRepo } from "@/lib/types";
 
 const ROOT = path.resolve(import.meta.dirname, "..");
@@ -23,6 +23,7 @@ type GhRepo = {
   homepage: string | null;
   html_url: string;
   fork: boolean;
+  private?: boolean;
   owner: { login: string };
 };
 
@@ -166,11 +167,18 @@ async function fetchParticipation(
 async function fetchAllRepos(login: string): Promise<GhRepo[]> {
   const repos: GhRepo[] = [];
   let page = 1;
+  // Authenticated /user/repos includes private owner repos (needed for TrainFlow pins).
+  const useAuthed = Boolean(process.env.GITHUB_TOKEN);
   while (true) {
-    const batch = await ghJson<GhRepo[]>(
-      `${API}/users/${login}/repos?per_page=100&type=owner&sort=updated&page=${page}`,
-    );
-    repos.push(...batch);
+    const url = useAuthed
+      ? `${API}/user/repos?per_page=100&affiliation=owner&sort=updated&page=${page}`
+      : `${API}/users/${login}/repos?per_page=100&type=owner&sort=updated&page=${page}`;
+    const batch = await ghJson<GhRepo[]>(url);
+    // When using /user/repos, keep only this portfolio owner's repos.
+    const owned = useAuthed
+      ? batch.filter((r) => r.owner.login.toLowerCase() === login.toLowerCase())
+      : batch;
+    repos.push(...owned);
     if (batch.length < 100) break;
     page += 1;
   }
@@ -323,6 +331,7 @@ async function buildGithubData(): Promise<GithubData> {
       homepage: repo.homepage,
       html_url: repo.html_url,
       fork: repo.fork,
+      private: Boolean(repo.private),
     };
     return rankable;
   });
@@ -346,12 +355,22 @@ async function buildGithubData(): Promise<GithubData> {
           homepage: repo.homepage,
           html_url: repo.html_url,
           fork: true,
+          private: Boolean(repo.private),
         }),
       ),
   ];
 
-  const topProjects = rankRepos(allRankable, { top: 6, denylist: DENYLIST });
   const allProjects = rankAll(allRankable, { denylist: DENYLIST });
+  const rankedTop = rankRepos(allRankable, { top: 6, denylist: DENYLIST });
+  const pins = [...siteConfig.featuredPins];
+  for (const pin of pins) {
+    if (!allProjects.some((r) => r.name.toLowerCase() === pin.toLowerCase())) {
+      console.warn(
+        `[fetch-github] featured pin "${pin}" not found (private repos need GITHUB_TOKEN)`,
+      );
+    }
+  }
+  const topProjects = applyFeaturedPins(rankedTop, allProjects, pins, 6);
 
   const scoredNonFork = allProjects;
   const totalStars = scoredNonFork.reduce((s, r) => s + r.stargazers_count, 0);

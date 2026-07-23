@@ -1,8 +1,8 @@
 export const en = {
   meta: {
-    title: "Felipe Gomes — Software Engineer",
+    title: "Felipe Gomes — AI Engineer",
     description:
-      "Software Engineer · Frontend · Full-stack capable. Portfolio of Felipe Gomes — video craft, product, and AI tooling from Rio de Janeiro.",
+      "AI Engineer · Frontend · Full-stack capable. Portfolio of Felipe Gomes — video craft, product, and AI tooling from Rio de Janeiro.",
   },
 
   nav: {
@@ -19,14 +19,14 @@ export const en = {
   },
 
   hero: {
-    role: "Software Engineer",
+    role: "AI Engineer",
     focus: "Frontend · Full-stack capable",
     typingLines: [
       "Building products with code and AI",
-      "From video craft to software engineering",
+      "From video craft to AI engineering",
       "Shipping tools that feel premium",
     ],
-    arc: "Video editor transitioning into software engineering — building products with code and AI.",
+    arc: "Video editor transitioning into AI engineering — building products with code and AI.",
     ctaProjects: "View Projects",
     ctaResume: "Download Resume",
     ctaGithub: "GitHub",
@@ -52,11 +52,12 @@ export const en = {
     },
     projects: {
       title: "Featured Projects",
-      subtitle: "Top repositories ranked from public GitHub activity.",
+      subtitle: "Pinned highlights, then top repositories ranked from GitHub activity.",
       liveDemo: "Live Demo",
       viewGithub: "GitHub",
       stars: "Stars",
       forks: "Forks",
+      private: "Private",
     },
     ask: {
       title: "Ask me about my projects",

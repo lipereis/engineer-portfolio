@@ -2,9 +2,9 @@ import type { Dictionary } from "./en";
 
 export const pt = {
   meta: {
-    title: "Felipe Gomes — Software Engineer",
+    title: "Felipe Gomes — AI Engineer",
     description:
-      "Software Engineer · Frontend · Full-stack capable. Portfólio de Felipe Gomes — ofício em vídeo, produto e tooling com IA, do Rio de Janeiro.",
+      "AI Engineer · Frontend · Full-stack capable. Portfólio de Felipe Gomes — ofício em vídeo, produto e tooling com IA, do Rio de Janeiro.",
   },
 
   nav: {
@@ -21,14 +21,14 @@ export const pt = {
   },
 
   hero: {
-    role: "Software Engineer",
+    role: "AI Engineer",
     focus: "Frontend · Full-stack capable",
     typingLines: [
       "Construindo produtos com código e IA",
-      "Do ofício em vídeo à engenharia de software",
+      "Do ofício em vídeo à engenharia de IA",
       "Entregando ferramentas com acabamento premium",
     ],
-    arc: "Editor de vídeo em transição para engenharia de software — construindo produtos com código e IA.",
+    arc: "Editor de vídeo em transição para engenharia de IA — construindo produtos com código e IA.",
     ctaProjects: "Ver Projetos",
     ctaResume: "Baixar Currículo",
     ctaGithub: "GitHub",
@@ -54,11 +54,12 @@ export const pt = {
     },
     projects: {
       title: "Projetos em Destaque",
-      subtitle: "Principais repositórios ranqueados pela atividade pública no GitHub.",
+      subtitle: "Destaques fixos, depois repositórios ranqueados pela atividade no GitHub.",
       liveDemo: "Demo ao vivo",
       viewGithub: "GitHub",
       stars: "Stars",
       forks: "Forks",
+      private: "Privado",
     },
     ask: {
       title: "Pergunte sobre meus projetos",

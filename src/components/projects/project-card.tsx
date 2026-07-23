@@ -53,11 +53,18 @@ export function ProjectCard({
           <h3 className="font-display text-xl tracking-tight text-fg sm:text-2xl">
             {repo.name}
           </h3>
-          {repo.language ? (
-            <span className="rounded-md border border-border/60 bg-fg/[0.04] px-2 py-0.5 text-xs text-muted-foreground">
-              {repo.language}
-            </span>
-          ) : null}
+          <div className="flex flex-wrap items-center gap-1.5">
+            {repo.private ? (
+              <span className="rounded-md border border-accent/35 bg-accent/10 px-2 py-0.5 text-xs text-accent">
+                {copy.private}
+              </span>
+            ) : null}
+            {repo.language ? (
+              <span className="rounded-md border border-border/60 bg-fg/[0.04] px-2 py-0.5 text-xs text-muted-foreground">
+                {repo.language}
+              </span>
+            ) : null}
+          </div>
         </div>
 
         {repo.description ? (

@@ -19,9 +19,9 @@ const instrument = Instrument_Serif({
   display: "swap",
 });
 
-const siteTitle = `${siteConfig.name} — Software Engineer`;
+const siteTitle = `${siteConfig.name} — AI Engineer`;
 const siteDescription =
-  "Software engineer based in Rio de Janeiro. Frontend-strong, full-stack capable — shipping products with React, Next.js, and AI-assisted craft. Open to software engineering roles.";
+  "AI engineer based in Rio de Janeiro. Frontend-strong, full-stack capable — shipping products with React, Next.js, and AI-assisted craft. Open to AI engineering roles.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.siteUrl),
@@ -34,6 +34,7 @@ export const metadata: Metadata = {
   authors: [{ name: siteConfig.name, url: siteConfig.siteUrl }],
   creator: siteConfig.name,
   keywords: [
+    "AI Engineer",
     "Software Engineer",
     "Frontend",
     "Full-stack",
@@ -58,7 +59,7 @@ export const metadata: Metadata = {
         url: "/og.png",
         width: 1200,
         height: 630,
-        alt: `${siteConfig.name} — Software Engineer`,
+        alt: `${siteConfig.name} — AI Engineer`,
       },
     ],
   },
@@ -80,7 +81,7 @@ const jsonLdPerson = {
   name: siteConfig.name,
   url: siteConfig.siteUrl,
   email: siteConfig.email,
-  jobTitle: "Software Engineer",
+  jobTitle: "AI Engineer",
   description: siteDescription,
   address: {
     "@type": "PostalAddress",

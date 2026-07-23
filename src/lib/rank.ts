@@ -56,3 +56,45 @@ export function rankAll(
 ): ScoredRepo[] {
   return filterAndScore(repos, opts.denylist);
 }
+
+/**
+ * Put pinned repos first (order preserved), then fill remaining slots from ranked list.
+ * Missing pins are skipped with a warning left to the caller.
+ */
+export function applyFeaturedPins(
+  ranked: ScoredRepo[],
+  all: ScoredRepo[],
+  pins: readonly string[],
+  top = 6,
+): ScoredRepo[] {
+  const byName = new Map(all.map((r) => [r.name.toLowerCase(), r]));
+  const used = new Set<string>();
+  const result: ScoredRepo[] = [];
+
+  for (const pin of pins) {
+    const hit = byName.get(pin.toLowerCase());
+    if (!hit) continue;
+    const key = hit.name.toLowerCase();
+    if (used.has(key)) continue;
+    result.push(hit);
+    used.add(key);
+  }
+
+  for (const repo of ranked) {
+    if (result.length >= top) break;
+    const key = repo.name.toLowerCase();
+    if (used.has(key)) continue;
+    result.push(repo);
+    used.add(key);
+  }
+
+  for (const repo of all) {
+    if (result.length >= top) break;
+    const key = repo.name.toLowerCase();
+    if (used.has(key)) continue;
+    result.push(repo);
+    used.add(key);
+  }
+
+  return result.slice(0, top);
+}
