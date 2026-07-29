@@ -109,7 +109,7 @@ export function CustomCursor() {
           opacity: visible ? 1 : 0,
           backgroundColor: hovering
             ? "color-mix(in srgb, var(--accent) 14%, transparent)"
-            : "transparent",
+            : "color-mix(in srgb, var(--accent) 0%, transparent)",
           boxShadow: hovering
             ? "0 0 34px color-mix(in srgb, var(--accent) 26%, transparent)"
             : "0 0 18px color-mix(in srgb, var(--accent) 12%, transparent)",
