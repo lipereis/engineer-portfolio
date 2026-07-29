@@ -1,18 +1,20 @@
 /**
- * Generates public/resume.pdf from siteConfig plus the project list below.
+ * Generates public/resume-en.pdf and public/resume-pt.pdf from siteConfig.
+ * Also writes public/resume.pdf as a copy of the English file (legacy URL).
  * Run: npx tsx scripts/generate-resume.ts
  */
-import { createWriteStream } from "node:fs";
+import { createWriteStream, copyFileSync } from "node:fs";
 import { mkdir } from "node:fs/promises";
 import path from "node:path";
 import PDFDocument from "pdfkit";
-import { siteConfig } from "../src/config";
+import { siteConfig, type LocalizedString } from "../src/config";
+import type { Locale } from "../src/lib/i18n";
 
 const ROOT = path.resolve(import.meta.dirname, "..");
-const OUT_PATH = path.join(ROOT, "public", "resume.pdf");
+const PUBLIC = path.join(ROOT, "public");
 
 const MARGIN = 46;
-const PAGE_WIDTH = 612; // US Letter
+const PAGE_WIDTH = 612;
 const PAGE_HEIGHT = 792;
 const CONTENT_WIDTH = PAGE_WIDTH - MARGIN * 2;
 const PAGE_BOTTOM = PAGE_HEIGHT - MARGIN;
@@ -24,7 +26,7 @@ const MUTED = "#565656";
 type ProjectLine = {
   name: string;
   year: string;
-  blurb: string;
+  blurb: LocalizedString;
   stack: string;
   repo: string;
 };
@@ -33,46 +35,98 @@ const PROJECTS: ProjectLine[] = [
   {
     name: "TrainFlow",
     year: "2026",
-    blurb:
-      "AI-powered operating system for personal trainers: client management, program building, and assisted planning.",
+    blurb: {
+      en: "AI-powered operating system for personal trainers: client management, program building, and assisted planning.",
+      pt: "Sistema operacional com IA para personal trainers: gestão de alunos, montagem de treinos e planejamento assistido.",
+    },
     stack: "TypeScript, Next.js, Node.js",
     repo: "github.com/lipereis/TrainFlow",
   },
   {
     name: "RAGCore",
     year: "2026",
-    blurb:
-      "Local Retrieval-Augmented Generation engine for querying PDF documents. Combines semantic search (Chroma) with keyword search (BM25), local re-ranking via FlashRank, and grounded answers through the Gemini Flash API.",
+    blurb: {
+      en: "Local Retrieval-Augmented Generation engine for querying PDF documents. Combines semantic search (Chroma) with keyword search (BM25), local re-ranking via FlashRank, and grounded answers through the Gemini Flash API.",
+      pt: "Motor local de Retrieval-Augmented Generation (RAG) para consulta de documentos PDF. Combina busca semântica (Chroma) e busca por palavra-chave (BM25), com re-ranking local via FlashRank e respostas grounded pela API do Gemini Flash.",
+    },
     stack: "Python, pdfplumber, Chroma, BM25, FlashRank, Gemini API",
     repo: "github.com/lipereis/RAGCore",
   },
   {
     name: "SpoilerAlert",
     year: "2026",
-    blurb:
-      "Streamlit web app that generates a “Spotify Wrapped”-style card from a public Letterboxd profile. Scrapes public data, aggregates with pandas, and renders a 1080x1920 card with Pillow.",
+    blurb: {
+      en: "Streamlit web app that generates a “Spotify Wrapped”-style card from a public Letterboxd profile. Scrapes public data, aggregates with pandas, and renders a 1080x1920 card with Pillow.",
+      pt: "Aplicação web em Streamlit que gera um card no estilo “Spotify Wrapped” a partir do perfil público no Letterboxd. Faz scraping de dados públicos, agregação com pandas e renderização do card (1080x1920) com Pillow.",
+    },
     stack: "Python, Streamlit, pandas, Pillow, letterboxdpy",
     repo: "github.com/lipereis/spoileralert",
   },
   {
     name: "CineOps",
     year: "2026",
-    blurb: "Tooling for audiovisual operations and post-production workflows.",
+    blurb: {
+      en: "Tooling for audiovisual operations and post-production workflows.",
+      pt: "Ferramenta para operações e fluxos de trabalho audiovisuais.",
+    },
     stack: "JavaScript",
     repo: "github.com/lipereis/CineOps",
   },
 ];
 
-const SKILL_ROWS: [string, string][] = [
-  ["AI / AI Engineering", siteConfig.skills.ai.map((s) => s.name).join(", ")],
-  ["Backend", siteConfig.skills.backend.map((s) => s.name).join(", ")],
-  ["Languages", siteConfig.skills.languages.map((s) => s.name).join(", ")],
-  ["Frontend", siteConfig.skills.frontend.map((s) => s.name).join(", ")],
-  ["Databases", siteConfig.skills.databases.map((s) => s.name).join(", ")],
-  ["Tools & Deploy", siteConfig.skills.tools.map((s) => s.name).join(", ")],
-];
+const COPY = {
+  en: {
+    profile: "Profile",
+    skills: "Technical Skills",
+    projects: "Projects",
+    education: "Education",
+    experience: "Professional Experience",
+    languages: "Languages",
+    certifications: "Courses & Certifications",
+    stack: "Stack",
+    repository: "Repository",
+    skillRows: [
+      ["AI / AI Engineering", siteConfig.skills.ai.map((s) => s.name).join(", ")],
+      ["Backend", siteConfig.skills.backend.map((s) => s.name).join(", ")],
+      ["Languages", siteConfig.skills.languages.map((s) => s.name).join(", ")],
+      ["Frontend", siteConfig.skills.frontend.map((s) => s.name).join(", ")],
+      ["Databases", siteConfig.skills.databases.map((s) => s.name).join(", ")],
+      ["Tools & Deploy", siteConfig.skills.tools.map((s) => s.name).join(", ")],
+    ] as [string, string][],
+  },
+  pt: {
+    profile: "Perfil",
+    skills: "Competências Técnicas",
+    projects: "Projetos",
+    education: "Formação Acadêmica",
+    experience: "Experiência Profissional",
+    languages: "Idiomas",
+    certifications: "Cursos e Certificações",
+    stack: "Stack",
+    repository: "Repositório",
+    skillRows: [
+      [
+        "IA / AI Engineering",
+        siteConfig.skills.ai.map((s) => s.name).join(", "),
+      ],
+      ["Backend", siteConfig.skills.backend.map((s) => s.name).join(", ")],
+      [
+        "Linguagens",
+        siteConfig.skills.languages.map((s) => s.name).join(", "),
+      ],
+      ["Frontend", siteConfig.skills.frontend.map((s) => s.name).join(", ")],
+      [
+        "Banco de Dados",
+        siteConfig.skills.databases.map((s) => s.name).join(", "),
+      ],
+      [
+        "Ferramentas & Deploy",
+        siteConfig.skills.tools.map((s) => s.name).join(", "),
+      ],
+    ] as [string, string][],
+  },
+} as const;
 
-/** Absolute-positioned layout needs manual pagination. */
 function ensureSpace(doc: PDFKit.PDFDocument, y: number, needed: number): number {
   if (y + needed <= PAGE_BOTTOM) return y;
   doc.addPage();
@@ -96,7 +150,6 @@ function sectionTitle(doc: PDFKit.PDFDocument, title: string, y: number): number
   return rule + 9;
 }
 
-/** Bold left title with a muted right-aligned meta label on the same baseline. */
 function entryHeading(
   doc: PDFKit.PDFDocument,
   left: string,
@@ -140,123 +193,152 @@ function body(
   return doc.y;
 }
 
-async function main() {
-  await mkdir(path.dirname(OUT_PATH), { recursive: true });
+function writeResume(locale: Locale, outPath: string): Promise<void> {
+  const copy = COPY[locale];
 
-  const doc = new PDFDocument({
-    size: "LETTER",
-    margins: { top: MARGIN, bottom: MARGIN, left: MARGIN, right: MARGIN },
-    info: {
-      Title: `${siteConfig.fullName} — Resume`,
-      Author: siteConfig.fullName,
-      Subject: siteConfig.headline,
-      Keywords: "backend, AI engineer, RAG, Node.js, Python, TypeScript, Next.js",
-    },
-  });
-
-  const stream = createWriteStream(OUT_PATH);
-  doc.pipe(stream);
-
-  // Header
-  doc
-    .font("Helvetica-Bold")
-    .fontSize(21)
-    .fillColor(INK)
-    .text(siteConfig.fullName.toUpperCase(), MARGIN, MARGIN, {
-      width: CONTENT_WIDTH,
-      characterSpacing: 0.4,
+  return new Promise((resolve, reject) => {
+    const doc = new PDFDocument({
+      size: "LETTER",
+      margins: { top: MARGIN, bottom: MARGIN, left: MARGIN, right: MARGIN },
+      info: {
+        Title: `${siteConfig.fullName} — Resume (${locale.toUpperCase()})`,
+        Author: siteConfig.fullName,
+        Subject: siteConfig.headline,
+        Keywords:
+          "backend, AI engineer, RAG, Node.js, Python, TypeScript, Next.js",
+      },
     });
 
-  doc
-    .font("Helvetica")
-    .fontSize(10)
-    .fillColor(ACCENT)
-    .text(siteConfig.headline, { width: CONTENT_WIDTH });
+    const stream = createWriteStream(outPath);
+    doc.pipe(stream);
 
-  doc.moveDown(0.4);
-  doc
-    .fontSize(8.5)
-    .fillColor(MUTED)
-    .text(
-      [
-        siteConfig.location,
-        siteConfig.phone,
-        siteConfig.email,
-        `github.com/${siteConfig.githubUsername}`,
-        siteConfig.linkedinHandle,
-        "lipereis.github.io/engineer-portfolio",
-      ].join("   ·   "),
-      { width: CONTENT_WIDTH },
-    );
-
-  let y = doc.y + 13;
-
-  y = sectionTitle(doc, "Profile", y);
-  y = body(doc, siteConfig.about.en, y) + 11;
-
-  y = sectionTitle(doc, "Technical Skills", y);
-  for (const [label, value] of SKILL_ROWS) {
-    y = ensureSpace(doc, y, 22);
     doc
       .font("Helvetica-Bold")
-      .fontSize(8.5)
+      .fontSize(21)
       .fillColor(INK)
-      .text(`${label}: `, MARGIN, y, { continued: true, width: CONTENT_WIDTH });
-    doc.font("Helvetica").fillColor(MUTED).text(value, { lineGap: 1 });
-    y = doc.y + 3.5;
-  }
-  y += 8;
+      .text(siteConfig.fullName.toUpperCase(), MARGIN, MARGIN, {
+        width: CONTENT_WIDTH,
+        characterSpacing: 0.4,
+      });
 
-  y = sectionTitle(doc, "Projects", y);
-  for (const project of PROJECTS) {
-    y = entryHeading(doc, project.name, project.year, y);
-    y = body(doc, project.blurb, y, { color: MUTED }) + 2;
-    y = body(doc, `Stack: ${project.stack}`, y, { size: 8 }) + 1;
-    y = body(doc, `Repository: ${project.repo}`, y, { size: 8, color: MUTED }) + 9;
-  }
-  y += 2;
+    doc
+      .font("Helvetica")
+      .fontSize(10)
+      .fillColor(ACCENT)
+      .text(siteConfig.headline, { width: CONTENT_WIDTH });
 
-  y = sectionTitle(doc, "Education", y);
-  for (const entry of siteConfig.education) {
-    y = entryHeading(doc, entry.institution.en, entry.period.en, y);
-    y = body(doc, `${entry.title.en} — ${entry.description.en}`, y, {
-      color: MUTED,
-    });
+    doc.moveDown(0.4);
+    doc
+      .fontSize(8.5)
+      .fillColor(MUTED)
+      .text(
+        [
+          siteConfig.location,
+          siteConfig.phone,
+          siteConfig.email,
+          `github.com/${siteConfig.githubUsername}`,
+          siteConfig.linkedinHandle,
+          "lipereis.github.io/engineer-portfolio",
+        ].join("   ·   "),
+        { width: CONTENT_WIDTH },
+      );
+
+    let y = doc.y + 13;
+
+    y = sectionTitle(doc, copy.profile, y);
+    y = body(doc, siteConfig.about[locale], y) + 11;
+
+    y = sectionTitle(doc, copy.skills, y);
+    for (const [label, value] of copy.skillRows) {
+      y = ensureSpace(doc, y, 22);
+      doc
+        .font("Helvetica-Bold")
+        .fontSize(8.5)
+        .fillColor(INK)
+        .text(`${label}: `, MARGIN, y, { continued: true, width: CONTENT_WIDTH });
+      doc.font("Helvetica").fillColor(MUTED).text(value, { lineGap: 1 });
+      y = doc.y + 3.5;
+    }
     y += 8;
-  }
-  y += 2;
 
-  y = sectionTitle(doc, "Professional Experience", y);
-  for (const entry of siteConfig.experience) {
-    y = entryHeading(doc, `${entry.role.en} — ${entry.org.en}`, entry.period.en, y);
-    y = body(doc, entry.description.en, y, { color: MUTED });
-    y += 8;
-  }
-  y += 2;
+    y = sectionTitle(doc, copy.projects, y);
+    for (const project of PROJECTS) {
+      y = entryHeading(doc, project.name, project.year, y);
+      y = body(doc, project.blurb[locale], y, { color: MUTED }) + 2;
+      y = body(doc, `${copy.stack}: ${project.stack}`, y, { size: 8 }) + 1;
+      y =
+        body(doc, `${copy.repository}: ${project.repo}`, y, {
+          size: 8,
+          color: MUTED,
+        }) + 9;
+    }
+    y += 2;
 
-  y = sectionTitle(doc, "Languages", y);
-  y =
-    body(
-      doc,
-      siteConfig.spokenLanguages
-        .map((lang) => `${lang.name.en} — ${lang.level.en}`)
-        .join("   |   "),
-      y,
-    ) + 11;
+    y = sectionTitle(doc, copy.education, y);
+    for (const entry of siteConfig.education) {
+      y = entryHeading(doc, entry.institution[locale], entry.period[locale], y);
+      y = body(
+        doc,
+        `${entry.title[locale]} — ${entry.description[locale]}`,
+        y,
+        { color: MUTED },
+      );
+      y += 8;
+    }
+    y += 2;
 
-  y = sectionTitle(doc, "Courses & Certifications", y);
-  for (const cert of siteConfig.certifications) {
-    y = body(doc, `•  ${cert.title.en} (${cert.year})`, y, { color: MUTED }) + 3;
-  }
+    y = sectionTitle(doc, copy.experience, y);
+    for (const entry of siteConfig.experience) {
+      y = entryHeading(
+        doc,
+        `${entry.role[locale]} — ${entry.org[locale]}`,
+        entry.period[locale],
+        y,
+      );
+      y = body(doc, entry.description[locale], y, { color: MUTED });
+      y += 8;
+    }
+    y += 2;
 
-  doc.end();
+    y = sectionTitle(doc, copy.languages, y);
+    y =
+      body(
+        doc,
+        siteConfig.spokenLanguages
+          .map((lang) => `${lang.name[locale]} — ${lang.level[locale]}`)
+          .join("   |   "),
+        y,
+      ) + 11;
 
-  await new Promise<void>((resolve, reject) => {
+    y = sectionTitle(doc, copy.certifications, y);
+    for (const cert of siteConfig.certifications) {
+      y =
+        body(doc, `•  ${cert.title[locale]} (${cert.year})`, y, {
+          color: MUTED,
+        }) + 3;
+    }
+
+    doc.end();
+
     stream.on("finish", () => resolve());
     stream.on("error", reject);
   });
+}
 
-  console.log(`Wrote ${OUT_PATH}`);
+async function main() {
+  await mkdir(PUBLIC, { recursive: true });
+
+  const enPath = path.join(PUBLIC, "resume-en.pdf");
+  const ptPath = path.join(PUBLIC, "resume-pt.pdf");
+  const legacyPath = path.join(PUBLIC, "resume.pdf");
+
+  await writeResume("en", enPath);
+  await writeResume("pt", ptPath);
+  copyFileSync(enPath, legacyPath);
+
+  console.log(`Wrote ${enPath}`);
+  console.log(`Wrote ${ptPath}`);
+  console.log(`Wrote ${legacyPath} (EN alias)`);
 }
 
 main().catch((err) => {

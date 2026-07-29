@@ -9,7 +9,7 @@ import { siteConfig } from "@/config";
 import { useLocale } from "@/hooks/use-locale";
 import { useReducedMotion } from "@/hooks/use-reduced-motion";
 import { useTheme } from "@/hooks/use-theme";
-import { cn, withBasePath } from "@/lib/utils";
+import { cn, resumePathForLocale, withBasePath } from "@/lib/utils";
 
 const SECTION_IDS = [
   "about",
@@ -36,6 +36,7 @@ const DESKTOP_IDS = [
 export function SiteHeader() {
   const { theme, toggle } = useTheme();
   const { locale, setLocale, t } = useLocale();
+  const resumeHref = withBasePath(resumePathForLocale(locale));
   const reduced = useReducedMotion();
   const [open, setOpen] = React.useState(false);
   const [scrolled, setScrolled] = React.useState(false);
@@ -140,7 +141,7 @@ export function SiteHeader() {
             </Button>
 
             <a
-              href={withBasePath(siteConfig.resumeUrl)}
+              href={resumeHref}
               target="_blank"
               rel="noopener noreferrer"
               className="hidden rounded-md px-2.5 py-1.5 text-sm text-accent transition-opacity hover:opacity-80 sm:inline"
@@ -195,7 +196,7 @@ export function SiteHeader() {
               </button>
             ))}
             <a
-              href={withBasePath(siteConfig.resumeUrl)}
+              href={resumeHref}
               target="_blank"
               rel="noopener noreferrer"
               className="mt-4 rounded-md px-2 py-3 text-lg text-accent"

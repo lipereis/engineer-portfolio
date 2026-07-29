@@ -3,6 +3,7 @@
 import * as React from "react";
 import {
   Code2,
+  Download,
   ExternalLink,
   Languages,
   Mail,
@@ -24,6 +25,7 @@ import { siteConfig } from "@/config";
 import { useLocale } from "@/hooks/use-locale";
 import { useReducedMotion } from "@/hooks/use-reduced-motion";
 import { useTheme } from "@/hooks/use-theme";
+import { resumePathForLocale, withBasePath } from "@/lib/utils";
 
 const SECTION_IDS = [
   "about",
@@ -137,6 +139,21 @@ export function CommandMenu() {
             >
               <ExternalLink />
               {t.command.actions.openLinkedin}
+            </CommandItem>
+            <CommandItem
+              value={t.command.actions.downloadResume}
+              onSelect={() =>
+                run(() => {
+                  window.open(
+                    withBasePath(resumePathForLocale(locale)),
+                    "_blank",
+                    "noopener,noreferrer",
+                  );
+                })
+              }
+            >
+              <Download />
+              {t.command.actions.downloadResume}
             </CommandItem>
           </CommandGroup>
 

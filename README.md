@@ -35,7 +35,7 @@ npm run fetch-github     # refresh GitHub data → src/data/
 npm run build            # static export → out/ (runs fetch via prebuild)
 npm start                # serve out/ (npx serve out)
 npm test                 # vitest
-npm run generate-resume  # regenerate public/resume.pdf
+npm run generate-resume  # regenerate public/resume-en.pdf + resume-pt.pdf (+ resume.pdf EN alias)
 ```
 
 ## Customize content

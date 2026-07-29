@@ -2,13 +2,14 @@
 
 import { siteConfig } from "@/config";
 import { useLocale } from "@/hooks/use-locale";
-import { withBasePath } from "@/lib/utils";
+import { resumePathForLocale, withBasePath } from "@/lib/utils";
 
 const year = new Date().getFullYear();
 
 export function SiteFooter() {
-  const { t } = useLocale();
+  const { t, locale } = useLocale();
   const githubUrl = `https://github.com/${siteConfig.githubUsername}`;
+  const resumeHref = withBasePath(resumePathForLocale(locale));
 
   return (
     <footer className="mt-auto border-t border-border">
@@ -52,7 +53,7 @@ export function SiteFooter() {
             {t.sections.contact.linkedin}
           </a>
           <a
-            href={withBasePath(siteConfig.resumeUrl)}
+            href={resumeHref}
             target="_blank"
             rel="noopener noreferrer"
             className="transition-colors hover:text-fg"

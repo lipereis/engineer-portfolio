@@ -10,13 +10,14 @@ import { MagneticButton } from "@/components/ui/magnetic-button";
 import { siteConfig } from "@/config";
 import { useLocale } from "@/hooks/use-locale";
 import { useReducedMotion } from "@/hooks/use-reduced-motion";
-import { withBasePath } from "@/lib/utils";
+import { resumePathForLocale, withBasePath } from "@/lib/utils";
 
 const githubUrl = `https://github.com/${siteConfig.githubUsername}`;
 
 export function Hero() {
-  const { t } = useLocale();
+  const { t, locale } = useLocale();
   const reduced = useReducedMotion();
+  const resumeHref = withBasePath(resumePathForLocale(locale));
 
   const scrollToProjects = React.useCallback(() => {
     const el = document.getElementById("projects");
@@ -102,7 +103,7 @@ export function Hero() {
             nativeButton={false}
             render={
               <a
-                href={withBasePath(siteConfig.resumeUrl)}
+                href={resumeHref}
                 target="_blank"
                 rel="noopener noreferrer"
               />

@@ -2,6 +2,7 @@ import { clsx, type ClassValue } from "clsx"
 import { twMerge } from "tailwind-merge"
 
 import { siteConfig } from "@/config"
+import type { Locale } from "@/lib/i18n"
 
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs))
@@ -11,6 +12,11 @@ export function cn(...inputs: ClassValue[]) {
 export function displayRepoName(name: string): string {
   const overrides = siteConfig.repoDisplayNames as Record<string, string>
   return overrides[name.toLowerCase()] ?? name
+}
+
+/** Resume path for the active UI locale. */
+export function resumePathForLocale(locale: Locale): string {
+  return siteConfig.resumeUrls[locale] ?? siteConfig.resumeUrl
 }
 
 /** Prefix absolute site paths with `basePath` for plain `<a>` / static assets. */
