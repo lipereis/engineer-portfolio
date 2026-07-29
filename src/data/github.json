@@ -4,7 +4,7 @@
     "avatarUrl": "https://avatars.githubusercontent.com/u/204008502?v=4",
     "followers": 0,
     "following": 1,
-    "publicRepos": 35,
+    "publicRepos": 36,
     "htmlUrl": "https://github.com/lipereis"
   },
   "topProjects": [
@@ -22,7 +22,7 @@
       "html_url": "https://github.com/lipereis/TrainFlow",
       "fork": false,
       "private": false,
-      "score": 65.98236979309361
+      "score": 65.9679121865487
     },
     {
       "name": "CineOps",
@@ -38,7 +38,7 @@
       "html_url": "https://github.com/lipereis/CineOps",
       "fork": false,
       "private": false,
-      "score": 27.23703541333714
+      "score": 27.222577806792238
     },
     {
       "name": "RAGCore",
@@ -54,23 +54,23 @@
       "html_url": "https://github.com/lipereis/RAGCore",
       "fork": false,
       "private": false,
-      "score": 40.431513153063165
+      "score": 40.41705554651826
     },
     {
       "name": "spoileralert",
       "description": null,
       "stargazers_count": 0,
       "forks_count": 0,
-      "size": 417,
+      "size": 451,
       "language": "Python",
       "topics": [],
-      "pushed_at": "2026-07-29T02:43:32Z",
+      "pushed_at": "2026-07-29T14:28:27Z",
       "commitCount": 0,
       "homepage": null,
       "html_url": "https://github.com/lipereis/spoileralert",
       "fork": false,
       "private": false,
-      "score": 27.06853798183029
+      "score": 27.244197860064688
     },
     {
       "name": "video-portfolio",
@@ -86,7 +86,7 @@
       "html_url": "https://github.com/lipereis/video-portfolio",
       "fork": false,
       "private": false,
-      "score": 55.09766802368722
+      "score": 55.08321041714231
     },
     {
       "name": "SupportFlow-AI",
@@ -102,7 +102,7 @@
       "html_url": "https://github.com/lipereis/SupportFlow-AI",
       "fork": false,
       "private": false,
-      "score": 45.44387378852739
+      "score": 45.42941618198249
     }
   ],
   "allProjects": [
@@ -120,7 +120,7 @@
       "html_url": "https://github.com/lipereis/TrainFlow",
       "fork": false,
       "private": false,
-      "score": 65.98236979309361
+      "score": 65.9679121865487
     },
     {
       "name": "video-portfolio",
@@ -136,7 +136,7 @@
       "html_url": "https://github.com/lipereis/video-portfolio",
       "fork": false,
       "private": false,
-      "score": 55.09766802368722
+      "score": 55.08321041714231
     },
     {
       "name": "SupportFlow-AI",
@@ -152,7 +152,7 @@
       "html_url": "https://github.com/lipereis/SupportFlow-AI",
       "fork": false,
       "private": false,
-      "score": 45.44387378852739
+      "score": 45.42941618198249
     },
     {
       "name": "TerminalMind",
@@ -168,7 +168,7 @@
       "html_url": "https://github.com/lipereis/TerminalMind",
       "fork": false,
       "private": false,
-      "score": 45.1589793821347
+      "score": 45.14452177558981
     },
     {
       "name": "ladobdacena",
@@ -184,7 +184,7 @@
       "html_url": "https://github.com/lipereis/ladobdacena",
       "fork": false,
       "private": false,
-      "score": 41.99358554651826
+      "score": 41.97912793997336
     },
     {
       "name": "RAGCore",
@@ -200,7 +200,7 @@
       "html_url": "https://github.com/lipereis/RAGCore",
       "fork": false,
       "private": false,
-      "score": 40.431513153063165
+      "score": 40.41705554651826
     },
     {
       "name": "scriptmvp-ai",
@@ -216,7 +216,7 @@
       "html_url": "https://github.com/lipereis/scriptmvp-ai",
       "fork": false,
       "private": false,
-      "score": 38.18701496052132
+      "score": 38.17255735397641
     },
     {
       "name": "queuekind",
@@ -232,7 +232,7 @@
       "html_url": "https://github.com/lipereis/queuekind",
       "fork": false,
       "private": true,
-      "score": 35.71826258228691
+      "score": 35.70380497574201
     },
     {
       "name": "Wealthchain",
@@ -248,7 +248,23 @@
       "html_url": "https://github.com/lipereis/Wealthchain",
       "fork": false,
       "private": false,
-      "score": 33.20291773829908
+      "score": 33.188460131754184
+    },
+    {
+      "name": "spoileralert",
+      "description": null,
+      "stargazers_count": 0,
+      "forks_count": 0,
+      "size": 451,
+      "language": "Python",
+      "topics": [],
+      "pushed_at": "2026-07-29T14:28:27Z",
+      "commitCount": 0,
+      "homepage": null,
+      "html_url": "https://github.com/lipereis/spoileralert",
+      "fork": false,
+      "private": false,
+      "score": 27.244197860064688
     },
     {
       "name": "CineOps",
@@ -264,23 +280,7 @@
       "html_url": "https://github.com/lipereis/CineOps",
       "fork": false,
       "private": false,
-      "score": 27.23703541333714
-    },
-    {
-      "name": "spoileralert",
-      "description": null,
-      "stargazers_count": 0,
-      "forks_count": 0,
-      "size": 417,
-      "language": "Python",
-      "topics": [],
-      "pushed_at": "2026-07-29T02:43:32Z",
-      "commitCount": 0,
-      "homepage": null,
-      "html_url": "https://github.com/lipereis/spoileralert",
-      "fork": false,
-      "private": false,
-      "score": 27.06853798183029
+      "score": 27.222577806792238
     },
     {
       "name": "tubepilot-ai",
@@ -296,7 +296,7 @@
       "html_url": "https://github.com/lipereis/tubepilot-ai",
       "fork": false,
       "private": true,
-      "score": 24.351296258086
+      "score": 24.336838651541093
     },
     {
       "name": "tube-vision-suite",
@@ -312,7 +312,7 @@
       "html_url": "https://github.com/lipereis/tube-vision-suite",
       "fork": false,
       "private": true,
-      "score": 23.541985470414765
+      "score": 23.527527863869864
     },
     {
       "name": "samplesearch",
@@ -328,7 +328,7 @@
       "html_url": "https://github.com/lipereis/samplesearch",
       "fork": false,
       "private": false,
-      "score": 22.39222852597032
+      "score": 22.37777091942542
     },
     {
       "name": "dogsnext",
@@ -344,7 +344,7 @@
       "html_url": "https://github.com/lipereis/dogsnext",
       "fork": false,
       "private": false,
-      "score": 21.371341444539578
+      "score": 21.356883837994676
     },
     {
       "name": "jumpcut",
@@ -360,7 +360,7 @@
       "html_url": "https://github.com/lipereis/jumpcut",
       "fork": false,
       "private": false,
-      "score": 20.516887962804415
+      "score": 20.502430356259513
     },
     {
       "name": "animaisfantasticos.github.io",
@@ -392,7 +392,7 @@
       "html_url": "https://github.com/lipereis/climaagora",
       "fork": false,
       "private": false,
-      "score": 19.636749549562406
+      "score": 19.622291943017505
     },
     {
       "name": "filmeapp",
@@ -408,7 +408,7 @@
       "html_url": "https://github.com/lipereis/filmeapp",
       "fork": false,
       "private": false,
-      "score": 18.070003925513696
+      "score": 18.055546318968794
     },
     {
       "name": "projetodogs",
@@ -424,7 +424,7 @@
       "html_url": "https://github.com/lipereis/projetodogs",
       "fork": false,
       "private": false,
-      "score": 17.278153183504568
+      "score": 17.263695576959666
     },
     {
       "name": "filedrop",
@@ -440,7 +440,7 @@
       "html_url": "https://github.com/lipereis/filedrop",
       "fork": false,
       "private": false,
-      "score": 17.23516612109969
+      "score": 17.220708514554794
     },
     {
       "name": "gambamachine",
@@ -456,7 +456,7 @@
       "html_url": "https://github.com/lipereis/gambamachine",
       "fork": false,
       "private": false,
-      "score": 16.749853621099696
+      "score": 16.735396014554794
     },
     {
       "name": "listadetarefas",
@@ -472,7 +472,7 @@
       "html_url": "https://github.com/lipereis/listadetarefas",
       "fork": false,
       "private": false,
-      "score": 16.732706551084476
+      "score": 16.71824894453957
     },
     {
       "name": "cacaniqueljs",
@@ -488,7 +488,7 @@
       "html_url": "https://github.com/lipereis/cacaniqueljs",
       "fork": false,
       "private": false,
-      "score": 16.139425063261037
+      "score": 16.12496745671614
     },
     {
       "name": "conversordemo",
@@ -504,7 +504,7 @@
       "html_url": "https://github.com/lipereis/conversordemo",
       "fork": false,
       "private": false,
-      "score": 15.695721676655253
+      "score": 15.681264070110348
     },
     {
       "name": "rentandride.github.io",
@@ -536,7 +536,7 @@
       "html_url": "https://github.com/lipereis/letterbotd",
       "fork": false,
       "private": false,
-      "score": 14.73509429842085
+      "score": 14.720636691875951
     },
     {
       "name": "calculadora",
@@ -552,7 +552,7 @@
       "html_url": "https://github.com/lipereis/calculadora",
       "fork": false,
       "private": false,
-      "score": 14.380997076198629
+      "score": 14.366539469653727
     },
     {
       "name": "bullcord",
@@ -568,7 +568,7 @@
       "html_url": "https://github.com/lipereis/bullcord",
       "fork": false,
       "private": false,
-      "score": 12.574259062500001
+      "score": 12.5598014559551
     },
     {
       "name": "sakuracommerce",
@@ -584,7 +584,7 @@
       "html_url": "https://github.com/lipereis/sakuracommerce",
       "fork": false,
       "private": false,
-      "score": 12.497218537385844
+      "score": 12.482760930840943
     },
     {
       "name": "bikcraft.github.io",
@@ -632,7 +632,7 @@
       "html_url": "https://github.com/lipereis/projetolms",
       "fork": false,
       "private": false,
-      "score": 5.047300348649161
+      "score": 5.032842742104262
     }
   ],
   "stats": {
@@ -640,10 +640,10 @@
     "totalForks": 0
   },
   "languages": {
-    "TypeScript": 1441272,
-    "CSS": 194493,
-    "JavaScript": 1383983,
-    "Python": 557068,
+    "JavaScript": 1387674,
+    "CSS": 196420,
+    "TypeScript": 1445322,
+    "Python": 607252,
     "PLpgSQL": 5796,
     "Dockerfile": 355,
     "HTML": 183209
@@ -2691,14 +2691,14 @@
     },
     {
       "date": "2026-07-28",
-      "count": 8,
+      "count": 10,
       "level": 1
     },
     {
       "date": "2026-07-29",
-      "count": 0,
-      "level": 0
+      "count": 12,
+      "level": 1
     }
   ],
-  "fetchedAt": "2026-07-29T12:20:22.116Z"
+  "fetchedAt": "2026-07-29T20:46:57.802Z"
 }

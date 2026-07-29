@@ -2,6 +2,7 @@ import { AboutSection } from "@/components/about/about-section";
 import { ContactSection } from "@/components/contact/contact-section";
 import { EducationSection } from "@/components/education/education-section";
 import { ExperienceSection } from "@/components/experience/experience-section";
+import { ExtensionsSection } from "@/components/extensions/extensions-section";
 import { Hero } from "@/components/hero/hero";
 import { Reveal } from "@/components/motion/reveal";
 import { ProjectsSection } from "@/components/projects/projects-section";
@@ -21,6 +22,9 @@ export default function Home() {
       </Reveal>
       <Reveal>
         <ProjectsSection />
+      </Reveal>
+      <Reveal>
+        <ExtensionsSection />
       </Reveal>
       <Reveal>
         <AskProjects />

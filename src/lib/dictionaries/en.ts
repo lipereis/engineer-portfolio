@@ -9,6 +9,7 @@ export const en = {
     about: "About",
     skills: "Skills",
     projects: "Projects",
+    extensions: "Extensions",
     ask: "Search",
     stats: "Stats",
     experience: "Experience",
@@ -59,6 +60,21 @@ export const en = {
       stars: "Stars",
       forks: "Forks",
       private: "Private",
+    },
+    extensions: {
+      title: "Browser Extensions",
+      subtitle:
+        "Small tools that bring useful data into the workflows where it matters.",
+      viewGithub: "View on GitHub",
+      capabilities: "What it does",
+      previewLabel: "Illustrative preview",
+      preview: {
+        asin: "ASIN",
+        sales: "Monthly sales",
+        gross: "Gross revenue",
+        commission: "Amazon commission",
+        net: "Net earnings",
+      },
     },
     ask: {
       title: "Ask me about my projects",

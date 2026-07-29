@@ -25,20 +25,8 @@ import { siteConfig } from "@/config";
 import { useLocale } from "@/hooks/use-locale";
 import { useReducedMotion } from "@/hooks/use-reduced-motion";
 import { useTheme } from "@/hooks/use-theme";
+import { SECTION_IDS, type SectionId } from "@/lib/sections";
 import { resumePathForLocale, withBasePath } from "@/lib/utils";
-
-const SECTION_IDS = [
-  "about",
-  "skills",
-  "projects",
-  "ask",
-  "stats",
-  "experience",
-  "education",
-  "contact",
-] as const;
-
-type SectionId = (typeof SECTION_IDS)[number];
 
 export function CommandMenu() {
   const [open, setOpen] = React.useState(false);

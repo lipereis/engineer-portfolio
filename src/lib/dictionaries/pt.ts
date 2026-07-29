@@ -11,6 +11,7 @@ export const pt = {
     about: "Sobre",
     skills: "Habilidades",
     projects: "Projetos",
+    extensions: "Extensões",
     ask: "Busca",
     stats: "Estatísticas",
     experience: "Experiência",
@@ -61,6 +62,21 @@ export const pt = {
       stars: "Stars",
       forks: "Forks",
       private: "Privado",
+    },
+    extensions: {
+      title: "Extensões para Navegador",
+      subtitle:
+        "Ferramentas pequenas que levam dados úteis para o fluxo onde eles realmente importam.",
+      viewGithub: "Ver no GitHub",
+      capabilities: "O que faz",
+      previewLabel: "Prévia ilustrativa",
+      preview: {
+        asin: "ASIN",
+        sales: "Vendas mensais",
+        gross: "Receita bruta",
+        commission: "Comissão da Amazon",
+        net: "Ganhos líquidos",
+      },
     },
     ask: {
       title: "Pergunte sobre meus projetos",

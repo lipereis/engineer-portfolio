@@ -57,6 +57,20 @@ export type SpokenLanguage = {
   level: LocalizedString;
 };
 
+export type ExtensionEntry = {
+  id: string;
+  name: string;
+  repository: string;
+  technologies: readonly string[];
+  type: LocalizedString;
+  description: LocalizedString;
+  capabilities: {
+    en: readonly string[];
+    pt: readonly string[];
+  };
+  previewAlt: LocalizedString;
+};
+
 export const siteConfig = {
   name: "Felipe Gomes",
   fullName: "Felipe Damasceno Reis Gomes",
@@ -79,7 +93,7 @@ export const siteConfig = {
   socials: {} as Record<string, never>,
 
   /** Repos excluded from ranking (e.g. profile README-only). */
-  repoDenylist: ["lipereis", "engineer-portfolio"] as const,
+  repoDenylist: ["lipereis", "engineer-portfolio", "AmzScope"] as const,
 
   /**
    * Always show first in Featured (then fill remaining slots by score).
@@ -91,6 +105,41 @@ export const siteConfig = {
   repoDisplayNames: {
     spoileralert: "SpoilerAlert",
   } as const,
+
+  extensions: [
+    {
+      id: "amzscope",
+      name: "AmzScope",
+      repository: "https://github.com/lipereis/AmzScope",
+      technologies: ["JavaScript", "CSS", "Chrome Extension API"],
+      type: {
+        en: "Chrome Extension · Manifest V3",
+        pt: "Extensão Chrome · Manifest V3",
+      },
+      description: {
+        en: "Amazon Brazil product analytics, injected directly into the product page. AmzScope identifies the ASIN and estimates monthly sales, revenue, Amazon commission, and net earnings without interrupting the research workflow.",
+        pt: "Análises de produtos da Amazon Brasil, injetadas diretamente na página do produto. O AmzScope identifica o ASIN e estima vendas mensais, receita, comissão da Amazon e ganhos líquidos sem interromper o fluxo de pesquisa.",
+      },
+      capabilities: {
+        en: [
+          "Automatic ASIN detection",
+          "Monthly sales estimates",
+          "Gross and net revenue projections",
+          "Estimated Amazon commission",
+        ],
+        pt: [
+          "Detecção automática do ASIN",
+          "Estimativas de vendas mensais",
+          "Projeções de receita bruta e líquida",
+          "Comissão estimada da Amazon",
+        ],
+      },
+      previewAlt: {
+        en: "Illustrative AmzScope panel showing sample ASIN, sales, revenue, commission, and net earnings.",
+        pt: "Painel ilustrativo do AmzScope com exemplos de ASIN, vendas, receita, comissão e ganhos líquidos.",
+      },
+    },
+  ] as const satisfies readonly ExtensionEntry[],
 
   about: {
     en: "I'm Felipe Gomes — moving from communication and audiovisual work into software, focused on backend and AI engineering. My foundation is storytelling, production, and content operations; today I point that same discipline at building digital products. I'm self-taught in JavaScript, React, Node.js, and Python, with published projects (including AI tooling built on retrieval, vector search, and re-ranking) and constant practice in version control and deployment. I'm looking for a Backend / AI Engineer role where product reasoning, delivery discipline, and growing full-stack depth all count.",

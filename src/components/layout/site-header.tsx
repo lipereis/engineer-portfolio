@@ -9,29 +9,12 @@ import { siteConfig } from "@/config";
 import { useLocale } from "@/hooks/use-locale";
 import { useReducedMotion } from "@/hooks/use-reduced-motion";
 import { useTheme } from "@/hooks/use-theme";
+import {
+  DESKTOP_SECTION_IDS,
+  SECTION_IDS,
+  type SectionId,
+} from "@/lib/sections";
 import { cn, resumePathForLocale, withBasePath } from "@/lib/utils";
-
-const SECTION_IDS = [
-  "about",
-  "skills",
-  "projects",
-  "ask",
-  "stats",
-  "experience",
-  "education",
-  "contact",
-] as const;
-
-type SectionId = (typeof SECTION_IDS)[number];
-
-/** Primary links shown in the desktop bar; full set in the mobile drawer. */
-const DESKTOP_IDS = [
-  "about",
-  "projects",
-  "experience",
-  "education",
-  "contact",
-] as const satisfies readonly SectionId[];
 
 export function SiteHeader() {
   const { theme, toggle } = useTheme();
@@ -105,7 +88,7 @@ export function SiteHeader() {
             aria-label="Primary"
             className="ml-auto hidden items-center gap-1 lg:flex"
           >
-            {DESKTOP_IDS.map((id) => (
+            {DESKTOP_SECTION_IDS.map((id) => (
               <button
                 key={id}
                 type="button"
