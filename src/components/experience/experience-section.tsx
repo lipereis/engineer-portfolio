@@ -61,11 +61,26 @@ export function ExperienceSection() {
                 {entry.period[locale]}
               </p>
               <h3 className="mt-2 font-display text-2xl tracking-tight text-fg sm:text-3xl">
-                {entry.title[locale]}
+                {entry.role[locale]}
               </h3>
+              <p className="mt-1 text-sm font-medium text-fg/70">
+                {entry.org[locale]}
+              </p>
               <p className="mt-3 max-w-xl text-sm leading-relaxed text-muted-foreground sm:text-base">
                 {entry.description[locale]}
               </p>
+              {entry.tags ? (
+                <ul className="mt-4 flex list-none flex-wrap gap-2">
+                  {entry.tags.map((tag) => (
+                    <li
+                      key={tag}
+                      className="rounded-md border border-border/60 px-2 py-0.5 text-[11px] tracking-wide text-muted-foreground"
+                    >
+                      {tag}
+                    </li>
+                  ))}
+                </ul>
+              ) : null}
             </motion.li>
           ))}
         </ol>

@@ -7,7 +7,7 @@ import { ProjectPlaceholder } from "@/components/projects/project-placeholder";
 import { Button } from "@/components/ui/button";
 import { useLocale } from "@/hooks/use-locale";
 import type { ScoredRepo } from "@/lib/types";
-import { cn } from "@/lib/utils";
+import { cn, displayRepoName } from "@/lib/utils";
 
 type ProjectCardProps = ScoredRepo & {
   index?: number;
@@ -45,13 +45,16 @@ export function ProjectCard({
       whileHover={reduced ? undefined : { y: -6 }}
     >
       <div className="relative overflow-hidden border-b border-border/50">
-        <ProjectPlaceholder name={repo.name} language={repo.language} />
+        <ProjectPlaceholder
+          name={displayRepoName(repo.name)}
+          language={repo.language}
+        />
       </div>
 
       <div className="flex flex-1 flex-col gap-3 p-4 sm:p-5">
         <div className="flex flex-wrap items-start justify-between gap-2">
           <h3 className="font-display text-xl tracking-tight text-fg sm:text-2xl">
-            {repo.name}
+            {displayRepoName(repo.name)}
           </h3>
           <div className="flex flex-wrap items-center gap-1.5">
             {repo.private ? (

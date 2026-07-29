@@ -7,6 +7,7 @@ import { Input } from "@/components/ui/input";
 import githubJson from "@/data/github.json";
 import { useLocale } from "@/hooks/use-locale";
 import type { GithubData, ScoredRepo } from "@/lib/types";
+import { displayRepoName } from "@/lib/utils";
 
 const github = githubJson as GithubData;
 
@@ -97,7 +98,7 @@ export function AskProjects() {
                     >
                       <div className="min-w-0">
                         <p className="font-medium tracking-tight text-fg group-hover:text-accent">
-                          {repo.name}
+                          {displayRepoName(repo.name)}
                           {repo.language ? (
                             <span className="ml-2 text-xs font-normal text-muted-foreground">
                               {repo.language}

@@ -4,7 +4,7 @@
     "avatarUrl": "https://avatars.githubusercontent.com/u/204008502?v=4",
     "followers": 0,
     "following": 1,
-    "publicRepos": 31,
+    "publicRepos": 35,
     "htmlUrl": "https://github.com/lipereis"
   },
   "topProjects": [
@@ -13,16 +13,16 @@
       "description": "AI-powered operating system for personal trainers",
       "stargazers_count": 0,
       "forks_count": 0,
-      "size": 1226,
+      "size": 1391,
       "language": "TypeScript",
       "topics": [],
-      "pushed_at": "2026-07-23T01:11:10Z",
-      "commitCount": 69,
+      "pushed_at": "2026-07-25T14:49:24Z",
+      "commitCount": 106,
       "homepage": null,
       "html_url": "https://github.com/lipereis/TrainFlow",
       "fork": false,
       "private": false,
-      "score": 61.86219697773973
+      "score": 65.98281008942162
     },
     {
       "name": "CineOps",
@@ -38,7 +38,39 @@
       "html_url": "https://github.com/lipereis/CineOps",
       "fork": false,
       "private": false,
-      "score": 27.48490578671994
+      "score": 27.237475709665144
+    },
+    {
+      "name": "RAGCore",
+      "description": "Local hybrid RAG engine: pdfplumber + Chroma/BM25 + FlashRank + Gemini Flash",
+      "stargazers_count": 0,
+      "forks_count": 0,
+      "size": 15,
+      "language": "Python",
+      "topics": [],
+      "pushed_at": "2026-07-26T00:32:35Z",
+      "commitCount": 4,
+      "homepage": null,
+      "html_url": "https://github.com/lipereis/RAGCore",
+      "fork": false,
+      "private": false,
+      "score": 40.431953449391166
+    },
+    {
+      "name": "spoileralert",
+      "description": null,
+      "stargazers_count": 0,
+      "forks_count": 0,
+      "size": 417,
+      "language": "Python",
+      "topics": [],
+      "pushed_at": "2026-07-29T02:43:32Z",
+      "commitCount": 0,
+      "homepage": null,
+      "html_url": "https://github.com/lipereis/spoileralert",
+      "fork": false,
+      "private": false,
+      "score": 27.068978278158294
     },
     {
       "name": "video-portfolio",
@@ -54,55 +86,23 @@
       "html_url": "https://github.com/lipereis/video-portfolio",
       "fork": false,
       "private": false,
-      "score": 55.34553839659437
+      "score": 55.09810831953958
     },
     {
-      "name": "ladobdacena",
-      "description": "Meu projeto de artigos sobre música, cinema e moda. Utilizei HTML, CSS e JavaScript.",
+      "name": "SupportFlow-AI",
+      "description": "AI-powered customer support platform for NovaMart — LangGraph, FastAPI, RAG, human escalation",
       "stargazers_count": 0,
       "forks_count": 0,
-      "size": 2574,
-      "language": "HTML",
-      "topics": [],
-      "pushed_at": "2025-09-23T15:05:36Z",
-      "commitCount": 31,
-      "homepage": null,
-      "html_url": "https://github.com/lipereis/ladobdacena",
-      "fork": false,
-      "private": false,
-      "score": 42.24145591942541
-    },
-    {
-      "name": "scriptmvp-ai",
-      "description": "Ferramenta de IA para gerar roteiros virais de Reels, TikTok e Shorts | Projeto de Portfólio de Prompt Engineering",
-      "stargazers_count": 0,
-      "forks_count": 0,
-      "size": 16,
+      "size": 75,
       "language": "Python",
       "topics": [],
-      "pushed_at": "2026-04-13T14:50:10Z",
-      "commitCount": 8,
+      "pushed_at": "2026-07-23T14:03:42Z",
+      "commitCount": 17,
       "homepage": null,
-      "html_url": "https://github.com/lipereis/scriptmvp-ai",
+      "html_url": "https://github.com/lipereis/SupportFlow-AI",
       "fork": false,
       "private": false,
-      "score": 38.43488533342846
-    },
-    {
-      "name": "queuekind",
-      "description": null,
-      "stargazers_count": 0,
-      "forks_count": 0,
-      "size": 2428,
-      "language": "TypeScript",
-      "topics": [],
-      "pushed_at": "2026-07-16T13:48:17Z",
-      "commitCount": 4,
-      "homepage": null,
-      "html_url": "https://github.com/lipereis/queuekind",
-      "fork": false,
-      "private": true,
-      "score": 35.96613295519406
+      "score": 45.44431408437975
     }
   ],
   "allProjects": [
@@ -111,16 +111,16 @@
       "description": "AI-powered operating system for personal trainers",
       "stargazers_count": 0,
       "forks_count": 0,
-      "size": 1226,
+      "size": 1391,
       "language": "TypeScript",
       "topics": [],
-      "pushed_at": "2026-07-23T01:11:10Z",
-      "commitCount": 69,
+      "pushed_at": "2026-07-25T14:49:24Z",
+      "commitCount": 106,
       "homepage": null,
       "html_url": "https://github.com/lipereis/TrainFlow",
       "fork": false,
       "private": false,
-      "score": 61.86219697773973
+      "score": 65.98281008942162
     },
     {
       "name": "video-portfolio",
@@ -136,7 +136,39 @@
       "html_url": "https://github.com/lipereis/video-portfolio",
       "fork": false,
       "private": false,
-      "score": 55.345538397070015
+      "score": 55.09810832001523
+    },
+    {
+      "name": "SupportFlow-AI",
+      "description": "AI-powered customer support platform for NovaMart — LangGraph, FastAPI, RAG, human escalation",
+      "stargazers_count": 0,
+      "forks_count": 0,
+      "size": 75,
+      "language": "Python",
+      "topics": [],
+      "pushed_at": "2026-07-23T14:03:42Z",
+      "commitCount": 17,
+      "homepage": null,
+      "html_url": "https://github.com/lipereis/SupportFlow-AI",
+      "fork": false,
+      "private": false,
+      "score": 45.4443140848554
+    },
+    {
+      "name": "TerminalMind",
+      "description": "Personal Research Assistant CLI with OpenAI Structured Outputs, RAG-lite ingest, and Rich UX",
+      "stargazers_count": 0,
+      "forks_count": 0,
+      "size": 73,
+      "language": "Python",
+      "topics": [],
+      "pushed_at": "2026-07-24T12:01:24Z",
+      "commitCount": 16,
+      "homepage": null,
+      "html_url": "https://github.com/lipereis/TerminalMind",
+      "fork": false,
+      "private": false,
+      "score": 45.15941967846271
     },
     {
       "name": "ladobdacena",
@@ -152,7 +184,23 @@
       "html_url": "https://github.com/lipereis/ladobdacena",
       "fork": false,
       "private": false,
-      "score": 42.241455919901064
+      "score": 41.99402584237062
+    },
+    {
+      "name": "RAGCore",
+      "description": "Local hybrid RAG engine: pdfplumber + Chroma/BM25 + FlashRank + Gemini Flash",
+      "stargazers_count": 0,
+      "forks_count": 0,
+      "size": 15,
+      "language": "Python",
+      "topics": [],
+      "pushed_at": "2026-07-26T00:32:35Z",
+      "commitCount": 4,
+      "homepage": null,
+      "html_url": "https://github.com/lipereis/RAGCore",
+      "fork": false,
+      "private": false,
+      "score": 40.431953449391166
     },
     {
       "name": "scriptmvp-ai",
@@ -168,7 +216,7 @@
       "html_url": "https://github.com/lipereis/scriptmvp-ai",
       "fork": false,
       "private": false,
-      "score": 38.43488533390411
+      "score": 38.18745525637367
     },
     {
       "name": "queuekind",
@@ -184,7 +232,7 @@
       "html_url": "https://github.com/lipereis/queuekind",
       "fork": false,
       "private": true,
-      "score": 35.966132955669714
+      "score": 35.71870287861492
     },
     {
       "name": "Wealthchain",
@@ -200,7 +248,7 @@
       "html_url": "https://github.com/lipereis/Wealthchain",
       "fork": false,
       "private": false,
-      "score": 33.45078811168188
+      "score": 33.20335803415144
     },
     {
       "name": "CineOps",
@@ -216,7 +264,23 @@
       "html_url": "https://github.com/lipereis/CineOps",
       "fork": false,
       "private": false,
-      "score": 27.48490578671994
+      "score": 27.237475709665144
+    },
+    {
+      "name": "spoileralert",
+      "description": null,
+      "stargazers_count": 0,
+      "forks_count": 0,
+      "size": 417,
+      "language": "Python",
+      "topics": [],
+      "pushed_at": "2026-07-29T02:43:32Z",
+      "commitCount": 0,
+      "homepage": null,
+      "html_url": "https://github.com/lipereis/spoileralert",
+      "fork": false,
+      "private": false,
+      "score": 27.068978278158294
     },
     {
       "name": "tubepilot-ai",
@@ -231,8 +295,8 @@
       "homepage": "https://tubepilot-ai.vercel.app",
       "html_url": "https://github.com/lipereis/tubepilot-ai",
       "fork": false,
-      "private": false,
-      "score": 24.599166631468794
+      "private": true,
+      "score": 24.351736554414
     },
     {
       "name": "tube-vision-suite",
@@ -248,7 +312,7 @@
       "html_url": "https://github.com/lipereis/tube-vision-suite",
       "fork": false,
       "private": true,
-      "score": 23.789855843797568
+      "score": 23.54242576674277
     },
     {
       "name": "samplesearch",
@@ -264,7 +328,7 @@
       "html_url": "https://github.com/lipereis/samplesearch",
       "fork": false,
       "private": false,
-      "score": 22.64009889935312
+      "score": 22.392668821822678
     },
     {
       "name": "dogsnext",
@@ -280,7 +344,7 @@
       "html_url": "https://github.com/lipereis/dogsnext",
       "fork": false,
       "private": false,
-      "score": 21.61921181792238
+      "score": 21.371781740391935
     },
     {
       "name": "jumpcut",
@@ -296,7 +360,7 @@
       "html_url": "https://github.com/lipereis/jumpcut",
       "fork": false,
       "private": false,
-      "score": 20.764758336187217
+      "score": 20.517328258656775
     },
     {
       "name": "animaisfantasticos.github.io",
@@ -328,7 +392,7 @@
       "html_url": "https://github.com/lipereis/climaagora",
       "fork": false,
       "private": false,
-      "score": 19.884619922945205
+      "score": 19.637189845414767
     },
     {
       "name": "filmeapp",
@@ -344,7 +408,7 @@
       "html_url": "https://github.com/lipereis/filmeapp",
       "fork": false,
       "private": false,
-      "score": 18.3178742988965
+      "score": 18.070444221366056
     },
     {
       "name": "projetodogs",
@@ -360,7 +424,7 @@
       "html_url": "https://github.com/lipereis/projetodogs",
       "fork": false,
       "private": false,
-      "score": 17.526023556887367
+      "score": 17.27859347935693
     },
     {
       "name": "filedrop",
@@ -376,7 +440,7 @@
       "html_url": "https://github.com/lipereis/filedrop",
       "fork": false,
       "private": false,
-      "score": 17.483036494482494
+      "score": 17.235606416952052
     },
     {
       "name": "gambamachine",
@@ -392,7 +456,7 @@
       "html_url": "https://github.com/lipereis/gambamachine",
       "fork": false,
       "private": false,
-      "score": 16.997723994482495
+      "score": 16.750293916952053
     },
     {
       "name": "listadetarefas",
@@ -408,7 +472,7 @@
       "html_url": "https://github.com/lipereis/listadetarefas",
       "fork": false,
       "private": false,
-      "score": 16.980576924467275
+      "score": 16.733146846936833
     },
     {
       "name": "cacaniqueljs",
@@ -424,7 +488,7 @@
       "html_url": "https://github.com/lipereis/cacaniqueljs",
       "fork": false,
       "private": false,
-      "score": 16.38729543664384
+      "score": 16.139865359113397
     },
     {
       "name": "conversordemo",
@@ -440,7 +504,7 @@
       "html_url": "https://github.com/lipereis/conversordemo",
       "fork": false,
       "private": false,
-      "score": 15.943592050038049
+      "score": 15.69616197250761
     },
     {
       "name": "rentandride.github.io",
@@ -472,7 +536,7 @@
       "html_url": "https://github.com/lipereis/letterbotd",
       "fork": false,
       "private": false,
-      "score": 14.982964671803654
+      "score": 14.735534594273211
     },
     {
       "name": "calculadora",
@@ -488,7 +552,7 @@
       "html_url": "https://github.com/lipereis/calculadora",
       "fork": false,
       "private": false,
-      "score": 14.628867449581428
+      "score": 14.381437372050987
     },
     {
       "name": "bullcord",
@@ -504,7 +568,7 @@
       "html_url": "https://github.com/lipereis/bullcord",
       "fork": false,
       "private": false,
-      "score": 12.8221294358828
+      "score": 12.574699358352358
     },
     {
       "name": "sakuracommerce",
@@ -520,7 +584,7 @@
       "html_url": "https://github.com/lipereis/sakuracommerce",
       "fork": false,
       "private": false,
-      "score": 12.745088910768645
+      "score": 12.497658833238203
     },
     {
       "name": "bikcraft.github.io",
@@ -568,7 +632,7 @@
       "html_url": "https://github.com/lipereis/projetolms",
       "fork": false,
       "private": false,
-      "score": 5.295170722031963
+      "score": 5.04774064450152
     }
   ],
   "stats": {
@@ -576,18 +640,15 @@
     "totalForks": 0
   },
   "languages": {
-    "TypeScript": 1389873,
-    "JavaScript": 1383170,
-    "CSS": 177665,
-    "HTML": 183209,
+    "Python": 557068,
+    "CSS": 194289,
+    "TypeScript": 1428438,
     "PLpgSQL": 5796,
-    "Python": 52273
+    "JavaScript": 1383983,
+    "Dockerfile": 355,
+    "HTML": 183209
   },
   "commitActivity": [
-    {
-      "week": "2025-07-27",
-      "count": 0
-    },
     {
       "week": "2025-08-03",
       "count": 0
@@ -610,15 +671,15 @@
     },
     {
       "week": "2025-09-07",
-      "count": 2
+      "count": 0
     },
     {
       "week": "2025-09-14",
-      "count": 8
+      "count": 6
     },
     {
       "week": "2025-09-21",
-      "count": 27
+      "count": 31
     },
     {
       "week": "2025-09-28",
@@ -650,11 +711,11 @@
     },
     {
       "week": "2025-11-16",
-      "count": 2
+      "count": 0
     },
     {
       "week": "2025-11-23",
-      "count": 0
+      "count": 2
     },
     {
       "week": "2025-11-30",
@@ -682,11 +743,11 @@
     },
     {
       "week": "2026-01-11",
-      "count": 8
+      "count": 0
     },
     {
       "week": "2026-01-18",
-      "count": 2
+      "count": 10
     },
     {
       "week": "2026-01-25",
@@ -702,11 +763,11 @@
     },
     {
       "week": "2026-02-15",
-      "count": 4
+      "count": 3
     },
     {
       "week": "2026-02-22",
-      "count": 1
+      "count": 2
     },
     {
       "week": "2026-03-01",
@@ -766,11 +827,11 @@
     },
     {
       "week": "2026-06-07",
-      "count": 1
+      "count": 0
     },
     {
       "week": "2026-06-14",
-      "count": 0
+      "count": 1
     },
     {
       "week": "2026-06-21",
@@ -778,11 +839,11 @@
     },
     {
       "week": "2026-06-28",
-      "count": 3
+      "count": 1
     },
     {
       "week": "2026-07-05",
-      "count": 2
+      "count": 4
     },
     {
       "week": "2026-07-12",
@@ -790,45 +851,14 @@
     },
     {
       "week": "2026-07-19",
-      "count": 101
+      "count": 37
+    },
+    {
+      "week": "2026-07-26",
+      "count": 142
     }
   ],
   "contributionWeeks": [
-    {
-      "date": "2025-07-20",
-      "count": 0,
-      "level": 0
-    },
-    {
-      "date": "2025-07-21",
-      "count": 0,
-      "level": 0
-    },
-    {
-      "date": "2025-07-22",
-      "count": 0,
-      "level": 0
-    },
-    {
-      "date": "2025-07-23",
-      "count": 0,
-      "level": 0
-    },
-    {
-      "date": "2025-07-24",
-      "count": 0,
-      "level": 0
-    },
-    {
-      "date": "2025-07-25",
-      "count": 0,
-      "level": 0
-    },
-    {
-      "date": "2025-07-26",
-      "count": 0,
-      "level": 0
-    },
     {
       "date": "2025-07-27",
       "count": 0,
@@ -942,7 +972,7 @@
     {
       "date": "2025-08-18",
       "count": 4,
-      "level": 3
+      "level": 1
     },
     {
       "date": "2025-08-19",
@@ -962,7 +992,7 @@
     {
       "date": "2025-08-22",
       "count": 4,
-      "level": 3
+      "level": 1
     },
     {
       "date": "2025-08-23",
@@ -972,17 +1002,17 @@
     {
       "date": "2025-08-24",
       "count": 7,
-      "level": 4
+      "level": 1
     },
     {
       "date": "2025-08-25",
       "count": 4,
-      "level": 3
+      "level": 1
     },
     {
       "date": "2025-08-26",
       "count": 4,
-      "level": 3
+      "level": 1
     },
     {
       "date": "2025-08-27",
@@ -992,7 +1022,7 @@
     {
       "date": "2025-08-28",
       "count": 9,
-      "level": 4
+      "level": 1
     },
     {
       "date": "2025-08-29",
@@ -1052,7 +1082,7 @@
     {
       "date": "2025-09-09",
       "count": 4,
-      "level": 3
+      "level": 1
     },
     {
       "date": "2025-09-10",
@@ -1062,12 +1092,12 @@
     {
       "date": "2025-09-11",
       "count": 3,
-      "level": 2
+      "level": 1
     },
     {
       "date": "2025-09-12",
       "count": 2,
-      "level": 2
+      "level": 1
     },
     {
       "date": "2025-09-13",
@@ -1082,7 +1112,7 @@
     {
       "date": "2025-09-15",
       "count": 4,
-      "level": 3
+      "level": 1
     },
     {
       "date": "2025-09-16",
@@ -1092,7 +1122,7 @@
     {
       "date": "2025-09-17",
       "count": 5,
-      "level": 3
+      "level": 1
     },
     {
       "date": "2025-09-18",
@@ -1122,7 +1152,7 @@
     {
       "date": "2025-09-23",
       "count": 26,
-      "level": 4
+      "level": 2
     },
     {
       "date": "2025-09-24",
@@ -1132,7 +1162,7 @@
     {
       "date": "2025-09-25",
       "count": 5,
-      "level": 3
+      "level": 1
     },
     {
       "date": "2025-09-26",
@@ -1407,7 +1437,7 @@
     {
       "date": "2025-11-19",
       "count": 2,
-      "level": 2
+      "level": 1
     },
     {
       "date": "2025-11-20",
@@ -1682,7 +1712,7 @@
     {
       "date": "2026-01-13",
       "count": 8,
-      "level": 4
+      "level": 1
     },
     {
       "date": "2026-01-14",
@@ -2132,7 +2162,7 @@
     {
       "date": "2026-04-13",
       "count": 8,
-      "level": 4
+      "level": 1
     },
     {
       "date": "2026-04-14",
@@ -2362,12 +2392,12 @@
     {
       "date": "2026-05-29",
       "count": 4,
-      "level": 3
+      "level": 1
     },
     {
       "date": "2026-05-30",
-      "count": 6,
-      "level": 4
+      "count": 0,
+      "level": 0
     },
     {
       "date": "2026-05-31",
@@ -2527,7 +2557,7 @@
     {
       "date": "2026-07-01",
       "count": 2,
-      "level": 2
+      "level": 1
     },
     {
       "date": "2026-07-02",
@@ -2621,24 +2651,54 @@
     },
     {
       "date": "2026-07-20",
-      "count": 0,
-      "level": 0
+      "count": 21,
+      "level": 2
     },
     {
       "date": "2026-07-21",
-      "count": 0,
-      "level": 0
+      "count": 19,
+      "level": 2
     },
     {
       "date": "2026-07-22",
-      "count": 7,
+      "count": 59,
       "level": 4
     },
     {
       "date": "2026-07-23",
+      "count": 44,
+      "level": 3
+    },
+    {
+      "date": "2026-07-24",
+      "count": 4,
+      "level": 1
+    },
+    {
+      "date": "2026-07-25",
+      "count": 22,
+      "level": 2
+    },
+    {
+      "date": "2026-07-26",
+      "count": 0,
+      "level": 0
+    },
+    {
+      "date": "2026-07-27",
+      "count": 0,
+      "level": 0
+    },
+    {
+      "date": "2026-07-28",
+      "count": 8,
+      "level": 1
+    },
+    {
+      "date": "2026-07-29",
       "count": 0,
       "level": 0
     }
   ],
-  "fetchedAt": "2026-07-23T11:34:59.474Z"
+  "fetchedAt": "2026-07-29T12:04:56.598Z"
 }

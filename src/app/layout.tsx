@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { GeistSans } from "geist/font/sans";
 import { Instrument_Serif } from "next/font/google";
 import { BackToTop } from "@/components/layout/back-to-top";
-import { CursorGlow } from "@/components/layout/cursor-glow";
+import { CustomCursor } from "@/components/layout/custom-cursor";
 import { LoadingScreen } from "@/components/layout/loading-screen";
 import { ScrollProgress } from "@/components/layout/scroll-progress";
 import { SiteFooter } from "@/components/layout/site-footer";
@@ -19,9 +19,9 @@ const instrument = Instrument_Serif({
   display: "swap",
 });
 
-const siteTitle = `${siteConfig.name} — AI Engineer`;
+const siteTitle = `${siteConfig.name} — Backend & AI Engineer`;
 const siteDescription =
-  "AI engineer based in Rio de Janeiro. Frontend-strong, full-stack capable — shipping products with React, Next.js, and AI-assisted craft. Open to AI engineering roles.";
+  "Backend & AI engineer based in Rio de Janeiro. Retrieval-augmented generation, REST APIs, and full-stack product work with TypeScript, Node.js, Python, React, and Next.js. Open to Backend / AI Engineer roles.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.siteUrl),
@@ -34,9 +34,12 @@ export const metadata: Metadata = {
   authors: [{ name: siteConfig.name, url: siteConfig.siteUrl }],
   creator: siteConfig.name,
   keywords: [
+    "Backend Engineer",
     "AI Engineer",
-    "Software Engineer",
-    "Frontend",
+    "RAG",
+    "Retrieval-Augmented Generation",
+    "Node.js",
+    "Python",
     "Full-stack",
     "React",
     "Next.js",
@@ -59,7 +62,7 @@ export const metadata: Metadata = {
         url: "/og.png",
         width: 1200,
         height: 630,
-        alt: `${siteConfig.name} — AI Engineer`,
+        alt: `${siteConfig.name} — Backend & AI Engineer`,
       },
     ],
   },
@@ -81,7 +84,7 @@ const jsonLdPerson = {
   name: siteConfig.name,
   url: siteConfig.siteUrl,
   email: siteConfig.email,
-  jobTitle: "AI Engineer",
+  jobTitle: "Backend & AI Engineer",
   description: siteDescription,
   address: {
     "@type": "PostalAddress",
@@ -132,7 +135,7 @@ export default function RootLayout({
         <AppProviders>
           <LoadingScreen />
           <ScrollProgress />
-          <CursorGlow />
+          <CustomCursor />
           <SiteHeader />
           <main id="content" className="flex min-h-0 flex-1 flex-col">
             {children}

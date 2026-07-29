@@ -1,5 +1,5 @@
 /**
- * Generates a one-page starter resume PDF at public/resume.pdf.
+ * Generates public/resume.pdf from siteConfig plus the project list below.
  * Run: npx tsx scripts/generate-resume.ts
  */
 import { createWriteStream } from "node:fs";
@@ -11,67 +11,133 @@ import { siteConfig } from "../src/config";
 const ROOT = path.resolve(import.meta.dirname, "..");
 const OUT_PATH = path.join(ROOT, "public", "resume.pdf");
 
-const MARGIN = 48;
+const MARGIN = 46;
 const PAGE_WIDTH = 612; // US Letter
+const PAGE_HEIGHT = 792;
 const CONTENT_WIDTH = PAGE_WIDTH - MARGIN * 2;
+const PAGE_BOTTOM = PAGE_HEIGHT - MARGIN;
 
 const ACCENT = "#C4A574";
-const INK = "#1a1a1a";
-const MUTED = "#555555";
+const INK = "#141414";
+const MUTED = "#565656";
 
 type ProjectLine = {
   name: string;
+  year: string;
   blurb: string;
-  stack?: string;
+  stack: string;
+  repo: string;
 };
 
 const PROJECTS: ProjectLine[] = [
   {
-    name: "video-portfolio",
-    blurb: "Video editor / videomaker portfolio site.",
-    stack: "JavaScript",
+    name: "TrainFlow",
+    year: "2026",
+    blurb:
+      "AI-powered operating system for personal trainers: client management, program building, and assisted planning.",
+    stack: "TypeScript, Next.js, Node.js",
+    repo: "github.com/lipereis/TrainFlow",
   },
   {
-    name: "ladobdacena",
-    blurb: "Articles on music, cinema, and fashion.",
-    stack: "HTML, CSS, JavaScript",
+    name: "RAGCore",
+    year: "2026",
+    blurb:
+      "Local Retrieval-Augmented Generation engine for querying PDF documents. Combines semantic search (Chroma) with keyword search (BM25), local re-ranking via FlashRank, and grounded answers through the Gemini Flash API.",
+    stack: "Python, pdfplumber, Chroma, BM25, FlashRank, Gemini API",
+    repo: "github.com/lipereis/RAGCore",
   },
   {
-    name: "scriptmvp-ai",
-    blurb: "AI tool for viral Reels / TikTok / Shorts scripts (prompt engineering portfolio).",
-    stack: "Python",
-  },
-  {
-    name: "Wealthchain",
-    blurb: "Crypto market UI powered by the CoinGecko API.",
-    stack: "JavaScript",
+    name: "SpoilerAlert",
+    year: "2026",
+    blurb:
+      "Streamlit web app that generates a “Spotify Wrapped”-style card from a public Letterboxd profile. Scrapes public data, aggregates with pandas, and renders a 1080x1920 card with Pillow.",
+    stack: "Python, Streamlit, pandas, Pillow, letterboxdpy",
+    repo: "github.com/lipereis/spoileralert",
   },
   {
     name: "CineOps",
-    blurb: "Video / ops tooling experiment at the creative × product intersection.",
+    year: "2026",
+    blurb: "Tooling for audiovisual operations and post-production workflows.",
     stack: "JavaScript",
-  },
-  {
-    name: "tubepilot-ai",
-    blurb: "AI-assisted tube / content workflow tool (live on Vercel).",
-    stack: "TypeScript",
+    repo: "github.com/lipereis/CineOps",
   },
 ];
 
+const SKILL_ROWS: [string, string][] = [
+  ["AI / AI Engineering", siteConfig.skills.ai.map((s) => s.name).join(", ")],
+  ["Backend", siteConfig.skills.backend.map((s) => s.name).join(", ")],
+  ["Languages", siteConfig.skills.languages.map((s) => s.name).join(", ")],
+  ["Frontend", siteConfig.skills.frontend.map((s) => s.name).join(", ")],
+  ["Databases", siteConfig.skills.databases.map((s) => s.name).join(", ")],
+  ["Tools & Deploy", siteConfig.skills.tools.map((s) => s.name).join(", ")],
+];
+
+/** Absolute-positioned layout needs manual pagination. */
+function ensureSpace(doc: PDFKit.PDFDocument, y: number, needed: number): number {
+  if (y + needed <= PAGE_BOTTOM) return y;
+  doc.addPage();
+  return MARGIN;
+}
+
 function sectionTitle(doc: PDFKit.PDFDocument, title: string, y: number): number {
+  const top = ensureSpace(doc, y, 46);
   doc
     .font("Helvetica-Bold")
-    .fontSize(10)
+    .fontSize(9.5)
     .fillColor(INK)
-    .text(title.toUpperCase(), MARGIN, y, { characterSpacing: 1.2 });
-  const after = doc.y + 4;
+    .text(title.toUpperCase(), MARGIN, top, { characterSpacing: 1.3 });
+  const rule = doc.y + 3.5;
   doc
-    .moveTo(MARGIN, after)
-    .lineTo(MARGIN + CONTENT_WIDTH, after)
+    .moveTo(MARGIN, rule)
+    .lineTo(MARGIN + CONTENT_WIDTH, rule)
     .strokeColor(ACCENT)
     .lineWidth(1)
     .stroke();
-  return after + 10;
+  return rule + 9;
+}
+
+/** Bold left title with a muted right-aligned meta label on the same baseline. */
+function entryHeading(
+  doc: PDFKit.PDFDocument,
+  left: string,
+  right: string,
+  y: number,
+): number {
+  const top = ensureSpace(doc, y, 40);
+  doc
+    .font("Helvetica-Bold")
+    .fontSize(9.5)
+    .fillColor(INK)
+    .text(left, MARGIN, top, { width: CONTENT_WIDTH * 0.68 });
+  const leftBottom = doc.y;
+  doc
+    .font("Helvetica")
+    .fontSize(8.5)
+    .fillColor(MUTED)
+    .text(right, MARGIN + CONTENT_WIDTH * 0.68, top + 1, {
+      width: CONTENT_WIDTH * 0.32,
+      align: "right",
+    });
+  return Math.max(leftBottom, doc.y) + 2;
+}
+
+function body(
+  doc: PDFKit.PDFDocument,
+  text: string,
+  y: number,
+  options: { indent?: number; color?: string; size?: number } = {},
+): number {
+  const indent = options.indent ?? 0;
+  const top = ensureSpace(doc, y, 24);
+  doc
+    .font("Helvetica")
+    .fontSize(options.size ?? 8.5)
+    .fillColor(options.color ?? INK)
+    .text(text, MARGIN + indent, top, {
+      width: CONTENT_WIDTH - indent,
+      lineGap: 1.1,
+    });
+  return doc.y;
 }
 
 async function main() {
@@ -81,9 +147,10 @@ async function main() {
     size: "LETTER",
     margins: { top: MARGIN, bottom: MARGIN, left: MARGIN, right: MARGIN },
     info: {
-      Title: `${siteConfig.name} — Resume`,
-      Author: siteConfig.name,
+      Title: `${siteConfig.fullName} — Resume`,
+      Author: siteConfig.fullName,
       Subject: siteConfig.headline,
+      Keywords: "backend, AI engineer, RAG, Node.js, Python, TypeScript, Next.js",
     },
   });
 
@@ -93,121 +160,94 @@ async function main() {
   // Header
   doc
     .font("Helvetica-Bold")
-    .fontSize(22)
+    .fontSize(21)
     .fillColor(INK)
-    .text(siteConfig.name, MARGIN, MARGIN, { width: CONTENT_WIDTH, align: "left" });
+    .text(siteConfig.fullName.toUpperCase(), MARGIN, MARGIN, {
+      width: CONTENT_WIDTH,
+      characterSpacing: 0.4,
+    });
 
   doc
     .font("Helvetica")
     .fontSize(10)
-    .fillColor(MUTED)
+    .fillColor(ACCENT)
     .text(siteConfig.headline, { width: CONTENT_WIDTH });
 
-  const contact = [
-    siteConfig.email,
-    siteConfig.location,
-    `github.com/${siteConfig.githubUsername}`,
-    "linkedin.com/in/felipe-gomes-0220b7247",
-  ].join("  ·  ");
-
-  doc.moveDown(0.35);
-  doc.fontSize(8.5).fillColor(MUTED).text(contact, { width: CONTENT_WIDTH });
-
-  let y = doc.y + 14;
-
-  // Summary
-  y = sectionTitle(doc, "Summary", y);
+  doc.moveDown(0.4);
   doc
-    .font("Helvetica")
-    .fontSize(9)
-    .fillColor(INK)
-    .text(siteConfig.about.en, MARGIN, y, {
-      width: CONTENT_WIDTH,
-      align: "left",
-      lineGap: 1.5,
-    });
-  y = doc.y + 12;
+    .fontSize(8.5)
+    .fillColor(MUTED)
+    .text(
+      [
+        siteConfig.location,
+        siteConfig.phone,
+        siteConfig.email,
+        `github.com/${siteConfig.githubUsername}`,
+        siteConfig.linkedinHandle,
+        "lipereis.github.io/engineer-portfolio",
+      ].join("   ·   "),
+      { width: CONTENT_WIDTH },
+    );
 
-  // Experience arc (honest — no fake employers)
-  y = sectionTitle(doc, "Experience arc", y);
-  for (const entry of siteConfig.experience) {
-    if (entry.id === "goals") continue; // keep goals off the resume body
-    doc
-      .font("Helvetica-Bold")
-      .fontSize(9.5)
-      .fillColor(INK)
-      .text(entry.title.en, MARGIN, y, { continued: true, width: CONTENT_WIDTH * 0.72 });
-    doc
-      .font("Helvetica")
-      .fontSize(8.5)
-      .fillColor(MUTED)
-      .text(`  —  ${entry.period.en}`, { align: "left" });
-    y = doc.y + 2;
-    doc
-      .font("Helvetica")
-      .fontSize(8.5)
-      .fillColor(INK)
-      .text(entry.description.en, MARGIN, y, {
-        width: CONTENT_WIDTH,
-        lineGap: 1,
-      });
-    y = doc.y + 8;
-  }
+  let y = doc.y + 13;
 
-  // Selected projects
-  y = sectionTitle(doc, "Selected projects", y);
-  for (const project of PROJECTS) {
-    const label = project.stack
-      ? `${project.name}  (${project.stack})`
-      : project.name;
-    doc
-      .font("Helvetica-Bold")
-      .fontSize(9)
-      .fillColor(INK)
-      .text(`•  ${label}`, MARGIN, y, { width: CONTENT_WIDTH });
-    y = doc.y + 1;
-    doc
-      .font("Helvetica")
-      .fontSize(8.5)
-      .fillColor(MUTED)
-      .text(project.blurb, MARGIN + 12, y, { width: CONTENT_WIDTH - 12 });
-    y = doc.y + 6;
-  }
+  y = sectionTitle(doc, "Profile", y);
+  y = body(doc, siteConfig.about.en, y) + 11;
 
-  // Skills
-  y = sectionTitle(doc, "Skills", y);
-  const skillLines: [string, string][] = [
-    ["Frontend", siteConfig.skills.frontend.map((s) => s.name).join(", ")],
-    ["Backend", siteConfig.skills.backend.map((s) => s.name).join(", ")],
-    ["Languages", siteConfig.skills.languages.map((s) => s.name).join(", ")],
-    ["Databases", siteConfig.skills.databases.map((s) => s.name).join(", ")],
-    ["Tools", siteConfig.skills.tools.map((s) => s.name).join(", ")],
-    ["Design", siteConfig.skills.design.map((s) => s.name).join(", ")],
-  ];
-  for (const [label, value] of skillLines) {
+  y = sectionTitle(doc, "Technical Skills", y);
+  for (const [label, value] of SKILL_ROWS) {
+    y = ensureSpace(doc, y, 22);
     doc
       .font("Helvetica-Bold")
       .fontSize(8.5)
       .fillColor(INK)
       .text(`${label}: `, MARGIN, y, { continued: true, width: CONTENT_WIDTH });
-    doc.font("Helvetica").fillColor(MUTED).text(value);
-    y = doc.y + 3;
+    doc.font("Helvetica").fillColor(MUTED).text(value, { lineGap: 1 });
+    y = doc.y + 3.5;
   }
+  y += 8;
 
-  y += 6;
+  y = sectionTitle(doc, "Projects", y);
+  for (const project of PROJECTS) {
+    y = entryHeading(doc, project.name, project.year, y);
+    y = body(doc, project.blurb, y, { color: MUTED }) + 2;
+    y = body(doc, `Stack: ${project.stack}`, y, { size: 8 }) + 1;
+    y = body(doc, `Repository: ${project.repo}`, y, { size: 8, color: MUTED }) + 9;
+  }
+  y += 2;
 
-  // Education (honest placeholders — no fake degrees)
-  y = sectionTitle(doc, "Education & learning", y);
-  doc
-    .font("Helvetica")
-    .fontSize(8.5)
-    .fillColor(INK)
-    .text(
-      "Self-taught software path via structured online coursework (HTML, CSS, JavaScript, UI fundamentals) and public GitHub projects in React, Next.js, TypeScript, and AI tooling. Formal certificates and course titles to be added when finalized — no university degree listed.",
-      MARGIN,
+  y = sectionTitle(doc, "Education", y);
+  for (const entry of siteConfig.education) {
+    y = entryHeading(doc, entry.institution.en, entry.period.en, y);
+    y = body(doc, `${entry.title.en} — ${entry.description.en}`, y, {
+      color: MUTED,
+    });
+    y += 8;
+  }
+  y += 2;
+
+  y = sectionTitle(doc, "Professional Experience", y);
+  for (const entry of siteConfig.experience) {
+    y = entryHeading(doc, `${entry.role.en} — ${entry.org.en}`, entry.period.en, y);
+    y = body(doc, entry.description.en, y, { color: MUTED });
+    y += 8;
+  }
+  y += 2;
+
+  y = sectionTitle(doc, "Languages", y);
+  y =
+    body(
+      doc,
+      siteConfig.spokenLanguages
+        .map((lang) => `${lang.name.en} — ${lang.level.en}`)
+        .join("   |   "),
       y,
-      { width: CONTENT_WIDTH, lineGap: 1 },
-    );
+    ) + 11;
+
+  y = sectionTitle(doc, "Courses & Certifications", y);
+  for (const cert of siteConfig.certifications) {
+    y = body(doc, `•  ${cert.title.en} (${cert.year})`, y, { color: MUTED }) + 3;
+  }
 
   doc.end();
 

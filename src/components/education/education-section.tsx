@@ -59,14 +59,6 @@ export function EducationSection() {
                 <span className="rounded-md border border-accent/35 bg-accent/10 px-2 py-0.5 text-[11px] font-medium uppercase tracking-[0.12em] text-accent">
                   {copy.kinds[entry.kind]}
                 </span>
-                {entry.editable ? (
-                  <span
-                    className="rounded-md border border-border/50 px-2 py-0.5 text-[11px] text-muted-foreground/80"
-                    title={copy.editableHint}
-                  >
-                    {copy.editable}
-                  </span>
-                ) : null}
               </div>
 
               <div>
@@ -87,6 +79,46 @@ export function EducationSection() {
             </motion.li>
           ))}
         </ul>
+
+        <div className="mt-12 grid gap-10 md:grid-cols-2">
+          <div>
+            <h3 className="mb-4 text-sm font-medium tracking-wide text-muted-foreground">
+              {copy.certifications}
+            </h3>
+            <ul className="flex list-none flex-wrap gap-2">
+              {siteConfig.certifications.map((cert) => (
+                <li
+                  key={cert.id}
+                  className="rounded-lg border border-border/60 bg-fg/[0.02] px-3 py-1.5 text-sm text-fg/80"
+                >
+                  {cert.title[locale]}
+                  <span className="ml-2 text-xs text-muted-foreground">
+                    {cert.year}
+                  </span>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div>
+            <h3 className="mb-4 text-sm font-medium tracking-wide text-muted-foreground">
+              {copy.languages}
+            </h3>
+            <ul className="flex list-none flex-wrap gap-2">
+              {siteConfig.spokenLanguages.map((lang) => (
+                <li
+                  key={lang.name.en}
+                  className="rounded-lg border border-border/60 bg-fg/[0.02] px-3 py-1.5 text-sm text-fg/80"
+                >
+                  {lang.name[locale]}
+                  <span className="ml-2 text-xs text-muted-foreground">
+                    {lang.level[locale]}
+                  </span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
       </div>
     </section>
   );

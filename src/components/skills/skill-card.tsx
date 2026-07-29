@@ -2,9 +2,11 @@
 
 import { motion } from "framer-motion";
 import {
+  ArrowUpDown,
   Atom,
   Binary,
   Bot,
+  Boxes,
   Braces,
   Clapperboard,
   Cloud,
@@ -14,12 +16,17 @@ import {
   FileType,
   GitBranch,
   HardDrive,
+  KeyRound,
   Layers,
+  LayoutDashboard,
   LayoutTemplate,
+  MessageSquareCode,
   Network,
+  NotebookPen,
   Palette,
   PenTool,
   Route,
+  Search,
   Server,
   Sparkles,
   Table2,
@@ -52,6 +59,13 @@ const iconMap: Record<string, LucideIcon> = {
   PenTool,
   Clapperboard,
   LayoutTemplate,
+  Boxes,
+  Search,
+  ArrowUpDown,
+  MessageSquareCode,
+  KeyRound,
+  LayoutDashboard,
+  NotebookPen,
 };
 
 export function getSkillIcon(name: string): LucideIcon {

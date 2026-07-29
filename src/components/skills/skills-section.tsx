@@ -6,9 +6,10 @@ import { useLocale } from "@/hooks/use-locale";
 import { useReducedMotion } from "@/hooks/use-reduced-motion";
 
 const SKILL_GROUPS = [
-  "frontend",
+  "ai",
   "backend",
   "languages",
+  "frontend",
   "databases",
   "tools",
   "design",

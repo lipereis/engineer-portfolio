@@ -1,8 +1,8 @@
 export const en = {
   meta: {
-    title: "Felipe Gomes — AI Engineer",
+    title: "Felipe Gomes — Backend & AI Engineer",
     description:
-      "AI Engineer · Frontend · Full-stack capable. Portfolio of Felipe Gomes — video craft, product, and AI tooling from Rio de Janeiro.",
+      "Backend & AI Engineer · Full-stack (React / Next.js / Node.js). Portfolio of Felipe Gomes — RAG systems, APIs, and product tooling from Rio de Janeiro.",
   },
 
   nav: {
@@ -19,14 +19,14 @@ export const en = {
   },
 
   hero: {
-    role: "AI Engineer",
-    focus: "Frontend · Full-stack capable",
+    role: "Backend & AI Engineer",
+    focus: "Full-stack · React / Next.js / Node.js",
     typingLines: [
-      "Building products with code and AI",
-      "From video craft to AI engineering",
+      "Building RAG systems and APIs",
+      "From audiovisual craft to AI engineering",
       "Shipping tools that feel premium",
     ],
-    arc: "Video editor transitioning into AI engineering — building products with code and AI.",
+    arc: "Communication and audiovisual background, now building backend services and AI systems.",
     ctaProjects: "View Projects",
     ctaResume: "Download Resume",
     ctaGithub: "GitHub",
@@ -42,11 +42,12 @@ export const en = {
       title: "Skills",
       subtitle: "Tools I use to design, build, and ship.",
       groups: {
-        frontend: "Frontend",
+        ai: "AI Engineering",
         backend: "Backend",
         languages: "Programming Languages",
+        frontend: "Frontend",
         databases: "Databases",
-        tools: "Tools",
+        tools: "Tools & Deploy",
         design: "Design",
       },
     },
@@ -85,18 +86,18 @@ export const en = {
     },
     experience: {
       title: "Experience",
-      subtitle: "A timeline of craft, learning, and transition.",
+      subtitle: "Professional work in communication and audiovisual production.",
     },
     education: {
       title: "Education",
-      subtitle: "Courses, self-taught path, and certificates.",
+      subtitle: "Degree, courses, and the self-taught path.",
       kinds: {
         university: "University",
         course: "Course",
         certificate: "Certificate",
       },
-      editable: "Editable",
-      editableHint: "Draft entry — revise in config.ts",
+      certifications: "Courses & certifications",
+      languages: "Languages",
     },
     contact: {
       title: "Contact",

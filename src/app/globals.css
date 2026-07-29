@@ -139,6 +139,14 @@ body {
   color: var(--fg);
 }
 
+/* Toggled by <CustomCursor /> only on fine pointers without reduced motion. */
+html.cursor-none,
+html.cursor-none *,
+html.cursor-none *::before,
+html.cursor-none *::after {
+  cursor: none !important;
+}
+
 .grain::before {
   content: "";
   pointer-events: none;

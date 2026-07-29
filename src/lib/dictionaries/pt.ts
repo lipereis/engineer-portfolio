@@ -2,9 +2,9 @@ import type { Dictionary } from "./en";
 
 export const pt = {
   meta: {
-    title: "Felipe Gomes — AI Engineer",
+    title: "Felipe Gomes — Backend & AI Engineer",
     description:
-      "AI Engineer · Frontend · Full-stack capable. Portfólio de Felipe Gomes — ofício em vídeo, produto e tooling com IA, do Rio de Janeiro.",
+      "Backend & AI Engineer · Full-stack (React / Next.js / Node.js). Portfólio de Felipe Gomes — sistemas RAG, APIs e tooling de produto, do Rio de Janeiro.",
   },
 
   nav: {
@@ -21,14 +21,14 @@ export const pt = {
   },
 
   hero: {
-    role: "AI Engineer",
-    focus: "Frontend · Full-stack capable",
+    role: "Backend & AI Engineer",
+    focus: "Full-stack · React / Next.js / Node.js",
     typingLines: [
-      "Construindo produtos com código e IA",
-      "Do ofício em vídeo à engenharia de IA",
+      "Construindo sistemas RAG e APIs",
+      "Do audiovisual à engenharia de IA",
       "Entregando ferramentas com acabamento premium",
     ],
-    arc: "Editor de vídeo em transição para engenharia de IA — construindo produtos com código e IA.",
+    arc: "Base em comunicação e audiovisual, hoje construindo serviços backend e sistemas de IA.",
     ctaProjects: "Ver Projetos",
     ctaResume: "Baixar Currículo",
     ctaGithub: "GitHub",
@@ -44,11 +44,12 @@ export const pt = {
       title: "Habilidades",
       subtitle: "Ferramentas que uso para desenhar, construir e entregar.",
       groups: {
-        frontend: "Frontend",
+        ai: "Engenharia de IA",
         backend: "Backend",
         languages: "Linguagens de Programação",
+        frontend: "Frontend",
         databases: "Bancos de Dados",
-        tools: "Ferramentas",
+        tools: "Ferramentas & Deploy",
         design: "Design",
       },
     },
@@ -87,18 +88,18 @@ export const pt = {
     },
     experience: {
       title: "Experiência",
-      subtitle: "Uma linha do tempo de ofício, aprendizado e transição.",
+      subtitle: "Atuação profissional em comunicação e produção audiovisual.",
     },
     education: {
       title: "Educação",
-      subtitle: "Cursos, trilha autodidata e certificados.",
+      subtitle: "Graduação, cursos e a trilha autodidata.",
       kinds: {
         university: "Universidade",
         course: "Curso",
         certificate: "Certificado",
       },
-      editable: "Editável",
-      editableHint: "Rascunho — revise em config.ts",
+      certifications: "Cursos e certificações",
+      languages: "Idiomas",
     },
     contact: {
       title: "Contato",

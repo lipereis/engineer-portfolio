@@ -38,7 +38,7 @@ export function AboutSection() {
           </p>
 
           <ol className="relative list-none space-y-0 border-l border-border/80 pl-0">
-            {siteConfig.experience.map((entry, index) => (
+            {siteConfig.journey.map((entry, index) => (
               <motion.li
                 key={entry.id}
                 className="relative pl-8 pb-10 last:pb-0"
