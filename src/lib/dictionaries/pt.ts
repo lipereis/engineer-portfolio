@@ -25,11 +25,11 @@ export const pt = {
     role: "Backend & AI Engineer",
     focus: "Full-stack · React / Next.js / Node.js",
     typingLines: [
-      "Construindo sistemas RAG e APIs",
-      "Do audiovisual à engenharia de IA",
-      "Entregando ferramentas com acabamento premium",
+      "Construindo ferramentas de IA para vídeo",
+      "Sistemas RAG, agentes e APIs",
+      "Da ilha de edição à engenharia de IA",
     ],
-    arc: "Base em comunicação e audiovisual, hoje construindo serviços backend e sistemas de IA.",
+    arc: "Um editor de vídeo que constrói as ferramentas de IA que editores precisam: transcrição, legendas, retrieval e o backend por trás.",
     ctaProjects: "Ver Projetos",
     ctaResume: "Baixar Currículo",
     ctaGithub: "GitHub",
@@ -40,6 +40,7 @@ export const pt = {
     about: {
       title: "Sobre",
       subtitle: "O caminho do ofício criativo à engenharia.",
+      videoPortfolio: "Ver meu trabalho em vídeo",
     },
     skills: {
       title: "Habilidades",
@@ -56,12 +57,9 @@ export const pt = {
     },
     projects: {
       title: "Projetos em Destaque",
-      subtitle: "Destaques fixos, depois repositórios ranqueados pela atividade no GitHub.",
+      subtitle: "Projetos de IA, backend e full-stack que desenhei e construí de ponta a ponta.",
       liveDemo: "Demo ao vivo",
       viewGithub: "GitHub",
-      stars: "Stars",
-      forks: "Forks",
-      private: "Privado",
     },
     extensions: {
       title: "Extensões para Navegador",
@@ -88,11 +86,8 @@ export const pt = {
     stats: {
       title: "Estatísticas do GitHub",
       subtitle: "Instantâneo da atividade pública na última build.",
-      repositories: "Repositórios",
-      stars: "Stars totais",
-      forks: "Forks totais",
-      followers: "Seguidores",
-      following: "Seguindo",
+      repositories: "Repositórios públicos",
+      commitsYear: "Commits nos últimos 12 meses",
       languages: "Linguagens",
       commits: "Atividade de commits",
       contributions: "Calendário de contribuições",
@@ -108,7 +103,7 @@ export const pt = {
     },
     education: {
       title: "Educação",
-      subtitle: "Graduação, cursos e a trilha autodidata.",
+      subtitle: "Graduação, cursos em andamento e a trilha autodidata.",
       kinds: {
         university: "Universidade",
         course: "Curso",

@@ -1,12 +1,9 @@
 "use client";
 
 import { ProjectCard } from "@/components/projects/project-card";
-import githubJson from "@/data/github.json";
+import { siteConfig } from "@/config";
 import { useLocale } from "@/hooks/use-locale";
 import { useReducedMotion } from "@/hooks/use-reduced-motion";
-import type { GithubData } from "@/lib/types";
-
-const github = githubJson as GithubData;
 
 export function ProjectsSection() {
   const { t } = useLocale();
@@ -35,9 +32,9 @@ export function ProjectsSection() {
         </header>
 
         <ul className="grid list-none grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {github.topProjects.map((repo, index) => (
-            <li key={repo.name} className="min-h-0">
-              <ProjectCard {...repo} index={index} reduced={reduced} />
+          {siteConfig.featuredProjects.map((project, index) => (
+            <li key={project.id} className="min-h-0">
+              <ProjectCard project={project} index={index} reduced={reduced} />
             </li>
           ))}
         </ul>

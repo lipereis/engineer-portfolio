@@ -38,16 +38,8 @@ export function StatsSection() {
       value: github.profile.publicRepos,
     },
     {
-      label: s.stars,
-      value: github.stats.totalStars,
-    },
-    {
-      label: s.followers,
-      value: github.profile.followers,
-    },
-    {
-      label: s.following,
-      value: github.profile.following,
+      label: s.commitsYear,
+      value: github.commitActivity.reduce((sum, week) => sum + week.count, 0),
     },
   ] as const;
 
@@ -73,7 +65,7 @@ export function StatsSection() {
           </p>
         </header>
 
-        <dl className="mb-14 grid grid-cols-2 gap-x-6 gap-y-8 sm:grid-cols-4">
+        <dl className="mb-14 grid grid-cols-2 gap-x-6 gap-y-8">
           {counters.map((item) => (
             <div key={item.label} className="min-w-0">
               <dt className="text-xs font-medium uppercase tracking-[0.16em] text-muted-foreground">

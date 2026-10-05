@@ -1,27 +1,27 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Code2, ExternalLink, GitFork, Star } from "lucide-react";
+import { Code2, ExternalLink } from "lucide-react";
 
 import { ProjectPlaceholder } from "@/components/projects/project-placeholder";
 import { Button } from "@/components/ui/button";
 import { useLocale } from "@/hooks/use-locale";
-import type { ScoredRepo } from "@/lib/types";
-import { cn, displayRepoName } from "@/lib/utils";
+import type { FeaturedProject } from "@/config";
+import { cn } from "@/lib/utils";
 
-type ProjectCardProps = ScoredRepo & {
+type ProjectCardProps = {
+  project: FeaturedProject;
   index?: number;
   reduced?: boolean;
 };
 
 export function ProjectCard({
+  project,
   index = 0,
   reduced = false,
-  ...repo
 }: ProjectCardProps) {
-  const { t } = useLocale();
+  const { locale, t } = useLocale();
   const copy = t.sections.projects;
-  const hasHomepage = Boolean(repo.homepage);
 
   return (
     <motion.article
@@ -45,70 +45,41 @@ export function ProjectCard({
       whileHover={reduced ? undefined : { y: -6 }}
     >
       <div className="relative overflow-hidden border-b border-border/50">
-        <ProjectPlaceholder
-          name={displayRepoName(repo.name)}
-          language={repo.language}
-        />
+        <ProjectPlaceholder name={project.name} language={project.language} />
       </div>
 
       <div className="flex flex-1 flex-col gap-3 p-4 sm:p-5">
         <div className="flex flex-wrap items-start justify-between gap-2">
           <h3 className="font-display text-xl tracking-tight text-fg sm:text-2xl">
-            {displayRepoName(repo.name)}
+            {project.name}
           </h3>
-          <div className="flex flex-wrap items-center gap-1.5">
-            {repo.private ? (
-              <span className="rounded-md border border-accent/35 bg-accent/10 px-2 py-0.5 text-xs text-accent">
-                {copy.private}
-              </span>
-            ) : null}
-            {repo.language ? (
-              <span className="rounded-md border border-border/60 bg-fg/[0.04] px-2 py-0.5 text-xs text-muted-foreground">
-                {repo.language}
-              </span>
-            ) : null}
-          </div>
-        </div>
-
-        {repo.description ? (
-          <p className="line-clamp-3 text-sm leading-relaxed text-muted-foreground">
-            {repo.description}
-          </p>
-        ) : null}
-
-        <div className="mt-auto flex flex-wrap items-center gap-3 pt-1 text-xs text-muted-foreground">
-          <span className="inline-flex items-center gap-1" title={copy.stars}>
-            <Star className="size-3.5 text-accent" aria-hidden />
-            <span className="sr-only">{copy.stars}: </span>
-            {repo.stargazers_count}
-          </span>
-          <span className="inline-flex items-center gap-1" title={copy.forks}>
-            <GitFork className="size-3.5" aria-hidden />
-            <span className="sr-only">{copy.forks}: </span>
-            {repo.forks_count}
+          <span className="rounded-md border border-border/60 bg-fg/[0.04] px-2 py-0.5 text-xs text-muted-foreground">
+            {project.language}
           </span>
         </div>
 
-        {repo.topics.length > 0 ? (
-          <ul className="flex list-none flex-wrap gap-1.5">
-            {repo.topics.slice(0, 5).map((topic) => (
-              <li
-                key={topic}
-                className="rounded-md bg-accent/10 px-2 py-0.5 text-[0.7rem] text-accent"
-              >
-                {topic}
-              </li>
-            ))}
-          </ul>
-        ) : null}
+        <p className="text-sm leading-relaxed text-muted-foreground">
+          {project.description[locale]}
+        </p>
+
+        <ul className="mt-auto flex list-none flex-wrap gap-1.5 pt-1">
+          {project.technologies.map((tech) => (
+            <li
+              key={tech}
+              className="rounded-md bg-accent/10 px-2 py-0.5 text-[0.7rem] text-accent"
+            >
+              {tech}
+            </li>
+          ))}
+        </ul>
 
         <div className="flex flex-wrap gap-2 pt-1">
-          {hasHomepage ? (
+          {project.demo ? (
             <Button
               nativeButton={false}
               render={
                 <a
-                  href={repo.homepage!}
+                  href={project.demo}
                   target="_blank"
                   rel="noopener noreferrer"
                 />
@@ -120,22 +91,24 @@ export function ProjectCard({
               {copy.liveDemo}
             </Button>
           ) : null}
-          <Button
-            nativeButton={false}
-            render={
-              <a
-                href={repo.html_url}
-                target="_blank"
-                rel="noopener noreferrer"
-              />
-            }
-            variant="outline"
-            size="sm"
-            className="gap-1.5"
-          >
-            <Code2 className="size-3.5" aria-hidden />
-            {copy.viewGithub}
-          </Button>
+          {project.repository ? (
+            <Button
+              nativeButton={false}
+              render={
+                <a
+                  href={project.repository}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                />
+              }
+              variant="outline"
+              size="sm"
+              className="gap-1.5"
+            >
+              <Code2 className="size-3.5" aria-hidden />
+              {copy.viewGithub}
+            </Button>
+          ) : null}
         </div>
       </div>
     </motion.article>

@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { ArrowUpRight } from "lucide-react";
 
 import { siteConfig } from "@/config";
 import { useLocale } from "@/hooks/use-locale";
@@ -33,9 +34,20 @@ export function AboutSection() {
         </header>
 
         <div className="grid gap-14 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,1fr)] lg:gap-16">
-          <p className="max-w-xl text-base leading-relaxed text-fg/90 sm:text-lg">
-            {siteConfig.about[locale]}
-          </p>
+          <div className="max-w-xl">
+            <p className="text-base leading-relaxed text-fg/90 sm:text-lg">
+              {siteConfig.about[locale]}
+            </p>
+            <a
+              href={siteConfig.videoPortfolioUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-6 inline-flex items-center gap-1.5 text-sm font-medium text-accent underline-offset-4 hover:underline"
+            >
+              {t.sections.about.videoPortfolio}
+              <ArrowUpRight className="size-4" aria-hidden />
+            </a>
+          </div>
 
           <ol className="relative list-none space-y-0 border-l border-border/80 pl-0">
             {siteConfig.journey.map((entry, index) => (

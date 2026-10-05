@@ -71,6 +71,18 @@ export type ExtensionEntry = {
   previewAlt: LocalizedString;
 };
 
+/** Hand-written project cards: the Featured grid no longer depends on GitHub ranking. */
+export type FeaturedProject = {
+  id: string;
+  name: string;
+  language: string;
+  description: LocalizedString;
+  technologies: readonly string[];
+  demo?: string;
+  /** Omitted for private repositories: the card then shows only the demo. */
+  repository?: string;
+};
+
 export const siteConfig = {
   name: "Felipe Gomes",
   fullName: "Felipe Damasceno Reis Gomes",
@@ -93,7 +105,10 @@ export const siteConfig = {
   socials: {} as Record<string, never>,
 
   /** Repos excluded from ranking (e.g. profile README-only). */
-  repoDenylist: ["lipereis", "engineer-portfolio", "AmzScope"] as const,
+  repoDenylist: ["lipereis", "engineer-portfolio", "AmzScope", "video-portfolio"] as const,
+
+  /** Earlier career work, linked from About instead of sitting in the engineering grid. */
+  videoPortfolioUrl: "https://lipereis.github.io/video-portfolio/",
 
   /**
    * Always show first in Featured (then fill remaining slots by score).
@@ -105,6 +120,109 @@ export const siteConfig = {
   repoDisplayNames: {
     spoileralert: "SpoilerAlert",
   } as const,
+
+  featuredProjects: [
+    {
+      id: "hookedit",
+      name: "HookEdit",
+      language: "TypeScript",
+      description: {
+        en: "AI editor for vertical video. Upload a clip and it transcribes with word-level timestamps (Whisper), builds dynamic captions, and uses Gemini to suggest retention edits: cuts, B-roll, sound effects, and a hook review. Exports the final clip through ffmpeg.",
+        pt: "Editor de vídeo vertical com IA. Você sobe o clipe e ele transcreve com timestamp por palavra (Whisper), monta legendas dinâmicas e usa o Gemini para sugerir edições de retenção: cortes, B-roll, efeitos sonoros e avaliação do hook. Exporta o clipe final via ffmpeg.",
+      },
+      technologies: ["Next.js", "FastAPI", "faster-whisper", "Gemini", "ffmpeg"],
+      demo: "https://hookedit.vercel.app/",
+    },
+    {
+      id: "trainflow",
+      name: "TrainFlow",
+      language: "TypeScript",
+      description: {
+        en: "AI-powered operating system for personal trainers: trainer and client accounts, invite flow, workout templates, and client management in a Turborepo monorepo.",
+        pt: "Sistema operacional com IA para personal trainers: contas de treinador e aluno, fluxo de convite, modelos de treino e gestão de alunos em um monorepo Turborepo.",
+      },
+      technologies: ["Next.js", "PostgreSQL", "Prisma", "Clerk", "Turborepo"],
+      demo: "https://trainflow-chi.vercel.app",
+      repository: "https://github.com/lipereis/TrainFlow",
+    },
+    {
+      id: "ragcore",
+      name: "RAGCore",
+      language: "Python",
+      description: {
+        en: "Local hybrid RAG engine: PDF parsing with pdfplumber, vector search in Chroma combined with BM25 keyword search, FlashRank re-ranking, and answers from Gemini Flash.",
+        pt: "Motor de RAG híbrido local: leitura de PDF com pdfplumber, busca vetorial no Chroma combinada com busca por palavra-chave BM25, re-ranking com FlashRank e respostas do Gemini Flash.",
+      },
+      technologies: ["Python", "Chroma", "BM25", "FlashRank", "Gemini"],
+      repository: "https://github.com/lipereis/RAGCore",
+    },
+    {
+      id: "supportflow-ai",
+      name: "SupportFlow-AI",
+      language: "Python",
+      description: {
+        en: "Customer support platform for a fictional store: a LangGraph agent answers from a RAG knowledge base behind a FastAPI service and escalates to a human when it should.",
+        pt: "Plataforma de atendimento para uma loja fictícia: um agente em LangGraph responde a partir de uma base RAG atrás de um serviço FastAPI e escala para um humano quando necessário.",
+      },
+      technologies: ["Python", "LangGraph", "FastAPI", "RAG", "Docker"],
+      repository: "https://github.com/lipereis/SupportFlow-AI",
+    },
+    {
+      id: "terminalmind",
+      name: "TerminalMind",
+      language: "Python",
+      description: {
+        en: "Research assistant for the terminal. Queries an LLM with strict structured outputs (Pydantic), grounds answers in locally ingested notes, cites the chunks it used, and keeps session history.",
+        pt: "Assistente de pesquisa no terminal. Consulta um LLM com saídas estruturadas estritas (Pydantic), fundamenta as respostas em notas ingeridas localmente, cita os trechos usados e guarda o histórico da sessão.",
+      },
+      technologies: ["Python", "Structured Outputs", "Pydantic", "Rich"],
+      repository: "https://github.com/lipereis/TerminalMind",
+    },
+    {
+      id: "cineops",
+      name: "CineOps",
+      language: "TypeScript",
+      description: {
+        en: "Film production tool that ties the shooting stripboard to the budget: drag a scene onto a shooting day and the budget recalculates in the same transaction.",
+        pt: "Ferramenta de produção de cinema que liga o stripboard de filmagem ao orçamento: arraste uma cena para uma diária e o orçamento é recalculado na mesma transação.",
+      },
+      technologies: ["Next.js", "PostgreSQL", "Prisma", "dnd-kit"],
+      repository: "https://github.com/lipereis/CineOps",
+    },
+    {
+      id: "spoileralert",
+      name: "SpoilerAlert",
+      language: "Python",
+      description: {
+        en: "Turns a year of Letterboxd diary entries into a cinema recap: deterministic stats, optional TMDB enrichment, and six shareable 1080×1920 cards.",
+        pt: "Transforma um ano de diário do Letterboxd em uma retrospectiva de cinema: estatísticas determinísticas, enriquecimento opcional via TMDB e seis cards 1080×1920 para compartilhar.",
+      },
+      technologies: ["Python", "Letterboxd", "TMDB"],
+      repository: "https://github.com/lipereis/spoileralert",
+    },
+    {
+      id: "aporte",
+      name: "Aporte",
+      language: "TypeScript",
+      description: {
+        en: "Personal finance tracker in Brazilian Portuguese: income and expenses, interactive spending charts, and monthly budgets per category.",
+        pt: "Controle financeiro pessoal em português: receitas e despesas, gráficos interativos de gastos e orçamentos mensais por categoria.",
+      },
+      technologies: ["Next.js", "Prisma", "Neon Postgres"],
+      repository: "https://github.com/lipereis/Aporte",
+    },
+    {
+      id: "bizu-do-busao",
+      name: "Bizu do Busão",
+      language: "TypeScript",
+      description: {
+        en: "Real-time tracker for the city buses of Rio de Janeiro. Consumes the open data API from the city, processes the coordinates in an async worker, stores them in MySQL, and shows the fleet on an interactive map.",
+        pt: "Rastreador em tempo real dos ônibus urbanos do Rio de Janeiro. Consome a API de dados abertos da prefeitura, processa as coordenadas em um worker assíncrono, armazena em MySQL e mostra a frota em um mapa interativo.",
+      },
+      technologies: ["TypeScript", "MySQL", "Open data API"],
+      repository: "https://github.com/lipereis/Bizu-do-Busao",
+    },
+  ] as const satisfies readonly FeaturedProject[],
 
   extensions: [
     {
@@ -142,8 +260,8 @@ export const siteConfig = {
   ] as const satisfies readonly ExtensionEntry[],
 
   about: {
-    en: "I'm Felipe Gomes — moving from communication and audiovisual work into software, focused on backend and AI engineering. My foundation is storytelling, production, and content operations; today I point that same discipline at building digital products. I'm self-taught in JavaScript, React, Node.js, and Python, with published projects (including AI tooling built on retrieval, vector search, and re-ranking) and constant practice in version control and deployment. I'm looking for a Backend / AI Engineer role where product reasoning, delivery discipline, and growing full-stack depth all count.",
-    pt: "Sou Felipe Gomes — em transição da comunicação e do audiovisual para software, com foco em backend e engenharia de IA. Minha base é storytelling, produção e gestão de conteúdo; hoje aplico essa mesma disciplina na construção de produtos digitais. Sou autodidata em JavaScript, React, Node.js e Python, com projetos publicados (incluindo ferramentas de IA com retrieval, busca vetorial e re-ranking) e prática constante de versionamento e deploy. Busco uma vaga de Backend / AI Engineer onde raciocínio de produto, disciplina de entrega e profundidade full-stack crescente contem juntos.",
+    en: "I'm Felipe Gomes — moving from communication and audiovisual work into software, focused on backend and AI engineering. My foundation is storytelling, production, and content operations; today I point that same discipline at building digital products. I'm self-taught in JavaScript, React, Node.js, and Python, with published projects (an AI editor for vertical video, plus tooling built on retrieval, vector search, and re-ranking) and constant practice in version control and deployment. I'm looking for a Backend / AI Engineer role where product reasoning, delivery discipline, and growing full-stack depth all count.",
+    pt: "Sou Felipe Gomes — em transição da comunicação e do audiovisual para software, com foco em backend e engenharia de IA. Minha base é storytelling, produção e gestão de conteúdo; hoje aplico essa mesma disciplina na construção de produtos digitais. Sou autodidata em JavaScript, React, Node.js e Python, com projetos publicados (um editor de vídeo vertical com IA e ferramentas com retrieval, busca vetorial e re-ranking) e prática constante de versionamento e deploy. Busco uma vaga de Backend / AI Engineer onde raciocínio de produto, disciplina de entrega e profundidade full-stack crescente contem juntos.",
   } satisfies LocalizedString,
 
   /** About-section timeline: the arc, not job history. */
@@ -180,8 +298,8 @@ export const siteConfig = {
       },
       period: { en: "Current", pt: "Atual" },
       description: {
-        en: "Building real systems: a local hybrid RAG engine (Chroma + BM25 + FlashRank + Gemini), an AI operating system for personal trainers, and Python data apps. REST APIs, retrieval pipelines, and prompt engineering.",
-        pt: "Construindo sistemas reais: um motor RAG híbrido local (Chroma + BM25 + FlashRank + Gemini), um sistema operacional com IA para personal trainers e apps de dados em Python. APIs REST, pipelines de retrieval e prompt engineering.",
+        en: "Building real systems: HookEdit, an AI editor for vertical video (Whisper + Gemini + ffmpeg), a local hybrid RAG engine (Chroma + BM25 + FlashRank + Gemini), and an AI operating system for personal trainers. REST APIs, retrieval pipelines, and prompt engineering.",
+        pt: "Construindo sistemas reais: o HookEdit, um editor de vídeo vertical com IA (Whisper + Gemini + ffmpeg), um motor RAG híbrido local (Chroma + BM25 + FlashRank + Gemini) e um sistema operacional com IA para personal trainers. APIs REST, pipelines de retrieval e prompt engineering.",
       },
     },
     {
@@ -280,6 +398,28 @@ export const siteConfig = {
       description: {
         en: "Narrative, media production, and audience thinking — the base I now apply to product and engineering work.",
         pt: "Narrativa, produção de mídia e pensamento de audiência — a base que agora aplico em produto e engenharia.",
+      },
+    },
+    {
+      id: "datacamp",
+      kind: "course",
+      title: { en: "Courses in progress", pt: "Cursos em andamento" },
+      institution: { en: "DataCamp", pt: "DataCamp" },
+      period: { en: "In progress", pt: "Em andamento" },
+      description: {
+        en: "Currently enrolled and studying on DataCamp.",
+        pt: "Atualmente matriculado e estudando no DataCamp.",
+      },
+    },
+    {
+      id: "coursera",
+      kind: "course",
+      title: { en: "Courses in progress", pt: "Cursos em andamento" },
+      institution: { en: "Coursera", pt: "Coursera" },
+      period: { en: "In progress", pt: "Em andamento" },
+      description: {
+        en: "Currently enrolled and studying on Coursera.",
+        pt: "Atualmente matriculado e estudando no Coursera.",
       },
     },
     {

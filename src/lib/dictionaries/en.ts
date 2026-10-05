@@ -23,11 +23,11 @@ export const en = {
     role: "Backend & AI Engineer",
     focus: "Full-stack · React / Next.js / Node.js",
     typingLines: [
-      "Building RAG systems and APIs",
-      "From audiovisual craft to AI engineering",
-      "Shipping tools that feel premium",
+      "Building AI tools for video",
+      "RAG systems, agents, and APIs",
+      "From the editing suite to AI engineering",
     ],
-    arc: "Communication and audiovisual background, now building backend services and AI systems.",
+    arc: "A video editor who builds the AI tools editors need: transcription, captions, retrieval, and the backend behind them.",
     ctaProjects: "View Projects",
     ctaResume: "Download Resume",
     ctaGithub: "GitHub",
@@ -38,6 +38,7 @@ export const en = {
     about: {
       title: "About",
       subtitle: "The path from creative craft to engineering.",
+      videoPortfolio: "See my video work",
     },
     skills: {
       title: "Skills",
@@ -54,12 +55,9 @@ export const en = {
     },
     projects: {
       title: "Featured Projects",
-      subtitle: "Pinned highlights, then top repositories ranked from GitHub activity.",
+      subtitle: "AI, backend, and full-stack projects I designed and built end to end.",
       liveDemo: "Live Demo",
       viewGithub: "GitHub",
-      stars: "Stars",
-      forks: "Forks",
-      private: "Private",
     },
     extensions: {
       title: "Browser Extensions",
@@ -86,11 +84,8 @@ export const en = {
     stats: {
       title: "GitHub Statistics",
       subtitle: "Public activity snapshot from the latest build.",
-      repositories: "Repositories",
-      stars: "Total stars",
-      forks: "Total forks",
-      followers: "Followers",
-      following: "Following",
+      repositories: "Public repositories",
+      commitsYear: "Commits in the last 12 months",
       languages: "Languages",
       commits: "Commit activity",
       contributions: "Contribution calendar",
@@ -106,7 +101,7 @@ export const en = {
     },
     education: {
       title: "Education",
-      subtitle: "Degree, courses, and the self-taught path.",
+      subtitle: "Degree, courses in progress, and the self-taught path.",
       kinds: {
         university: "University",
         course: "Course",
