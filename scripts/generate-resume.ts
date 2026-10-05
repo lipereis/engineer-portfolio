@@ -28,10 +28,22 @@ type ProjectLine = {
   year: string;
   blurb: LocalizedString;
   stack: string;
-  repo: string;
+  /** Private projects list a live demo instead of a repository. */
+  repo?: string;
+  demo?: string;
 };
 
 const PROJECTS: ProjectLine[] = [
+  {
+    name: "HookEdit",
+    year: "2026",
+    blurb: {
+      en: "AI editor for vertical video. Transcribes uploads with word-level timestamps (faster-whisper), builds dynamic captions, and uses Gemini to suggest retention edits (cuts, B-roll, sound effects, hook review). Renders the final clip with a single ffmpeg filter graph.",
+      pt: "Editor de vídeo vertical com IA. Transcreve o upload com timestamp por palavra (faster-whisper), monta legendas dinâmicas e usa o Gemini para sugerir edições de retenção (cortes, B-roll, efeitos sonoros, avaliação do hook). Renderiza o clipe final com um único filter graph do ffmpeg.",
+    },
+    stack: "TypeScript, Next.js, Python, FastAPI, faster-whisper, Gemini API, ffmpeg",
+    demo: "hookedit.vercel.app",
+  },
   {
     name: "TrainFlow",
     year: "2026",
@@ -66,10 +78,10 @@ const PROJECTS: ProjectLine[] = [
     name: "CineOps",
     year: "2026",
     blurb: {
-      en: "Tooling for audiovisual operations and post-production workflows.",
-      pt: "Ferramenta para operações e fluxos de trabalho audiovisuais.",
+      en: "Film production tool that ties the shooting stripboard to the budget: moving a scene to another shooting day recalculates the budget in the same transaction.",
+      pt: "Ferramenta de produção de cinema que liga o stripboard de filmagem ao orçamento: mover uma cena para outra diária recalcula o orçamento na mesma transação.",
     },
-    stack: "JavaScript",
+    stack: "TypeScript, Next.js, PostgreSQL, Prisma, dnd-kit",
     repo: "github.com/lipereis/CineOps",
   },
 ];
@@ -85,6 +97,7 @@ const COPY = {
     certifications: "Courses & Certifications",
     stack: "Stack",
     repository: "Repository",
+    demo: "Live demo",
     skillRows: [
       ["AI / AI Engineering", siteConfig.skills.ai.map((s) => s.name).join(", ")],
       ["Backend", siteConfig.skills.backend.map((s) => s.name).join(", ")],
@@ -104,6 +117,7 @@ const COPY = {
     certifications: "Cursos e Certificações",
     stack: "Stack",
     repository: "Repositório",
+    demo: "Demo ao vivo",
     skillRows: [
       [
         "IA / AI Engineering",
@@ -266,11 +280,10 @@ function writeResume(locale: Locale, outPath: string): Promise<void> {
       y = entryHeading(doc, project.name, project.year, y);
       y = body(doc, project.blurb[locale], y, { color: MUTED }) + 2;
       y = body(doc, `${copy.stack}: ${project.stack}`, y, { size: 8 }) + 1;
-      y =
-        body(doc, `${copy.repository}: ${project.repo}`, y, {
-          size: 8,
-          color: MUTED,
-        }) + 9;
+      const link = project.demo
+        ? `${copy.demo}: ${project.demo}`
+        : `${copy.repository}: ${project.repo}`;
+      y = body(doc, link, y, { size: 8, color: MUTED }) + 9;
     }
     y += 2;
 
