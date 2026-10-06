@@ -134,6 +134,17 @@ export const siteConfig = {
       demo: "https://hookedit.vercel.app/",
     },
     {
+      id: "metis",
+      name: "Metis",
+      language: "Python",
+      description: {
+        en: "Content pipeline built as a demonstration project. Turns a transcript into hooks, a video script table, and per-platform captions, and runs a trend radar over RSS feeds that sends approval cards to Slack or Telegram. LLM replies are validated against Pydantic schemas; tests run with a fake model.",
+        pt: "Pipeline de conteúdo feito como projeto de demonstração. Transforma uma transcrição em hooks, tabela de roteiro e legendas por plataforma, e roda um radar de tendências sobre feeds RSS que envia cartões de aprovação para Slack ou Telegram. As respostas do LLM são validadas com schemas Pydantic; os testes rodam com um modelo simulado.",
+      },
+      technologies: ["Python", "Pydantic", "LLM APIs", "RSS", "Webhooks"],
+      repository: "https://github.com/lipereis/metis-content-strategist",
+    },
+    {
       id: "trainflow",
       name: "TrainFlow",
       language: "TypeScript",
