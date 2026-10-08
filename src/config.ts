@@ -350,7 +350,7 @@ export const siteConfig = {
         en: "Nossoolharcarioca — Freelance",
         pt: "Nossoolharcarioca — Freelancer",
       },
-      period: { en: "2025", pt: "2025" },
+      period: { en: "Aug 2025 — Jun 2026", pt: "Ago/2025 — Jun/2026" },
       description: {
         en: "Planned, produced, and edited video content for Instagram, focused on storytelling and engagement.",
         pt: "Planejamento, produção e edição de conteúdo em vídeo para Instagram, com foco em storytelling e engajamento.",
@@ -364,7 +364,7 @@ export const siteConfig = {
         pt: "Social Media — TikTok e YouTube Shorts",
       },
       org: { en: "Coreboyshubclips", pt: "Coreboyshubclips" },
-      period: { en: "2024", pt: "2024" },
+      period: { en: "Sep 2024 — Present", pt: "Set/2024 — Atual" },
       description: {
         en: "Curated, edited, and published short-form video; tracked performance and iterated on what worked.",
         pt: "Curadoria, edição e publicação de vídeos curtos; monitoramento de desempenho e iteração sobre o que funcionava.",
