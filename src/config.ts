@@ -580,6 +580,8 @@ export const siteConfig = {
       { name: "Git / GitHub", icon: "GitBranch" },
       { name: "VS Code / Cursor", icon: "Terminal" },
       { name: "Vercel", icon: "Cloud" },
+      { name: "Docker", icon: "Boxes" },
+      { name: "n8n", icon: "Network" },
       { name: "Streamlit", icon: "LayoutDashboard" },
       { name: "Notion", icon: "NotebookPen" },
     ] as const satisfies readonly SkillItem[],
