@@ -156,6 +156,17 @@ export const siteConfig = {
       repository: "https://github.com/lipereis/video-content-pipeline",
     },
     {
+      id: "job-fit",
+      name: "jobfit",
+      language: "Python",
+      description: {
+        en: "Command-line tool that scores job postings against a resume and shows why, requirement by requirement. Reads company boards through public APIs into SQLite, separates required from nice-to-have skills, and refuses to score postings it cannot read. A labelled set of postings gates every change to the rules.",
+        pt: "Ferramenta de linha de comando que dá nota a vagas com base no currículo e mostra o porquê, requisito por requisito. Lê quadros de vagas por APIs públicas para um SQLite, separa requisitos obrigatórios de diferenciais e se recusa a dar nota a vagas que não consegue ler. Um conjunto de vagas rotuladas trava qualquer mudança nas regras.",
+      },
+      technologies: ["Python", "SQLite", "pytest", "REST APIs", "GitHub Actions"],
+      repository: "https://github.com/lipereis/job-fit",
+    },
+    {
       id: "trainflow",
       name: "TrainFlow",
       language: "TypeScript",
