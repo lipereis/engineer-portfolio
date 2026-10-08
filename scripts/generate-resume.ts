@@ -45,6 +45,16 @@ const PROJECTS: ProjectLine[] = [
     demo: "hookedit.vercel.app",
   },
   {
+    name: "Video Content Pipeline",
+    year: "2026",
+    blurb: {
+      en: "n8n workflow that turns a video into a first draft of social content: Whisper transcription, then hooks, script, and captions written by a local LLM (Ollama). A FastAPI worker holds the logic; failed videos are kept in a separate folder with the reason. Runs fully local in Docker.",
+      pt: "Workflow n8n que transforma um vídeo em um primeiro rascunho de conteúdo: transcrição com Whisper e, em seguida, hooks, roteiro e legendas escritos por um LLM local (Ollama). Um worker FastAPI concentra a lógica; vídeos que falham ficam em uma pasta separada com o motivo. Roda 100% local em Docker.",
+    },
+    stack: "n8n, Docker, Python, FastAPI, faster-whisper, Ollama, pytest",
+    repo: "github.com/lipereis/video-content-pipeline",
+  },
+  {
     name: "TrainFlow",
     year: "2026",
     blurb: {

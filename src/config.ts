@@ -145,6 +145,17 @@ export const siteConfig = {
       repository: "https://github.com/lipereis/metis-content-strategist",
     },
     {
+      id: "video-content-pipeline",
+      name: "Video Content Pipeline",
+      language: "Python",
+      description: {
+        en: "n8n workflow that turns a video into a first draft of social content. Drop a clip in a folder and it is transcribed with Whisper, then Metis writes hooks, a script, and captions through a local LLM on Ollama. Failed videos go to a separate folder with the reason. Runs fully local in Docker, with no API key.",
+        pt: "Workflow n8n que transforma um vídeo em um primeiro rascunho de conteúdo. Você solta o clipe em uma pasta, ele é transcrito com Whisper e o Metis escreve hooks, roteiro e legendas usando um LLM local no Ollama. Vídeos que falham vão para uma pasta separada com o motivo. Roda 100% local em Docker, sem chave de API.",
+      },
+      technologies: ["n8n", "Docker", "FastAPI", "faster-whisper", "Ollama"],
+      repository: "https://github.com/lipereis/video-content-pipeline",
+    },
+    {
       id: "trainflow",
       name: "TrainFlow",
       language: "TypeScript",
