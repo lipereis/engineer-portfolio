@@ -2,9 +2,9 @@ import type { Dictionary } from "./en";
 
 export const pt = {
   meta: {
-    title: "Felipe Gomes — Backend & AI Engineer",
+    title: "Felipe Gomes — Automação e IA aplicada a vídeo",
     description:
-      "Backend & AI Engineer · Full-stack (React / Next.js / Node.js). Portfólio de Felipe Gomes — sistemas RAG, APIs e tooling de produto, do Rio de Janeiro.",
+      "Automação e IA aplicada a vídeo · Python, n8n, LLMs · Editor de vídeo. Portfólio de Felipe Gomes — workflows n8n, pipelines de LLM e tooling de produto, do Rio de Janeiro.",
   },
 
   nav: {
@@ -22,7 +22,7 @@ export const pt = {
   },
 
   hero: {
-    role: "Backend & AI Engineer",
+    role: "Automação e IA aplicada a vídeo",
     focus: "Full-stack · React / Next.js / Node.js",
     typingLines: [
       "Construindo ferramentas de IA para vídeo",

@@ -101,7 +101,7 @@ export const siteConfig = {
   siteUrl: "https://lipereis.github.io/engineer-portfolio",
   basePath: "/engineer-portfolio",
   location: "Rio de Janeiro — RJ",
-  headline: "Backend & AI Engineer · Full-stack (React / Next.js / Node.js)",
+  headline: "AI & Automation for Video · Python, n8n, LLMs · Video Editor",
   socials: {} as Record<string, never>,
 
   /** Repos excluded from ranking (e.g. profile README-only). */
@@ -327,8 +327,8 @@ export const siteConfig = {
     {
       id: "goals",
       title: {
-        en: "Backend / AI Engineer Role",
-        pt: "Vaga de Backend / AI Engineer",
+        en: "AI & Automation Role",
+        pt: "Vaga de Automação e IA",
       },
       period: { en: "Next", pt: "Próximo" },
       description: {

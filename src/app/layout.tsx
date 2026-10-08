@@ -19,9 +19,9 @@ const instrument = Instrument_Serif({
   display: "swap",
 });
 
-const siteTitle = `${siteConfig.name} — Backend & AI Engineer`;
+const siteTitle = `${siteConfig.name} — AI & Automation for Video`;
 const siteDescription =
-  "Backend & AI engineer based in Rio de Janeiro. Retrieval-augmented generation, REST APIs, and full-stack product work with TypeScript, Node.js, Python, React, and Next.js. Open to Backend / AI Engineer roles.";
+  "Video editor building AI and automation tools in Rio de Janeiro. n8n workflows, LLM pipelines, RAG, and product work with Python, TypeScript, and Next.js. Open to automation and AI roles.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.siteUrl),
@@ -62,7 +62,7 @@ export const metadata: Metadata = {
         url: "/og.png",
         width: 1200,
         height: 630,
-        alt: `${siteConfig.name} — Backend & AI Engineer`,
+        alt: `${siteConfig.name} — AI & Automation for Video`,
       },
     ],
   },
@@ -84,7 +84,7 @@ const jsonLdPerson = {
   name: siteConfig.name,
   url: siteConfig.siteUrl,
   email: siteConfig.email,
-  jobTitle: "Backend & AI Engineer",
+  jobTitle: "AI & Automation for Video",
   description: siteDescription,
   address: {
     "@type": "PostalAddress",

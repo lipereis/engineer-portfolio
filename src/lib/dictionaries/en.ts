@@ -1,8 +1,8 @@
 export const en = {
   meta: {
-    title: "Felipe Gomes — Backend & AI Engineer",
+    title: "Felipe Gomes — AI & Automation for Video",
     description:
-      "Backend & AI Engineer · Full-stack (React / Next.js / Node.js). Portfolio of Felipe Gomes — RAG systems, APIs, and product tooling from Rio de Janeiro.",
+      "AI & Automation for Video · Python, n8n, LLMs · Video Editor. Portfolio of Felipe Gomes — n8n workflows, LLM pipelines, and product tooling from Rio de Janeiro.",
   },
 
   nav: {
@@ -20,7 +20,7 @@ export const en = {
   },
 
   hero: {
-    role: "Backend & AI Engineer",
+    role: "AI & Automation for Video",
     focus: "Full-stack · React / Next.js / Node.js",
     typingLines: [
       "Building AI tools for video",
