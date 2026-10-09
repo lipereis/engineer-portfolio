@@ -50,8 +50,8 @@ const PROJECTS: ProjectLine[] = [
     name: "TaxaSense",
     year: "2026",
     blurb: {
-      en: "B2B SaaS for investment advisory firms, built with a partner: computes real returns net of income tax and inflation and compares taxed assets with tax-exempt equivalents, producing a report under the firm's brand. Among my deliveries: the WhatsApp bot webhook (Supabase Edge Functions) and the persistence of prospects and reports in Postgres, through reviewed pull requests.",
-      pt: "SaaS B2B para escritórios de assessoria de investimentos, feito em dupla: calcula a rentabilidade líquida de IR e inflação e compara ativos tributados com isentos equivalentes, gerando relatório com a marca do escritório. Entre minhas entregas: o webhook do bot de WhatsApp (Supabase Edge Functions) e a persistência de prospects e relatórios no Postgres, por pull requests revisados.",
+      en: "B2B SaaS for investment advisory firms, in development with a partner: computes real returns net of income tax and inflation and compares taxed assets with tax-exempt equivalents, producing a report under the firm's brand. Among my deliveries: the WhatsApp bot webhook (Supabase Edge Functions) and the persistence of prospects and reports in Postgres, through reviewed pull requests.",
+      pt: "SaaS B2B para escritórios de assessoria de investimentos, em desenvolvimento em dupla: calcula a rentabilidade líquida de IR e inflação e compara ativos tributados com isentos equivalentes, gerando relatório com a marca do escritório. Entre minhas entregas: o webhook do bot de WhatsApp (Supabase Edge Functions) e a persistência de prospects e relatórios no Postgres, por pull requests revisados.",
     },
     stack: "Python, FastAPI, TypeScript, Next.js, Supabase (Postgres), WhatsApp Cloud API",
     note: { en: "Team project, private repository", pt: "Projeto em equipe, repositório privado" },

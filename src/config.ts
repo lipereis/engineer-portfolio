@@ -140,8 +140,8 @@ export const siteConfig = {
       name: "TaxaSense",
       language: "Python",
       description: {
-        en: "B2B SaaS for investment advisory firms, built with a partner: it computes real returns net of income tax and inflation, compares taxed assets with tax-exempt equivalents, and generates a report under the firm's brand. Among my deliveries: the WhatsApp bot webhook (Supabase Edge Functions, TypeScript) and the persistence of prospects and reports in Postgres.",
-        pt: "SaaS B2B para escritórios de assessoria de investimentos, feito em dupla: calcula a rentabilidade líquida de IR e inflação, compara ativos tributados com isentos equivalentes e gera relatório com a marca do escritório. Entre minhas entregas: o webhook do bot de WhatsApp (Supabase Edge Functions, TypeScript) e a persistência de prospects e relatórios no Postgres.",
+        en: "B2B SaaS for investment advisory firms, in development with a partner: it computes real returns net of income tax and inflation, compares taxed assets with tax-exempt equivalents, and generates a report under the firm's brand. Among my deliveries: the WhatsApp bot webhook (Supabase Edge Functions, TypeScript) and the persistence of prospects and reports in Postgres.",
+        pt: "SaaS B2B para escritórios de assessoria de investimentos, em desenvolvimento em dupla: calcula a rentabilidade líquida de IR e inflação, compara ativos tributados com isentos equivalentes e gera relatório com a marca do escritório. Entre minhas entregas: o webhook do bot de WhatsApp (Supabase Edge Functions, TypeScript) e a persistência de prospects e relatórios no Postgres.",
       },
       technologies: ["FastAPI", "Supabase", "Next.js", "WhatsApp Cloud API"],
       privateTeamProject: true,
