@@ -18,8 +18,9 @@ describe("featured projects", () => {
       expect(project.description.en.length).toBeGreaterThan(40);
       expect(project.description.pt.length).toBeGreaterThan(40);
       expect(project.technologies.length).toBeGreaterThan(0);
-      const links = project as { demo?: string; repository?: string };
-      expect(Boolean(links.demo || links.repository)).toBe(true);
+      const links = project as { demo?: string; repository?: string; privateTeamProject?: boolean };
+      // a private team project has no public link and says so on the card instead
+      expect(Boolean(links.demo || links.repository || links.privateTeamProject)).toBe(true);
     }
   });
 

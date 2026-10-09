@@ -57,6 +57,7 @@ export const en = {
       title: "Featured Projects",
       subtitle: "AI, backend, and full-stack projects I designed and built end to end.",
       liveDemo: "Live Demo",
+      privateTeam: "Team project · private repository",
       viewGithub: "GitHub",
     },
     extensions: {

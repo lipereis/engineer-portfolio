@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Code2, ExternalLink } from "lucide-react";
+import { Code2, ExternalLink, Lock } from "lucide-react";
 
 import { ProjectPlaceholder } from "@/components/projects/project-placeholder";
 import { Button } from "@/components/ui/button";
@@ -108,6 +108,12 @@ export function ProjectCard({
               <Code2 className="size-3.5" aria-hidden />
               {copy.viewGithub}
             </Button>
+          ) : null}
+          {project.privateTeamProject ? (
+            <span className="inline-flex items-center gap-1.5 rounded-md border border-border/60 px-2.5 py-1 text-xs text-muted-foreground">
+              <Lock className="size-3.5" aria-hidden />
+              {copy.privateTeam}
+            </span>
           ) : null}
         </div>
       </div>

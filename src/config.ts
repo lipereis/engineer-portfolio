@@ -81,6 +81,8 @@ export type FeaturedProject = {
   demo?: string;
   /** Omitted for private repositories: the card then shows only the demo. */
   repository?: string;
+  /** Team project in a private repository: the card says so instead of linking to code. */
+  privateTeamProject?: boolean;
 };
 
 export const siteConfig = {
@@ -132,6 +134,17 @@ export const siteConfig = {
       },
       technologies: ["Next.js", "FastAPI", "faster-whisper", "Gemini", "ffmpeg"],
       demo: "https://hookedit.vercel.app/",
+    },
+    {
+      id: "taxasense",
+      name: "TaxaSense",
+      language: "Python",
+      description: {
+        en: "B2B SaaS for investment advisory firms, built with a partner: it computes real returns net of income tax and inflation, compares taxed assets with tax-exempt equivalents, and generates a report under the firm's brand. Among my deliveries: the WhatsApp bot webhook (Supabase Edge Functions, TypeScript) and the persistence of prospects and reports in Postgres.",
+        pt: "SaaS B2B para escritórios de assessoria de investimentos, feito em dupla: calcula a rentabilidade líquida de IR e inflação, compara ativos tributados com isentos equivalentes e gera relatório com a marca do escritório. Entre minhas entregas: o webhook do bot de WhatsApp (Supabase Edge Functions, TypeScript) e a persistência de prospects e relatórios no Postgres.",
+      },
+      technologies: ["FastAPI", "Supabase", "Next.js", "WhatsApp Cloud API"],
+      privateTeamProject: true,
     },
     {
       id: "metis",

@@ -31,6 +31,8 @@ type ProjectLine = {
   /** Private projects list a live demo instead of a repository. */
   repo?: string;
   demo?: string;
+  /** Shown in place of a link when the project has neither. */
+  note?: LocalizedString;
 };
 
 const PROJECTS: ProjectLine[] = [
@@ -43,6 +45,16 @@ const PROJECTS: ProjectLine[] = [
     },
     stack: "TypeScript, Next.js, Python, FastAPI, faster-whisper, Gemini API, ffmpeg",
     demo: "hookedit.vercel.app",
+  },
+  {
+    name: "TaxaSense",
+    year: "2026",
+    blurb: {
+      en: "B2B SaaS for investment advisory firms, built with a partner: computes real returns net of income tax and inflation and compares taxed assets with tax-exempt equivalents, producing a report under the firm's brand. Among my deliveries: the WhatsApp bot webhook (Supabase Edge Functions) and the persistence of prospects and reports in Postgres, through reviewed pull requests.",
+      pt: "SaaS B2B para escritórios de assessoria de investimentos, feito em dupla: calcula a rentabilidade líquida de IR e inflação e compara ativos tributados com isentos equivalentes, gerando relatório com a marca do escritório. Entre minhas entregas: o webhook do bot de WhatsApp (Supabase Edge Functions) e a persistência de prospects e relatórios no Postgres, por pull requests revisados.",
+    },
+    stack: "Python, FastAPI, TypeScript, Next.js, Supabase (Postgres), WhatsApp Cloud API",
+    note: { en: "Team project, private repository", pt: "Projeto em equipe, repositório privado" },
   },
   {
     name: "Video Content Pipeline",
@@ -83,26 +95,6 @@ const PROJECTS: ProjectLine[] = [
     },
     stack: "Python, pdfplumber, Chroma, BM25, FlashRank, Gemini API",
     repo: "github.com/lipereis/RAGCore",
-  },
-  {
-    name: "SpoilerAlert",
-    year: "2026",
-    blurb: {
-      en: "Streamlit web app that generates a “Spotify Wrapped”-style card from a public Letterboxd profile. Scrapes public data, aggregates with pandas, and renders a 1080x1920 card with Pillow.",
-      pt: "Aplicação web em Streamlit que gera um card no estilo “Spotify Wrapped” a partir do perfil público no Letterboxd. Faz scraping de dados públicos, agregação com pandas e renderização do card (1080x1920) com Pillow.",
-    },
-    stack: "Python, Streamlit, pandas, Pillow, letterboxdpy",
-    repo: "github.com/lipereis/spoileralert",
-  },
-  {
-    name: "CineOps",
-    year: "2026",
-    blurb: {
-      en: "Film production tool that ties the shooting stripboard to the budget: moving a scene to another shooting day recalculates the budget in the same transaction.",
-      pt: "Ferramenta de produção de cinema que liga o stripboard de filmagem ao orçamento: mover uma cena para outra diária recalcula o orçamento na mesma transação.",
-    },
-    stack: "TypeScript, Next.js, PostgreSQL, Prisma, dnd-kit",
-    repo: "github.com/lipereis/CineOps",
   },
 ];
 
@@ -302,7 +294,9 @@ function writeResume(locale: Locale, outPath: string): Promise<void> {
       y = body(doc, `${copy.stack}: ${project.stack}`, y, { size: 8 }) + 1;
       const link = project.demo
         ? `${copy.demo}: ${project.demo}`
-        : `${copy.repository}: ${project.repo}`;
+        : project.repo
+          ? `${copy.repository}: ${project.repo}`
+          : (project.note?.[locale] ?? "");
       y = body(doc, link, y, { size: 8, color: MUTED }) + 9;
     }
     y += 2;

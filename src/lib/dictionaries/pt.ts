@@ -59,6 +59,7 @@ export const pt = {
       title: "Projetos em Destaque",
       subtitle: "Projetos de IA, backend e full-stack que desenhei e construí de ponta a ponta.",
       liveDemo: "Demo ao vivo",
+      privateTeam: "Projeto em equipe · repositório privado",
       viewGithub: "GitHub",
     },
     extensions: {
