@@ -70,10 +70,10 @@ const PROJECTS: ProjectLine[] = [
     name: "jobfit",
     year: "2026",
     blurb: {
-      en: "Command-line tool that scores job postings against a resume, requirement by requirement. Reads company boards through public APIs into SQLite and uses rule-based scoring with no language model. Run on 1,917 real postings, it exposed four scoring flaws that became rules and tests; a labelled set gates every change.",
-      pt: "Ferramenta de linha de comando que dá nota a vagas com base no currículo, requisito por requisito. Lê quadros de vagas por APIs públicas para um SQLite e usa regras auditáveis, sem modelo de linguagem. Rodada em 1.917 vagas reais, expôs quatro falhas de pontuação que viraram regras e testes; um conjunto rotulado trava cada mudança.",
+      en: "Tool that scores job postings against a resume, requirement by requirement, with a command line, a FastAPI API and a web page. Reads company boards through public APIs into SQLite and uses rule-based scoring with no language model. Run on 1,917 real postings, it exposed four scoring flaws that became rules and tests; a labelled set gates every change.",
+      pt: "Ferramenta que dá nota a vagas com base no currículo, requisito por requisito, com linha de comando, API em FastAPI e tela web. Lê quadros de vagas por APIs públicas para um SQLite e usa regras auditáveis, sem modelo de linguagem. Rodada em 1.917 vagas reais, expôs quatro falhas de pontuação que viraram regras e testes; um conjunto rotulado trava cada mudança.",
     },
-    stack: "Python, SQLite, SQL, pytest, GitHub Actions",
+    stack: "Python, FastAPI, SQLite, SQL, pytest, GitHub Actions",
     repo: "github.com/lipereis/job-fit",
   },
   {
