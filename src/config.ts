@@ -447,6 +447,17 @@ export const siteConfig = {
       },
     },
     {
+      id: "fiap",
+      kind: "course",
+      title: { en: "Software Engineering", pt: "Engenharia de Software" },
+      institution: { en: "FIAP", pt: "FIAP" },
+      period: { en: "In progress", pt: "Em andamento" },
+      description: {
+        en: "Software quality assurance techniques and the control and management procedures of the development cycle.",
+        pt: "Técnicas de garantia da qualidade de software e procedimentos de controle e gestão do ciclo de desenvolvimento.",
+      },
+    },
+    {
       id: "datacamp",
       kind: "course",
       title: { en: "Courses in progress", pt: "Cursos em andamento" },
