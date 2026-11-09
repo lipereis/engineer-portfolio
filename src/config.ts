@@ -367,17 +367,17 @@ export const siteConfig = {
     {
       id: "nossoolharcarioca",
       role: {
-        en: "Social Media / Video Editor / Videomaker",
-        pt: "Social Media / Editor de Vídeo / Videomaker",
+        en: "Audiovisual Analyst",
+        pt: "Analista de Audiovisual",
       },
       org: {
-        en: "Nossoolharcarioca — Freelance",
-        pt: "Nossoolharcarioca — Freelancer",
+        en: "Nosso Olhar Carioca",
+        pt: "Nosso Olhar Carioca",
       },
-      period: { en: "Aug 2025 — Jun 2026", pt: "Ago/2025 — Jun/2026" },
+      period: { en: "Aug 2025 — Present", pt: "Ago/2025 — Atual" },
       description: {
-        en: "Planned, produced, and edited video content for Instagram, focused on storytelling and engagement.",
-        pt: "Planejamento, produção e edição de conteúdo em vídeo para Instagram, com foco em storytelling e engajamento.",
+        en: "Shoot and edit cinematic Reels about Rio de Janeiro for an Instagram page with around 13K followers; plan topics and short scripts; color grade in DaVinci Resolve and finish in Premiere Pro.",
+        pt: "Captação e edição de Reels com linguagem cinematográfica sobre o Rio para uma página no Instagram com cerca de 13 mil seguidores; pautas e roteiros curtos; color grading no DaVinci Resolve e finalização no Premiere Pro.",
       },
       tags: ["Instagram", "Premiere Pro", "Storytelling"],
     },
