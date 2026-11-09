@@ -265,6 +265,7 @@ function writeResume(locale: Locale, outPath: string): Promise<void> {
           `github.com/${siteConfig.githubUsername}`,
           siteConfig.linkedinHandle,
           "lipereis.github.io/engineer-portfolio",
+          "Showreel: youtu.be/2fHAigODiNM",
         ].join("   ·   "),
         { width: CONTENT_WIDTH },
       );
